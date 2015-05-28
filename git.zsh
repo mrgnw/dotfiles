@@ -16,7 +16,7 @@ alias gitc='git commit -m'
 # because that is a horrible commit message
 alias glazy="gita; gitc 'quick commit - minor changes';"
 
+# find all .git directories and exec "git pull" on the parent.
 function gitrecursive {
-    # find all .git directories and exec "git pull" on the parent.
     find . -type d -name .git -exec sh -c "cd \"{}\"/../ && pwd && git pull" \;
 }
