@@ -12,7 +12,7 @@ alias gits='git status'
 alias gita='git add --all'
 alias gitc='git commit -m'
 
-alias gitlazy="gita; gitc 'quick commit - minor changes';"
+alias glazy="gita; gitc 'quick commit - minor changes';"
 
 function gitrecursive {
     # find all .git directories and exec "git pull" on the parent.
