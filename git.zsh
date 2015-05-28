@@ -12,6 +12,8 @@ alias gits='git status'
 alias gita='git add --all'
 alias gitc='git commit -m'
 
+# only used on personal projects
+# because that is a horrible commit message
 alias glazy="gita; gitc 'quick commit - minor changes';"
 
 function gitrecursive {
