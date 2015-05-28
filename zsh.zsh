@@ -2,6 +2,10 @@
 # zsh basic configuration
 #--------------------------
 
+# oh-my-zsh commands:
+# https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
+alias zsheet='open https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet'
+
 autoload -U promptinit
 promptinit
 
@@ -17,13 +21,14 @@ ZSH_THEME="avit-pure"
 plugins=(git gibo osx cp colorize vagrant python pip virtualenv atom
   jsontools zsh-syntax-highlighting colored-man themes)
 
+alias zz='zrc'
+alias zrc='source ~/.zshrc'
+alias zdir='zshdir'
+alias zedit='zshedit'
+
 alias zshedit="atom ~/.oh-my-zsh/custom/"
 alias zshdir="cd ~/.oh-my-zsh/custom/"
 alias ohmyzsh="atom ~/.oh-my-zsh"
-
-alias zrc='source ~/.zshrc'
-alias zdir='zshdir'
-alias zedit='zshdir'
 
 #--------------------------
 # Additional configuration
@@ -33,11 +38,6 @@ export PATH="/usr/local/heroku/bin:/Users/mw/mbin:/usr/local/bin:/usr/bin:/bin:/
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
-# Cross-platform (unix)
-alias ~="cd ~"
-alias ..="cd .."
-alias ...='cd ../..'
 
 alias myip='curl ip.appspot.com'
 alias mygeo='curl http://www.telize.com/geoip'
