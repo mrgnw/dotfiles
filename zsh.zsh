@@ -14,7 +14,7 @@ ZSH_THEME="avit-pure"
 
 # Plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx cp colorize vagrant python pip virtualenv atom
+plugins=(git gibo osx cp colorize vagrant python pip virtualenv atom
   jsontools zsh-syntax-highlighting colored-man themes)
 
 alias zshedit="atom ~/.oh-my-zsh/custom/"
