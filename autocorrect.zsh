@@ -2,6 +2,11 @@
 
 alias claer="clear"
 alias gti='git'
+# gitp ush
+alias gitp='git push;'
+alias ush=''
+
+
 
 # todo: Read from a dictionary?
 # {
