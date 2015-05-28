@@ -26,7 +26,7 @@ buryApp(){
     app=$(basename "$x")
     # extension="${app##*.}"
     app="${app%.*}"
-    echo "» Utilities/$app"
+    # echo " Utilities/$app"
 
     sudo mv /Applications/$app.app /Applications/Utilities/$app.app
   done
@@ -34,7 +34,9 @@ buryApp(){
 }
 
 buryApps(){
-  $(buryApp) Mail.app TextEdit.app
+  $(buryApp Automator Chess \ Dashboard DVD\ Player Font\ Book Game\ Center \
+  Image\ Capture Launchpad Mail Mission\ Control Photo\ Booth Stickies TextEdit \
+   Time\ Machine)
 }
 
 # turn on tab completion for brew
