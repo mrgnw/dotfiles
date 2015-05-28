@@ -12,7 +12,6 @@ export EDITOR='nano'
 # avit, pure, avit-pure, "random" does  a random theme
 ZSH_THEME="avit-pure"
 
-
 # Plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git osx cp colorize vagrant python pip virtualenv atom
@@ -21,6 +20,10 @@ plugins=(git osx cp colorize vagrant python pip virtualenv atom
 alias zshedit="atom ~/.oh-my-zsh/custom/"
 alias zshdir="cd ~/.oh-my-zsh/custom/"
 alias ohmyzsh="atom ~/.oh-my-zsh"
+
+alias zrc='source ~/.zshrc'
+alias zdir='zshdir'
+alias zedit='zshdir'
 
 #--------------------------
 # Additional configuration
