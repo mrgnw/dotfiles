@@ -5,6 +5,7 @@
 # oh-my-zsh commands:
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
 alias zsheet='open https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet'
+alias zsheet='open https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet'
 
 autoload -U promptinit
 promptinit
@@ -21,10 +22,11 @@ ZSH_THEME="avit-pure"
 plugins=(git gibo osx cp colorize vagrant python pip virtualenv atom
   jsontools zsh-syntax-highlighting colored-man themes)
 
-alias zz='zrc'
-alias zrc='source ~/.zshrc'
 alias zdir='zshdir'
 alias zedit='zshedit'
+
+alias zz='zrc'
+alias zrc='source ~/.zshrc'
 
 alias zshedit="atom ~/.oh-my-zsh/custom/"
 alias zshdir="cd ~/.oh-my-zsh/custom/"
@@ -33,14 +35,15 @@ alias ohmyzsh="atom ~/.oh-my-zsh"
 #--------------------------
 # Additional configuration
 #--------------------------
-# heroku
-export PATH="/usr/local/heroku/bin:/Users/mw/mbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 alias myip='curl ip.appspot.com'
-alias mygeo='curl http://www.telize.com/geoip'
+
+# Display your geographical information
+mygeo() {
+  # todo: accept parameters, show only those
+  json=$(curl -s "http://www.telize.com/geoip")
+  echo $json  | python -m json.tool
+}
 
 # simple ping function
 simpleping() {
@@ -67,6 +70,7 @@ historyHelper() {
 }
 
 # Shows top x commands. Defaults to 5
+# zsh_stats does this - but only does 20, not a flexible amount
 hist() {
   if [ $# -eq 0 ]; then
     historyHelper 5
@@ -74,3 +78,6 @@ hist() {
     historyHelper $1
   fi
 }
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"

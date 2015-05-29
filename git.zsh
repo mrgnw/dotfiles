@@ -21,6 +21,6 @@ alias ush=''
 alias glazy="gita; gitc 'quick commit - minor changes';"
 
 # find all .git directories and exec "git pull" on the parent.
-function gitrecursive {
-    find . -type d -name .git -exec sh -c "cd \"{}\"/../ && pwd && git pull" \;
-}
+# function gitrecursive {
+#     find . -type d -name .git -exec sh -c "cd \"{}\"/../ && pwd && git pull" \;
+# }
