@@ -17,30 +17,30 @@ make_rsa(){
 # OSX customizations
 # --------------------------------------
 if [[ $(uname) == "Darwin" ]]; then
-# Move the apps you never use to /Applications/Utilities
-buryApp(){
-  # You can just type the app name or click & drag the full path
-  # buryApp TextEdit
-  # buryApp /Applications/TextEdit.app
-  for x in $@; do
-    app=$(basename "$x")
-    # extension="${app##*.}"
-    app="${app%.*}"
-    # echo " Utilities/$app"
+  # Move the apps you never use to /Applications/Utilities
+  # ex: TextEdit || TextEdit.app || /Applications/TextEdit.app
+  buryApp() {
+    for x in $@; do
+      app=$(basename "$x")
+      # extension="${app##*.}"
+      app="${app%.*}"
+      # echo " Utilities/$app"
 
-    sudo mv /Applications/$app.app /Applications/Utilities/$app.app
-  done
+      sudo mv /Applications/$app.app /Applications/Utilities/$app.app
+    done
 
-}
+  }
 
-buryApps(){
-  $(buryApp Automator Chess \ Dashboard DVD\ Player Font\ Book Game\ Center \
-  Image\ Capture Launchpad Mail Mission\ Control Photo\ Booth Stickies TextEdit \
-   Time\ Machine)
-}
+  buryApps() {
+    $(buryApp Automator Chess \ Dashboard DVD\ Player Font\ Book Game\ Center \
+    Image\ Capture Launchpad Mail Mission\ Control Photo\ Booth Stickies TextEdit \
+     Time\ Machine)
+  }
 
-# turn on tab completion for brew
-brewTab(){
-  ln -s "$(brew --prefix)/Library/Contributions/brew_zsh_completion.zsh" /usr/local/share/zsh/site-functions
-}
+  # turn on tab completion for brew
+  brewTab() {
+    ln -s "$(brew --prefix)/Library/Contributions/brew_zsh_completion.zsh"\
+     /usr/local/share/zsh/site-functions
+  }
 fi
+# end OSX customizations
