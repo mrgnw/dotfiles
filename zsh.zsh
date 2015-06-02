@@ -25,7 +25,7 @@ plugins=(git gibo osx cp colorize vagrant python pip virtualenv atom
 alias zdir='zshdir'
 alias zedit='zshedit'
 
-alias zz='zrc'
+alias z='zrc'
 alias zrc='source ~/.zshrc'
 
 alias zshedit="atom ~/.oh-my-zsh/custom/"
