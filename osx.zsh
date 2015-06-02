@@ -35,5 +35,5 @@ if [[ $(uname) == "Darwin" ]]; then
     done
     IFS=$temp_ifs
   }
-  
+
 fi
