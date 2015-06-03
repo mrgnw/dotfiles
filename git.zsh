@@ -6,9 +6,13 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 
 # See pre-set git
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet#git
+  # gl = git pull
+  # 
 alias gall='git add --all'
 alias gs='git status'
 alias gc='git commit -m'
+alias gcd='git checkout develop'
+alias gcnb='git checkout -b'
 alias gits='git status'
 alias gita='git add --all'
 alias gitc='git commit -m'
