@@ -8,8 +8,8 @@ mcreate() {
   meteor create $@;
   # Q: can I hide the output from this?
   cd $1
-  echo mkdir client server public private;
-  echo rm $1.*; # removes the default project.css, html, and js
+  mkdir client server public private;
+  rm $1.*; # removes the default project.css, html, and js
 }
 mcreaterun() { mcreate $@; meteor }
 
