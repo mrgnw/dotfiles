@@ -1,20 +1,21 @@
 alias m='meteor'
 
 # Meteor request:
-# Have these as meteor default `meteor create` settings
+# Have these as meteor custom `meteor create` settings:
 # 1. Don't create [project].css/html/js
 # 2. Create client server public private
 mcreate() {
-  meteor create $@;
-  # Q: can I hide the output from this?
+  # Hides the output from `meteor create $@`
+  { meteor create $@; } &> /dev/null
   cd $1
   mkdir client server public private;
   rm $1.*; # removes the default project.css, html, and js
 }
-mcreaterun() { mcreate $@; meteor }
 
 # autocorrect
+alias m='meteor'
 alias mtr='meteor'
+alias mrt='meteor'
 alias mtor='meteor'
 alias metor='meteor'
 alias mteor='meteor'
