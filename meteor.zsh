@@ -1,19 +1,19 @@
 alias m='meteor'
+alias mongo='meteor mongo'
 
-# Meteor request:
-# Have these as meteor custom `meteor create` settings:
-# 1. Don't create [project].css/html/js
-# 2. Create client server public private
 mcreate() {
-  # Hides the output from `meteor create $@`
+  # Creates the project, hides the output from `meteor create $@`
   { meteor create $@; } &> /dev/null
-  cd $1
+  cd $1;
+
+  # removes the default project.css, html, and js
+  rm $1.*;
+
+  # 2. Create directories client server public private
   mkdir client server public private;
-  rm $1.*; # removes the default project.css, html, and js
 }
 
 # autocorrect
-alias m='meteor'
 alias mtr='meteor'
 alias mrt='meteor'
 alias mtor='meteor'
