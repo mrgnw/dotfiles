@@ -1,5 +1,4 @@
 # condensed zen of python
-
 zen(){
   echo "
   Beautiful > ugly
