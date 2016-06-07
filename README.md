@@ -4,7 +4,7 @@ My zsh customizations - aliases, functions, and themes.
 ## config
 I use [ohmyzsh](http://ohmyz.sh), so `~/.zshrc` has only two lines:
 
-    export ZSH=/Users/mw/.oh-my-zsh
+    export ZSH=~/.oh-my-zsh
     source $ZSH/oh-my-zsh.sh
 
 Everything else is contained in .zsh files in `~/.oh-my-zsh/custom/` (this repository).
