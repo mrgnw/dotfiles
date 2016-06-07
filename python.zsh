@@ -1,4 +1,5 @@
 alias py=python3
+alias python=python3
 
 # virtualenv / virtualenvwrapper
 mkvenv() { mkvirtualenv --python=/usr/local/bin/python3 $* }
@@ -9,4 +10,5 @@ showvenv() { showvirtualenv $* }
 
 
 export WORKON_HOME=~/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+# Todo: Check if it's there, prompt to install if it's not
+# source /usr/local/bin/virtualenvwrapper.sh
