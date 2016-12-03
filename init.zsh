@@ -45,7 +45,8 @@ if [[ $(uname) == "Darwin" ]]; then
 
 
   buryApps() {
-    $(buryApp Automator Chess \ Dashboard DVD\ Player Font\ Book Game\ Center \
+    # Removed in OSX Sierra: Dashboard, Game\ Center
+    $(buryApp Automator Chess \ DVD\ Player Font\ Book \
     Image\ Capture Launchpad Mail Mission\ Control Photo\ Booth Stickies TextEdit \
      Time\ Machine)
   }
