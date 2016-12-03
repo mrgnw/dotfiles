@@ -14,9 +14,7 @@ if [[ $(uname) == "Darwin" ]]; then
     # enable select in QuickLook
     defaults write com.apple.finder QLEnableTextSelection TRUE
 
-    # Hide apps that I rarely use.
-    # Automator, Chess, Dashboard, DVD Player, Font Book, Game Center,
-    # Image Capture, Launchpad, Mail, Mission Control, Photo Booth, Stickies, TextEdit
+    # Move apps that I rarely use into the Utilities folder
     buryApps
   }
 
@@ -43,9 +41,10 @@ if [[ $(uname) == "Darwin" ]]; then
     done
   }
 
-
+  # Default apps to bury:
+  # Automator, Chess, DVD Player, Font Book,  Image Capture, Launchpad, Mail,
+  # Mission Control, Photo Booth, Stickies, TextEdit
   buryApps() {
-    # Removed in OSX Sierra: Dashboard, Game\ Center
     $(buryApp Automator Chess \ DVD\ Player Font\ Book \
     Image\ Capture Launchpad Mail Mission\ Control Photo\ Booth Stickies TextEdit \
      Time\ Machine)
