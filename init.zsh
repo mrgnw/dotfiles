@@ -16,6 +16,9 @@ if [[ $(uname) == "Darwin" ]]; then
 
     # Move apps that I rarely use into the Utilities folder
     buryApps
+
+    # Disable warning when emptying trash
+    defaults write com.apple.finder WarnOnEmptyTrash -bool false
   }
 
 
