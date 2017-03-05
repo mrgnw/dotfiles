@@ -60,6 +60,11 @@ simpleping() {
 };
 
 sping() { simpleping $1 }
+spingg() { sping google.com }
+sping8() { sping 8.8.8.8 }
+p8() { sping8 }
+pg() { spingg }
+
 
 
 historyHelper() {
