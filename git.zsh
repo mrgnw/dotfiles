@@ -4,6 +4,9 @@
 # todo: function to create rsa & copy to clipboard
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
+# git: set global gitignore to the one I have in my zsh custom folder
+alias setglobalgitignore='git config --global core.excludesfile ~/.oh-my-zsh/custom/.gitignore_global'
+
 # See pre-set git
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet#git
   # gl = git pull
