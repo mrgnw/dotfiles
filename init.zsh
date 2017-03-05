@@ -16,6 +16,14 @@ if [[ $(uname) == "Darwin" ]]; then
   }
   #
 
+  quicklookApps () {
+    # github.com/sindresorhus/quick-look-plugins
+    brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package quicklookase qlvideo
+
+    # restart quicklook manager
+    qlmanage -r
+  }
+
   # Move the apps you never use to /Applications/Utilities
   # ex: TextEdit || TextEdit.app || /Applications/TextEdit.app
   buryApp() {
@@ -136,6 +144,8 @@ if [[ $(uname) == "Darwin" ]]; then
     defaults write com.apple.dock autohide -bool true
 
     # enable select in QuickLook
+    echo " 🔍 QuickLook"
+    quicklookApps # tested alone in Terminal, but not as part of this script
     defaults write com.apple.finder QLEnableTextSelection TRUE
 
     echo " - status & path bar"
