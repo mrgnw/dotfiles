@@ -1,5 +1,7 @@
-alias py=python
-# alias python=python3
+alias py=python3
+alias python=python3
+
+alias py2=python2.7
 
 # virtualenv / virtualenvwrapper
 mkvenv() { mkvirtualenv --python=/usr/local/bin/python3 $* }
