@@ -271,11 +271,3 @@ make_rsa(){
   open https://github.com/settings/ssh
 
 }
-
-rsa(){
-  if [[ ! -a ~/.ssh/id_rsa.pub ]]; then
-   make_rsa
- else
-   pbcopy < ~/.ssh/id_rsa.pub
-  fi
-}
