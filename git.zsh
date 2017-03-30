@@ -40,4 +40,5 @@ rsa(){
  else
    pbcopy < ~/.ssh/id_rsa.pub
   fi
+  echo "rsa copied"
 }
