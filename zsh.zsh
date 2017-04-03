@@ -32,6 +32,10 @@ alias zshedit="atom ~/.oh-my-zsh/custom/"
 alias zshdir="cd ~/.oh-my-zsh/custom/"
 alias ohmyzsh="atom ~/.oh-my-zsh"
 
+eval $(thefuck --alias)
+
+alias starwars="telnet towel.blinkenlights.nl"
+
 #--------------------------
 # Additional configuration
 #--------------------------
