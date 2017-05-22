@@ -14,3 +14,5 @@ showvenv() { showvirtualenv $* }
 export WORKON_HOME=~/.virtualenvs
 # Todo: Check if it's there, prompt to install if it's not
 # source /usr/local/bin/virtualenvwrapper.sh
+
+export PATH=/usr/local/lib/python2.7/site-packages:$PATH
