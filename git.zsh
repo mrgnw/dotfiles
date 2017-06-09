@@ -32,3 +32,13 @@ alias glazy="gita; gitc 'quick commit - minor changes';"
 # function gitrecursive {
 #     find . -type d -name .git -exec sh -c "cd \"{}\"/../ && pwd && git pull" \;
 # }
+
+# make_rsa is in init.zsh
+rsa(){
+  if [[ ! -a ~/.ssh/id_rsa.pub ]]; then
+   make_rsa
+ else
+   pbcopy < ~/.ssh/id_rsa.pub
+  fi
+  echo "rsa copied"
+}
