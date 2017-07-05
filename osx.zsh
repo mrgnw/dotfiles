@@ -9,6 +9,8 @@ if [[ $(uname) == "Darwin" ]]; then
   alias showHiddenFiles='defaults write com.apple.finder ShowAllFiles TRUE; killall Finder'
   alias hideHiddenFiles='defaults write com.apple.finder ShowAllFiles FALSE; killall Finder'
 
+  alias power='pmset -g'
+
   # Merge one folder into another.
   # Like clicking & dragging it in, except it merges files
   merge() {
