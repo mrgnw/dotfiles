@@ -1,5 +1,10 @@
 #!/bin/zsh
-alias terminalcheat='open http://bit.ly/osxterminalcheatsheet'
+alias terminalcheat='open https://github.com/0nn0/terminal-mac-cheatsheet'
+
+# Sublime stuff
+echo 'export PATH=$PATH:$HOME/bin' >> ~/.zshrc
+alias subl='sublime'
+
 
 if [[ $(uname) == "Darwin" ]]; then
 

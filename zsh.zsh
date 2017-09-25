@@ -64,11 +64,12 @@ simpleping() {
 
 };
 
+sp() { simpleping $1 }
 sping() { simpleping $1 }
-spingg() { sping google.com }
-sping8() { sping 8.8.8.8 }
-p8() { sping8 }
-pg() { spingg }
+spg() { sp google.com }
+sp8() { sp 8.8.8.8 }
+p8() { sp8 }
+pg() { spg }
 
 
 
