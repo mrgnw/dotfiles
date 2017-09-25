@@ -6,7 +6,6 @@
 # oh-my-zsh commands:
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
 alias zsheet='open https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet'
-alias zsheet='open https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet'
 
 autoload -U promptinit
 promptinit
@@ -23,14 +22,12 @@ ZSH_THEME="avit-pure"
 plugins=(git gibo osx cp colorize vagrant python pip virtualenv atom
   jsontools zsh-syntax-highlighting colored-man themes)
 
-alias zdir='zshdir'
-alias zedit='zshedit'
+alias zdir="cd ~/.oh-my-zsh/custom/"
+alias zedit="subl ~/.oh-my-zsh/custom/"
 
 alias z='zrc'
 alias zrc='source ~/.zshrc'
 
-alias zshedit="atom ~/.oh-my-zsh/custom/"
-alias zshdir="cd ~/.oh-my-zsh/custom/"
 alias ohmyzsh="atom ~/.oh-my-zsh"
 
 eval $(thefuck --alias)
