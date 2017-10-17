@@ -4,6 +4,7 @@ alias terminalcheat='open https://github.com/0nn0/terminal-mac-cheatsheet'
 # Sublime stuff
 echo 'export PATH=$PATH:$HOME/bin' >> ~/.zshrc
 alias subl='sublime'
+alias speed='speed-test' # install with npm install --global speed-test
 
 
 if [[ $(uname) == "Darwin" ]]; then
