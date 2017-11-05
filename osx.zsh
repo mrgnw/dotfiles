@@ -56,4 +56,23 @@ if [[ $(uname) == "Darwin" ]]; then
     IFS=$temp_ifs
   }
 
+  generateMACaddress(){
+    if [ "$1" != "" ]
+      then I="$1"
+    else
+      I="en0"
+    fi  
+    
+    echo ''
+    x=$(ifconfig $I | awk '/ether/{print $2}')
+    new=$(openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//')
+    echo "old $x »"  
+    echo "new $new"
+    
+    echo ""
+
+    echo "sudo ifconfig $I ether $new"
+
+  }
+
 fi
