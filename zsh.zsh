@@ -11,7 +11,8 @@ autoload -U promptinit
 promptinit
 
 # Preferred editor for local and remote sessions
-export EDITOR='nano'
+export PATH=$PATH:$HOME/bin
+export EDITOR='subl'
 
 # More themes in ~/.oh-my-zsh/themes/
 # avit, pure, avit-pure, "random" does  a random theme
