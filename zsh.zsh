@@ -10,10 +10,6 @@ alias zsheet='open https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet'
 autoload -U promptinit
 promptinit
 
-# Preferred editor for local and remote sessions
-export PATH=$PATH:$HOME/bin
-export EDITOR='subl'
-
 # More themes in ~/.oh-my-zsh/themes/
 # avit, pure, avit-pure, "random" does  a random theme
 ZSH_THEME="avit-pure"
