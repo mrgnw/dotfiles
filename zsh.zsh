@@ -4,6 +4,7 @@
 #--------------------------
 
 mkcd() { mkdir $1; cd $1; }
+alias xz='exec zsh' # restart zsh, reload scripts
 
 # oh-my-zsh commands:
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
