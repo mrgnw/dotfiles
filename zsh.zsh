@@ -3,6 +3,8 @@
 # zsh basic configuration
 #--------------------------
 
+mkcd() { mkdir $1; cd $1; }
+
 # oh-my-zsh commands:
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
 alias zsheet='open https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet'
