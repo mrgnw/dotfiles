@@ -48,6 +48,7 @@ if [[ $(uname) == "Darwin" ]]; then
       sublime-text
       typora
       spectacle
+      bartender
       alfred
       spotify
       iina
