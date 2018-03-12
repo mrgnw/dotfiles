@@ -1,4 +1,6 @@
-# download & run this file to install everything!
+# SetupMac
+
+
 
 
 # OSX customizations
@@ -22,6 +24,42 @@ if [[ $(uname) == "Darwin" ]]; then
 
     # restart quicklook manager
     qlmanage -r
+  }
+
+  standardBrews() {
+    brews=(
+      mas
+      git
+      youtube-dl
+      node
+      ffmpeg
+      thefuck
+    )
+    echo "  🍺 brew installing " ${apps[@]} 
+    brew install ${apps[@]}
+    brew cleanup
+  }
+
+  standardApps() {
+    apps=(
+      google-chrome
+      firefox
+      slack
+      sublime-text
+      typora
+      spectacle
+      alfred
+      spotify
+      iina
+      handbrake
+    )
+    echo "  🍺 installing " ${apps[@]} 
+    brew cask install ${apps[@]}
+
+    mas install 443987910 967805235 727593140 1055511498 418412301 441258766
+
+    brew cleanup
+
   }
 
   # Move the apps you never use to /Applications/Utilities
@@ -95,6 +133,7 @@ if [[ $(uname) == "Darwin" ]]; then
 
 
   }
+
   finderDefaults() {
 
     echo ""
