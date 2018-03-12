@@ -1,9 +1,11 @@
-# SetupMac
+# node defaults
+
+standardNode() {
+  npm install -g now
+}
 
 
-
-
-# OSX customizations
+# MacOS customizations
 # --------------------------------------
 if [[ $(uname) == "Darwin" ]]; then
 
@@ -53,6 +55,7 @@ if [[ $(uname) == "Darwin" ]]; then
       spotify
       iina
       handbrake
+      transmission
     )
     echo "  🍺 installing " ${apps[@]} 
     brew cask install ${apps[@]}
@@ -60,8 +63,8 @@ if [[ $(uname) == "Darwin" ]]; then
     mas install 443987910 967805235 727593140 1055511498 418412301 441258766
 
     brew cleanup
-
   }
+
 
   # incomplete
   terminalThemes() {
@@ -122,6 +125,10 @@ if [[ $(uname) == "Darwin" ]]; then
 
     finderDefaults
     safariDefaults
+
+    standardBrews
+    standardApps
+    standardNode
 
     configApps
 
@@ -239,8 +246,7 @@ if [[ $(uname) == "Darwin" ]]; then
 
   safariDefaults() {
     echo ""
-    echo "🗺  Safari setup"
-    echo "   🤓  Dev tools"
+    echo "🗺 Safari Dev tools"
     defaults write com.apple.Safari IncludeDevelopMenu -bool true
     defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
     defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
