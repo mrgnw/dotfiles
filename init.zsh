@@ -62,6 +62,17 @@ if [[ $(uname) == "Darwin" ]]; then
 
   }
 
+  # incomplete
+  terminalThemes() {
+    # todo: make a variable for this directory
+    mkdir ~/Downloads/macos-terminal-themes
+    curl -L https://github.com/mrgnw/macos-terminal/zipball/master > ~/Downloads/macos-terminal-themes/macos_terminal_themes.zip
+    unzip ~/Downloads/macos-terminal-themes/macos_terminal_themes -d ~/Downloads/macos-terminal-themes
+    open ~/Downloads/macos-terminal-themes/**/*.terminal
+    rm -rf ~/Downloads/macos-terminal-themes
+
+  }
+
   # Move the apps you never use to /Applications/Utilities
   # ex: TextEdit || TextEdit.app || /Applications/TextEdit.app
   buryApp() {
