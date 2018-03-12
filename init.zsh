@@ -22,7 +22,21 @@ if [[ $(uname) == "Darwin" ]]; then
 
   quicklookApps () {
     # github.com/sindresorhus/quick-look-plugins
-    brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package quicklookase qlvideo
+    qlAppList=(
+        qlcolorcode
+        qlstephen
+        qlmarkdown+++
+        quicklook-json
+        quicklook-csv
+        betterzipql
+        qlimagesize
+        webpquicklook
+        suspicious-package
+        quicklookase
+        qlvideo
+      )
+
+    brew cask install ${qlAppList[@]} 
 
     # restart quicklook manager
     qlmanage -r
@@ -56,17 +70,25 @@ if [[ $(uname) == "Darwin" ]]; then
       iina
       handbrake
       transmission
+      visual-studio-code
     )
     echo "  🍺 installing " ${apps[@]} 
     brew cask install ${apps[@]}
 
     mas install 443987910 967805235 727593140 1055511498 418412301 441258766
 
+    # 443987910 1password
+    # 967805235 Paste 2
+    # 727593140 VPN Unlimited
+    # 418412301 Clean
+    # 441258766 Magnet window manager (alternative: [Spectacle](https://www.spectacleapp.com))
+    # 1055511498 Day One
+
     brew cleanup
   }
 
 
-  # incomplete
+  # untested
   terminalThemes() {
     # todo: make a variable for this directory
     mkdir ~/Downloads/macos-terminal-themes
