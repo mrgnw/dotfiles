@@ -2,6 +2,7 @@
 
 standardNode() {
   npm install -g now
+  npm install -g spoof
 }
 
 
