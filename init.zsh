@@ -149,6 +149,9 @@ if [[ $(uname) == "Darwin" ]]; then
     finderDefaults
     safariDefaults
 
+    # set global gitignore to this file
+    git config --global core.excludesfile ~/.oh-my-zsh/custom/.gitignore_global
+
     standardBrews
     standardApps
     standardNode
