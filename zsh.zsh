@@ -38,14 +38,6 @@ alias starwars="telnet towel.blinkenlights.nl"
 # Additional configuration
 #--------------------------
 
-alias myip='curl ip.appspot.com'
-
-# Display your geographical information
-mygeo() {
-  # todo: accept parameters, show only those
-  json=$(curl -s "http://www.telize.com/geoip")
-  echo $json  | python -m json.tool
-}
 
 # simple ping function
 simpleping() {
