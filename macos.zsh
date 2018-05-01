@@ -9,7 +9,7 @@ if [[ $(uname) == "Darwin" ]]; then
   alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl --new-window $@'
   export EDITOR='subl'
 
-  alias f='open .'
+  # alias f='open .'
   alias editHosts='sudo $EDITOR /etc/hosts'
   alias icloud="cd /Users/mw/Library/Mobile\ Documents/com\~apple\~CloudDocs"
   alias showHiddenFiles='defaults write com.apple.finder ShowAllFiles TRUE; killall Finder'

@@ -152,8 +152,11 @@ if [[ $(uname) == "Darwin" ]]; then
     # set global gitignore to this file
     git config --global core.excludesfile ~/.oh-my-zsh/custom/.gitignore_global
 
+    echo "standardBrews"
     standardBrews
+    echo "standardApps"
     standardApps
+    echo "standardNode"
     standardNode
 
     configApps
