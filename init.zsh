@@ -26,14 +26,14 @@ if [[ $(uname) == "Darwin" ]]; then
     qlAppList=(
         qlcolorcode
         qlstephen
-        qlmarkdown+++
+        qlmarkdown
         quicklook-json
         quicklook-csv
-        betterzipql
+        betterzip
         qlimagesize
         webpquicklook
         suspicious-package
-        quicklookase
+        # quicklookase
         qlvideo
       )
 
