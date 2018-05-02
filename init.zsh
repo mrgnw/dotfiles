@@ -1,7 +1,12 @@
-# download & run this file to install everything!
+# node defaults
+
+standardNode() {
+  npm install -g now
+  npm install -g spoof
+}
 
 
-# OSX customizations
+# MacOS customizations
 # --------------------------------------
 if [[ $(uname) == "Darwin" ]]; then
 
@@ -18,10 +23,81 @@ if [[ $(uname) == "Darwin" ]]; then
 
   quicklookApps () {
     # github.com/sindresorhus/quick-look-plugins
-    brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package quicklookase qlvideo
+    qlAppList=(
+        qlcolorcode
+        qlstephen
+        qlmarkdown
+        quicklook-json
+        quicklook-csv
+        betterzip
+        qlimagesize
+        webpquicklook
+        suspicious-package
+        # quicklookase
+        qlvideo
+      )
+
+    brew cask install ${qlAppList[@]} 
 
     # restart quicklook manager
     qlmanage -r
+  }
+
+  standardBrews() {
+    brews=(
+      mas
+      git
+      youtube-dl
+      node
+      ffmpeg
+      thefuck
+    )
+    echo "  🍺 brew installing " ${apps[@]} 
+    brew install ${apps[@]}
+    brew cleanup
+  }
+
+  standardApps() {
+    apps=(
+      google-chrome
+      firefox
+      slack
+      sublime-text
+      typora
+      spectacle
+      bartender
+      alfred
+      spotify
+      iina
+      handbrake
+      transmission
+      visual-studio-code
+    )
+    echo "  🍺 installing " ${apps[@]} 
+    brew cask install ${apps[@]}
+
+    mas install 443987910 967805235 727593140 1055511498 418412301 441258766
+
+    # 443987910 1password
+    # 967805235 Paste 2
+    # 727593140 VPN Unlimited
+    # 418412301 Clean
+    # 441258766 Magnet window manager (alternative: [Spectacle](https://www.spectacleapp.com))
+    # 1055511498 Day One
+
+    brew cleanup
+  }
+
+
+  # untested
+  terminalThemes() {
+    # todo: make a variable for this directory
+    mkdir ~/Downloads/macos-terminal-themes
+    curl -L https://github.com/mrgnw/macos-terminal/zipball/master > ~/Downloads/macos-terminal-themes/macos_terminal_themes.zip
+    unzip ~/Downloads/macos-terminal-themes/macos_terminal_themes -d ~/Downloads/macos-terminal-themes
+    open ~/Downloads/macos-terminal-themes/**/*.terminal
+    rm -rf ~/Downloads/macos-terminal-themes
+
   }
 
   # Move the apps you never use to /Applications/Utilities
@@ -73,6 +149,16 @@ if [[ $(uname) == "Darwin" ]]; then
     finderDefaults
     safariDefaults
 
+    # set global gitignore to this file
+    git config --global core.excludesfile ~/.oh-my-zsh/custom/.gitignore_global
+
+    echo "standardBrews"
+    standardBrews
+    echo "standardApps"
+    standardApps
+    echo "standardNode"
+    standardNode
+
     configApps
 
     # Disable smart quotes. Ain't nobody need those
@@ -95,6 +181,7 @@ if [[ $(uname) == "Darwin" ]]; then
 
 
   }
+
   finderDefaults() {
 
     echo ""
@@ -188,8 +275,7 @@ if [[ $(uname) == "Darwin" ]]; then
 
   safariDefaults() {
     echo ""
-    echo "🗺  Safari setup"
-    echo "   🤓  Dev tools"
+    echo "🗺 Safari Dev tools"
     defaults write com.apple.Safari IncludeDevelopMenu -bool true
     defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
     defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
