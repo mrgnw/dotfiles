@@ -10,6 +10,9 @@ standardNode() {
 # --------------------------------------
 if [[ $(uname) == "Darwin" ]]; then
 
+  # todo: add safari custom css https://gist.github.com/pat/fcc36b1663f71b325fcf
+  # todo: + my own css
+
   # change screenshot directory
   screenshotDir () {
     # todo: see if directory exists & create if it doesn't
