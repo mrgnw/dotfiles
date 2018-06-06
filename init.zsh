@@ -312,6 +312,11 @@ if [[ $(uname) == "Darwin" ]]; then
 
   configApps () {
 
+    echo "Sublime binary symlink"
+    mkdir ~/.bin
+    ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+
+
     echo "📈  CPU usage shows in Activity Monitor Dock icon"
     defaults write com.apple.ActivityMonitor IconType -int 5
 
