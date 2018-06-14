@@ -6,7 +6,8 @@ alias speed='speed-test' # install with npm install --global speed-test
 if [[ $(uname) == "Darwin" ]]; then
 
   # Sublime stuff
-  alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl --new-window $@'
+  # alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl --new-window $@'
+  # deprecated. initMac now sets up subl link to the subl binary
   export EDITOR='subl'
 
   # alias f='open .'

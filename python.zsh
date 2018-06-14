@@ -16,3 +16,15 @@ export WORKON_HOME=~/.virtualenvs
 # source /usr/local/bin/virtualenvwrapper.sh
 
 export PATH=/usr/local/lib/python2.7/site-packages:$PATH
+
+
+# condensed zen of python
+zen(){
+  echo "
+  Beautiful > ugly
+   Explicit > implicit
+     Simple > complex
+    Complex > complicated
+       Flat > nested
+     Sparse > dense"
+}
