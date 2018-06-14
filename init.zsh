@@ -10,6 +10,9 @@ standardNode() {
 # --------------------------------------
 if [[ $(uname) == "Darwin" ]]; then
 
+  # todo: add safari custom css https://gist.github.com/pat/fcc36b1663f71b325fcf
+  # todo: + my own css
+
   # change screenshot directory
   screenshotDir () {
     # todo: see if directory exists & create if it doesn't
@@ -308,6 +311,11 @@ if [[ $(uname) == "Darwin" ]]; then
   }
 
   configApps () {
+
+    echo "Sublime binary symlink"
+    mkdir ~/.bin
+    ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+
 
     echo "📈  CPU usage shows in Activity Monitor Dock icon"
     defaults write com.apple.ActivityMonitor IconType -int 5
