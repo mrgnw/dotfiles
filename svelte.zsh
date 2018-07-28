@@ -12,5 +12,12 @@ iife() {
 # (By default, Svelte will create a JavaScript module instead, which is 
 # recommended for more serious applications but requires additional steps.)
 
++sv() {
+	degit sveltejs/template $1
+	cd $1
+	npm install
+	npm run dev
+}
+
 
 # Production
