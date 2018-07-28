@@ -67,7 +67,7 @@ if [[ $(uname) == "Darwin" ]]; then
       slack
       sublime-text
       typora
-      spectacle
+      # spectacle
       bartender
       alfred
       spotify
