@@ -26,7 +26,7 @@ if [[ $(uname) == "Darwin" ]]; then
 
   quicklookApps () {
     # github.com/sindresorhus/quick-look-plugins
-    qlAppList=(
+    caskList=(
         qlcolorcode
         qlstephen
         qlmarkdown
@@ -40,7 +40,7 @@ if [[ $(uname) == "Darwin" ]]; then
         qlvideo
       )
 
-    brew cask install ${qlAppList[@]} 
+    brew cask install ${caskList[@]} 
 
     # restart quicklook manager
     qlmanage -r
@@ -55,38 +55,40 @@ if [[ $(uname) == "Darwin" ]]; then
       ffmpeg
       thefuck
     )
-    echo "  🍺 brew installing " ${apps[@]} 
-    brew install ${apps[@]}
+    echo "  🍺 brew installing " ${brews[@]} 
+    brew install ${brews[@]}
     brew cleanup
   }
 
   standardApps() {
     apps=(
-      google-chrome
-      firefox
-      slack
+      brave
       sublime-text
+      slack
+      spotify
       typora
       # spectacle
       bartender
-      alfred
-      spotify
+      # alfred
       iina
       handbrake
-      transmission
+      # transmission
       visual-studio-code
+      google-chrome
+      firefox
     )
     echo "  🍺 installing " ${apps[@]} 
     brew cask install ${apps[@]}
 
-    mas install 443987910 967805235 727593140 1055511498 418412301 441258766
-
-    # 443987910 1password
-    # 967805235 Paste 2
-    # 727593140 VPN Unlimited
-    # 418412301 Clean
-    # 441258766 Magnet window manager (alternative: [Spectacle](https://www.spectacleapp.com))
-    # 1055511498 Day One
+    appstore=(
+      443987910  # 1password
+      727593140  # VPN Unlimited
+      967805235  # Paste 2
+      # 418412301  # Clean - Deprecated (Mojave)
+      441258766  # Magnet window manager (alternative: [Spectacle](https://www.spectacleapp.com))
+      1055511498 # Day One
+    )
+    mas install ${appstore[@]}
 
     brew cleanup
   }
@@ -123,15 +125,8 @@ if [[ $(uname) == "Darwin" ]]; then
     done
   }
 
-  # Default apps to bury:
-  # Automator, Chess, DVD Player, Font Book,  Image Capture, Launchpad, Mail,
-  # Mission Control, Photo Booth, Stickies, TextEdit
-  buryApps() {
-    buryApp Automator Chess DVD\ Player Font\ Book \
-    Image\ Capture Launchpad Mail Mission\ Control Photo\ Booth Stickies TextEdit \
-    Time\ Machine
-    echo " Lame apps ➡️  Utilities"
-  }
+  
+  #   mas install ${appstore[@]}
 
   initMac() {
     # Many prefs taken from github.com/mathiasbynens/dotfiles/blob/master/.macos
@@ -144,7 +139,22 @@ if [[ $(uname) == "Darwin" ]]; then
     screenshotName 
 
     # Move apps that I rarely use into the Utilities folder
-    buryApps
+    buryThese=(
+     Automator
+     Chess
+     DVD\ Player
+     Font\ Book
+     Image\ Capture
+     Launchpad
+     Mail
+     Mission\ Control
+     Photo\ Booth
+     Stickies
+     TextEdit
+     Time\ Machine
+     )
+    echo "Burying rarely used apps to Utilities"
+    sudo buryApp ${buryThese[@]}
 
     # Enable apps from everywhere - makes getting set up easier
     openGate
@@ -154,6 +164,7 @@ if [[ $(uname) == "Darwin" ]]; then
 
     # set global gitignore to this file
     git config --global core.excludesfile ~/.oh-my-zsh/custom/.gitignore_global
+    # gitignore.io is also a good resource
 
     echo "standardBrews"
     standardBrews
