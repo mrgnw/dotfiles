@@ -4,6 +4,8 @@
 #--------------------------
 
 mkcd() { mkdir $1; cd $1; }
+alias cdd='cd ~/Downloads/'
+
 alias xz='echo "exec zsh => restart shell "; exec zsh;' # restart zsh, reload scripts
 
 # oh-my-zsh commands:
