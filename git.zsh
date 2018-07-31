@@ -26,7 +26,7 @@ alias gitp='git push;'
 alias ush=''
 
 # for quick commits to personal projects
-alias glazy="gita; gitc 'quick commit - minor changes';"
+# alias glazy="gita; gitc 'quick commit - minor changes';"
 
 # find all .git directories and exec "git pull" on the parent.
 # function gitrecursive {

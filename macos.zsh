@@ -1,7 +1,7 @@
 #!/bin/zsh
 alias terminalcheat='open https://github.com/0nn0/terminal-mac-cheatsheet'
 alias speed='speed-test' # install with npm install --global speed-test
-
+alias o='open .'
 
 if [[ $(uname) == "Darwin" ]]; then
 
