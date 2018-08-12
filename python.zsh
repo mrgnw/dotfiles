@@ -3,6 +3,8 @@ alias python=python3
 
 alias py2=python2.7
 
+alias jupy='jupyter notebook'
+
 # virtualenv / virtualenvwrapper
 mkvenv() { mkvirtualenv --python=/usr/local/bin/python3 $* }
 rmvenv() { rmvirtualenv $* }
