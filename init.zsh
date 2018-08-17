@@ -48,12 +48,15 @@ if [[ $(uname) == "Darwin" ]]; then
 
   standardBrews() {
     brews=(
-      mas
       git
-      youtube-dl
       node
+      youtube-dl
       ffmpeg
+      mas
       thefuck
+      jq
+      tree
+      httpie
     )
     echo "  🍺 brew installing " ${brews[@]} 
     brew install ${brews[@]}
