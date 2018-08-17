@@ -1,7 +1,8 @@
 alias py=python3
 alias python=python3
+alias pip=pip3
 
-alias py2=python2.7
+export PATH="$PATH:/Users/morgan.williams/Library/Python/3.7/bin"
 
 # virtualenv / virtualenvwrapper
 mkvenv() { mkvirtualenv --python=/usr/local/bin/python3 $* }
@@ -14,8 +15,6 @@ showvenv() { showvirtualenv $* }
 export WORKON_HOME=~/.virtualenvs
 # Todo: Check if it's there, prompt to install if it's not
 # source /usr/local/bin/virtualenvwrapper.sh
-
-export PATH=/usr/local/lib/python2.7/site-packages:$PATH
 
 
 # condensed zen of python
