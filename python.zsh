@@ -4,6 +4,8 @@ alias pip=pip3
 
 export PATH="$PATH:/Users/morgan.williams/Library/Python/3.7/bin"
 
+alias jupy='jupyter notebook'
+
 # virtualenv / virtualenvwrapper
 mkvenv() { mkvirtualenv --python=/usr/local/bin/python3 $* }
 rmvenv() { rmvirtualenv $* }
