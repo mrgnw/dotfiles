@@ -58,4 +58,56 @@ if [[ $(uname) == "Darwin" ]]; then
   }
 
 
+  nocorners() {
+    defaults write com.apple.dock wvous-bl-corner -int 0
+    defaults write com.apple.dock wvous-br-corner -int 0
+    defaults write com.apple.dock wvous-tl-corner -int 0
+    defaults write com.apple.dock wvous-tl-corner -int 0
+    defaults write com.apple.dock wvous-br-modifier -int 0
+    defaults write com.apple.dock wvous-bl-modifier -int 0
+    defaults write com.apple.dock wvous-tl-modifier -int 0
+    defaults write com.apple.dock wvous-t4-modifier -int 0
+  }
+
+  corner() {
+    base='defaults write com.apple.dock wvous-'
+
+    # modifiers
+    mod_none=0
+    mod_shift=131072
+    mod_control=262144
+    mod_option=524288
+    mod_cmd=1048576
+
+    # Possible values:
+    # tl, tr, bl, br = topleft, topright, bottomleft, bottomright
+    #  0: nothing
+    #  2: Mission Control
+    #  3: Show application windows
+    #  4: Desktop
+    #  5: Start screen saver
+    #  6: Disable screen saver
+    #  7: Dashboard
+    # 10: Sleep display
+    # 11: Launchpad
+    # 12: Notification Center
+    # 13: Lock screen
+
+    # $1 = $corner
+    # $2 = $action
+    # $3 = modifier
+
+    # ex: `corner tl 11 0`
+    echo "$base-$1-corner -int $2"
+    echo "$base-$1-modifier -int $3"
+
+  }
+
+  # corner-defaults = [
+  # "tl 0 0",
+  # "tr 0 0",
+  # "bl 0 0",
+  # "tr 0 0"
+  # ]
+
 fi
