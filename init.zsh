@@ -35,7 +35,8 @@ if [[ $(uname) == "Darwin" ]]; then
         betterzip
         qlimagesize
         webpquicklook
-        suspicious-package
+        lepton
+        # suspicious-package
         # quicklookase
         qlvideo
       )
@@ -52,7 +53,6 @@ if [[ $(uname) == "Darwin" ]]; then
       node
       youtube-dl
       ffmpeg
-      lepton
       mas
       thefuck
       jq
