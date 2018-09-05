@@ -52,6 +52,7 @@ if [[ $(uname) == "Darwin" ]]; then
       node
       youtube-dl
       ffmpeg
+      lepton
       mas
       thefuck
       jq
