@@ -27,18 +27,16 @@ if [[ $(uname) == "Darwin" ]]; then
   quicklookApps () {
     # github.com/sindresorhus/quick-look-plugins
     caskList=(
-        qlcolorcode
-        qlstephen
-        qlmarkdown
-        quicklook-json
-        quicklook-csv
-        betterzip
-        qlimagesize
-        webpquicklook
-        lepton
-        # suspicious-package
         # quicklookase
+        lepton
+        qlcolorcode
+        qlimagesize
+        qlmarkdown
+        qlstephen
         qlvideo
+        quicklook-csv
+        quicklook-json
+        webpquicklook
       )
 
     brew cask install ${caskList[@]} 
@@ -49,15 +47,15 @@ if [[ $(uname) == "Darwin" ]]; then
 
   standardBrews() {
     brews=(
-      git
-      node
-      youtube-dl
       ffmpeg
-      mas
-      thefuck
-      jq
-      tree
+      git
       httpie
+      jq
+      mas
+      node
+      thefuck
+      tree
+      youtube-dl
     )
     echo "  🍺 brew installing " ${brews[@]} 
     brew install ${brews[@]}
@@ -66,20 +64,21 @@ if [[ $(uname) == "Darwin" ]]; then
 
   standardApps() {
     apps=(
+      # alfred
+      # transmission
+      bartender
+      bitwarden
       brave
-      sublime-text
+      firefox
+      google-chrome
+      handbrake
+      iina
+      istat-menus
       slack
       spotify
+      sublime-text
       typora
-      # spectacle
-      bartender
-      # alfred
-      iina
-      handbrake
-      # transmission
       visual-studio-code
-      google-chrome
-      firefox
     )
     echo "  🍺 installing " ${apps[@]} 
     brew cask install ${apps[@]}
