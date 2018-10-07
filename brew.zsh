@@ -14,6 +14,8 @@ brew-list-info() {
 alias ydl='youtube-dl'
 alias y='youtube-dl'
 
+alias cask='brew cask'
+
 # git
 # lastpass-cli
 # mas

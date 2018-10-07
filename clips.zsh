@@ -1,3 +1,4 @@
+# github.com/mifi/lossless-cut is a nice GUI for extracting clips
 clip() {
 	if [ "$4" != "" ] 
 	then local LENGTH=$4

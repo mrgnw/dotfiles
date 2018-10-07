@@ -3,6 +3,8 @@
 # zsh basic configuration
 #--------------------------
 
+alias ❯=''
+
 mkcd() { mkdir $1; cd $1; }
 alias cdd='cd ~/Downloads/'
 
