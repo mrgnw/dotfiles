@@ -65,10 +65,10 @@ if [[ $(uname) == "Darwin" ]]; then
   standardApps() {
     apps=(
       # alfred
-      # transmission
       bartender
       bitwarden
       brave
+      chrome-remote-desktop-host
       firefox
       google-chrome
       handbrake
@@ -77,8 +77,11 @@ if [[ $(uname) == "Darwin" ]]; then
       slack
       spotify
       sublime-text
+      transmission
       typora
       visual-studio-code
+      webtorrent
+
     )
     echo "  🍺 installing " ${apps[@]} 
     brew cask install ${apps[@]}
