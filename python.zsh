@@ -2,6 +2,10 @@ alias py=python3
 alias python=python3
 alias pip=pip3
 
+# 2018 virtualenv setup
+export WORKON_HOME=~/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+
 export PATH="$PATH:/Users/morgan.williams/Library/Python/3.7/bin"
 
 alias jupy='jupyter notebook'
@@ -13,10 +17,6 @@ cdvenv() { cdvirtualenv $* }
 lsvenv() { lsvirtualenv $* }
 showvenv() { showvirtualenv $* }
 
-
-export WORKON_HOME=~/.virtualenvs
-# Todo: Check if it's there, prompt to install if it's not
-# source /usr/local/bin/virtualenvwrapper.sh
 
 
 # condensed zen of python
