@@ -1,8 +1,8 @@
 alias py=python3
 alias python=python3
-alias pip=pip3
+# alias pip=pip3
+alias pip='noglob pip'
 
-export PATH="$PATH:/Users/morgan.williams/Library/Python/3.7/bin"
 
 alias jupy='jupyter notebook'
 

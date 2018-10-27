@@ -34,7 +34,7 @@ alias zrc='source ~/.zshrc'
 
 alias ohmyzsh="atom ~/.oh-my-zsh"
 
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 alias starwars="telnet towel.blinkenlights.nl"
 
