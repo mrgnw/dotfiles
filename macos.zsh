@@ -27,7 +27,7 @@ if [[ $(uname) == "Darwin" ]]; then
   }
 
   openGate() {
-    echo "Opening the gates"
+    echo "Gatekeeper deactivated"
     sudo spctl --master-disable
     defaults write com.apple.LaunchServices LSQuarantine -bool NO
   }
