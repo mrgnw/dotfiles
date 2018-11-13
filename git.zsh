@@ -16,9 +16,9 @@ alias setglobalgitignore='git config --global core.excludesfile ~/.oh-my-zsh/cus
 function mv {
 	# from https://twitter.com/captainsafia/status/1062151829067325441
     if git rev-parse --git-dir > /dev/null 2>&1; then
-        git mv $@
+        git mv "$@"
     else
-        mv $@
+        mv "$@"
     fi
 }
 
