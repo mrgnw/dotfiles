@@ -67,30 +67,31 @@ if [[ $(uname) == "Darwin" ]]; then
       # alfred
       bartender
       bitwarden
-      brave
-      chrome-remote-desktop-host
+      brave-browser
+      # chrome-remote-desktop-host
       firefox
       google-chrome
-      handbrake
-      iina
+      # handbrake
+      # iina - Last update Jan 2018
+      mpv
       istat-menus
       slack
       spotify
       sublime-text
-      transmission
+      # transmission
       typora
       visual-studio-code
-      webtorrent
+      # webtorrent
 
     )
     echo "  🍺 installing " ${apps[@]} 
     brew cask install ${apps[@]}
 
     appstore=(
-      443987910 # 1password
+      # 443987910 # 1password
       727593140  # VPN Unlimited
       967805235  # Paste 2
-      975890633 # HotKey App (1.3.1)
+      975890633  # HotKey App (1.3.1)
       # 418412301  # Clean - Deprecated (Mojave)
       441258766  # Magnet window manager (alternative: [Spectacle](https://www.spectacleapp.com))
       1055511498 # Day One
