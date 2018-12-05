@@ -1,6 +1,6 @@
-alias py=python3
-alias pip='noglob pip'
-alias pip3='noglob pip3'
+# alias py=python3
+# alias pip='noglob pip'
+# alias pip3='noglob pip3'
 alias jupy='jupyter notebook'
 
 # Create & activate in the project base folder
@@ -23,7 +23,7 @@ venv() {
 
 }
 
-create_env() { virtualenv -p python3 ~/.virtualenvs/${PWD##*/} }
+create_env() { virtualenv -p python ~/.virtualenvs/${PWD##*/} }
 activate_env() { source ~/.virtualenvs/${PWD##*/}/bin/activate }
 rmenv() { rm -rf ~/.virtualenvs/${PWD##*/} }
 
