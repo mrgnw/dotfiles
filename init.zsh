@@ -28,7 +28,6 @@ if [[ $(uname) == "Darwin" ]]; then
     # github.com/sindresorhus/quick-look-plugins
     caskList=(
         # quicklookase
-        lepton
         qlcolorcode
         qlimagesize
         qlmarkdown
@@ -73,6 +72,8 @@ if [[ $(uname) == "Darwin" ]]; then
       google-chrome
       # handbrake
       # iina - Last update Jan 2018
+      iterm2
+      lepton
       mpv
       istat-menus
       slack
