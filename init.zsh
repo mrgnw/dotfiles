@@ -26,7 +26,7 @@ if [[ $(uname) == "Darwin" ]]; then
 
   quicklookApps () {
     # github.com/sindresorhus/quick-look-plugins
-    caskList=(
+    qlList=(
         # quicklookase
         qlcolorcode
         qlimagesize
@@ -62,7 +62,7 @@ if [[ $(uname) == "Darwin" ]]; then
   }
 
   standardApps() {
-    apps=(
+    casks=(
       # alfred
       bartender
       bitwarden
@@ -73,6 +73,7 @@ if [[ $(uname) == "Darwin" ]]; then
       # handbrake
       # iina - Last update Jan 2018
       iterm2
+      keycastr
       lepton
       mpv
       istat-menus
@@ -85,8 +86,8 @@ if [[ $(uname) == "Darwin" ]]; then
       # webtorrent
 
     )
-    echo "  🍺 installing " ${apps[@]} 
-    brew cask install ${apps[@]}
+    echo "  🍺 installing " ${casks[@]} 
+    brew cask install ${casks[@]}
 
     appstore=(
       # 443987910 # 1password
