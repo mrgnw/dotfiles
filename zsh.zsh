@@ -34,9 +34,7 @@ alias zrc='source ~/.zshrc'
 
 alias ohmyzsh="atom ~/.oh-my-zsh"
 
-# eval $(thefuck --alias)
-
-alias starwars="telnet towel.blinkenlights.nl"
+eval $(thefuck --alias)
 
 #--------------------------
 # Additional configuration
@@ -66,7 +64,7 @@ pg() { spg }
 
 
 
-historyHelper() {
+historySummary() {
   history | awk '{CMD[$2]++;count++;}END\
    { for (a in CMD)\
    print CMD[a] " " CMD[a]/count*100 "% " a;\
@@ -77,9 +75,9 @@ historyHelper() {
 # zsh_stats does this - but only does 20, not a flexible amount
 hist() {
   if [ $# -eq 0 ]; then
-    historyHelper 5
+    historySummary 5
   else
-    historyHelper $1
+    historySummary $1
   fi
 }
 
