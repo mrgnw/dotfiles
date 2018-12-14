@@ -46,6 +46,7 @@ if [[ $(uname) == "Darwin" ]]; then
 
   standardBrews() {
     brews=(
+      docker
       ffmpeg
       git
       httpie
