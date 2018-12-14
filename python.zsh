@@ -23,6 +23,15 @@ venv() {
 
 }
 
+pip_show_all() {
+  for i in "$@"
+  do 
+    local info=$(pip show ${i} | sed -n 3p)
+    echo $i $info
+  done
+}
+
+
 create_env() { virtualenv -p python ~/.virtualenvs/${PWD##*/} }
 activate_env() { source ~/.virtualenvs/${PWD##*/}/bin/activate }
 rmenv() { rm -rf ~/.virtualenvs/${PWD##*/} }
