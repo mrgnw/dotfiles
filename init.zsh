@@ -93,7 +93,8 @@ if [[ $(uname) == "Darwin" ]]; then
     appstore=(
       # 443987910 # 1password
       727593140  # VPN Unlimited
-      967805235  # Paste 2
+      # 967805235  # Paste 2
+      1179623856  # Pastebot
       975890633  # HotKey App (1.3.1)
       # 418412301  # Clean - Deprecated (Mojave)
       441258766  # Magnet window manager (alternative: [Spectacle](https://www.spectacleapp.com))
