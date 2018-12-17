@@ -20,6 +20,15 @@
 *.tar
 *.zip
 
+# Editors:
+.vscode
+.vscode/*
+
+# Gradle:
+.idea
+.idea/**/gradle.xml
+.idea/**/libraries
+
 # Logs and databases #
 ######################
 *.log
@@ -33,7 +42,6 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
-.idea
 
 
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
@@ -52,10 +60,6 @@ Thumbs.db
 .idea/**/sqlDataSources.xml
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
-
-# Gradle:
-.idea/**/gradle.xml
-.idea/**/libraries
 
 # Mongo Explorer plugin:
 .idea/**/mongoSettings.xml
