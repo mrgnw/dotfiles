@@ -5,7 +5,7 @@ dockerPulls(){
 	standardDocks=(
 		linuxserver/radarr
 		linuxserver/sonarr
-		linuxserver/docker-transmission
+		linuxserver/transmission
 		jstewig/docker-vpn-unlimited
 		)
 
