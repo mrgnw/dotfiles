@@ -2,6 +2,8 @@
 alias terminalcheat='open https://github.com/0nn0/terminal-mac-cheatsheet'
 alias speed='speed-test' # install with npm install --global speed-test
 alias o='open .'
+alias osa='osascript'
+alias osajs='osascript -il JavaScript'
 
 # todo: mass install by appname, instead of id.
 # e.g. mas install lanscan = mas search lanscan » mas install 472226235 

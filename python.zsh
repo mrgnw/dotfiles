@@ -1,11 +1,15 @@
-# alias py=python3
-# alias pip='noglob pip'
-# alias pip3='noglob pip3'
+alias py='python'
 alias jupy='jupyter notebook'
 
 # Create & activate in the project base folder
 # env works off current directory
 # Which means project folder names need to be unique
+
+create_env() { virtualenv -p python ~/.virtualenvs/${PWD##*/} }
+activate_env() { source ~/.virtualenvs/${PWD##*/}/bin/activate }
+rmenv() { rm -rf ~/.virtualenvs/${PWD##*/} }
+alias venvs='cd ~/.virtualenvs'
+
 mkenv() {
   mkcd $1;
   curl https://www.gitignore.io/api/python > .gitignore
@@ -30,15 +34,6 @@ pip_show_all() {
     echo $i $info
   done
 }
-
-
-create_env() { virtualenv -p python ~/.virtualenvs/${PWD##*/} }
-activate_env() { source ~/.virtualenvs/${PWD##*/}/bin/activate }
-rmenv() { rm -rf ~/.virtualenvs/${PWD##*/} }
-
-
-alias venvs='cd ~/.virtualenvs'
-
 
 # zen of python
 zen(){
