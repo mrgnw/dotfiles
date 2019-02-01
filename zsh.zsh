@@ -53,15 +53,6 @@ rpt() {
   done
 }
 
-dkr(){
-  docker_command=$1
-  shift
-  for i in "$@"
-  do 
-    docker $docker_command "$i"
-  done
-}
-
 
 # simple ping function
 simpleping() {

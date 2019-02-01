@@ -1,5 +1,4 @@
 
-
 dockerPulls(){
 	
 	standardDocks=(
