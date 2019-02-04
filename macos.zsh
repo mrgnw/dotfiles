@@ -8,7 +8,7 @@ alias osa='osascript'
 alias osajs='osascript -il JavaScript'
 alias ip.io='curl ipinfo.io'
 
- todo: mass install by appname, instead of id.
+# todo: mass install by appname, instead of id.
 # e.g. mas install lanscan = mas search lanscan » mas install 472226235 
 
 if [[ $(uname) == "Darwin" ]]; then
