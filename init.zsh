@@ -91,14 +91,13 @@ if [[ $(uname) == "Darwin" ]]; then
     brew cask install ${casks[@]}
 
     appstore=(
-      # 443987910 # 1password
-      727593140  # VPN Unlimited
-      # 967805235  # Paste 2
+      727593140   # VPN Unlimited
+      1065907486  # CiderTV - AppleTV remote!
       1179623856  # Pastebot
-      975890633  # HotKey App (1.3.1)
-      # 418412301  # Clean - Deprecated (Mojave)
-      441258766  # Magnet window manager (alternative: [Spectacle](https://www.spectacleapp.com))
-      1055511498 # Day One
+      975890633   # HotKey App (1.3.1)
+      441258766   # Magnet window manager (alternative: [Spectacle](https://www.spectacleapp.com))
+      1055511498  # Day One
+      # 443987910 # 1password
     )
     mas install ${appstore[@]}
 
