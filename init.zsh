@@ -72,10 +72,11 @@ if [[ $(uname) == "Darwin" ]]; then
       firefox
       google-chrome
       # handbrake
-      # iina - Last update Jan 2018
+      iina
       iterm2
       keycastr
       lepton
+      macmediakeyforwarder
       mpv
       istat-menus
       slack
