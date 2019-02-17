@@ -53,7 +53,7 @@ if [[ $(uname) == "Darwin" ]]; then
       jq
       mas
       node
-      thefuck
+      # thefuck
       tree
       youtube-dl
     )
