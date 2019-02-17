@@ -6,7 +6,7 @@ alias speed='speed-test' # install with npm install --global speed-test
 alias o='open .'
 alias osa='osascript'
 alias osajs='osascript -il JavaScript'
-alias ip.io='curl -sS ipinfo.io | jq --sort-keys'
+alias ip='curl -sS ipinfo.io | jq --sort-keys'
 alias chrome-rd='launchctl start org.chromium.chromoting && echo "chrome remote desktop should be running now"'
 
 # todo: mass install by appname, instead of id.
