@@ -24,6 +24,7 @@
 # Editors:
 .vscode
 .vscode/*
+*.sublime-project
 
 # Gradle:
 .idea
