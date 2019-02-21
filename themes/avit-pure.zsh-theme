@@ -2,8 +2,18 @@
 
 precmd() { print "" }
 # current_directory git_info git_status
-PROMPT='%c $(git_prompt_info)
+
+if [[ -n $SSH_CONNECTION ]]; then
+  PROMPT='%c $(git_prompt_info)
+📡 '
+else
+  PROMPT='%c $(git_prompt_info)
 ❯ '
+fi
+
+
+
+
 
 PROMPT2='%{$fg[grey]%}◀%{$reset_color%} '
 
