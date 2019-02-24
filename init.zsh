@@ -70,6 +70,7 @@ if [[ $(uname) == "Darwin" ]]; then
       brave-browser
       # chrome-remote-desktop-host
       firefox
+      fork
       google-chrome
       # handbrake
       iina
