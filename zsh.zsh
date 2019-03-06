@@ -34,8 +34,8 @@ ZSH_THEME="avit-pure"
 plugins=(git gibo osx cp colorize vagrant python pip virtualenv atom
   jsontools zsh-syntax-highlighting colored-man themes)
 
-alias zdir="cd ~/.oh-my-zsh/custom/"
-alias zedit="subl ~/.oh-my-zsh/custom/"
+alias zd="cd ~/.oh-my-zsh/custom/"
+alias zed="subl ~/.oh-my-zsh/custom/"
 
 alias z='zrc'
 alias zrc='source ~/.zshrc'
