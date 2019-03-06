@@ -1,12 +1,20 @@
-#--------------------------
-
-# zsh basic configuration
-#--------------------------
+#!/bin/zsh
 
 alias ❯=''
 
-mkcd() { mkdir $1; cd $1; }
+mcd() {
+  if [ -d /home/ram/dir ]
+  then
+    cd $1; 
+  else
+    mkdir $1; cd $1; 
+  fi
+
+  
+}
+
 alias cdd='cd ~/Downloads/'
+alias dev='cd ~/dev/'
 
 alias xz='echo "exec zsh => restart shell "; exec zsh;' # restart zsh, reload scripts
 
@@ -42,7 +50,7 @@ alias ohmyzsh="atom ~/.oh-my-zsh"
 
 # Takes a command that runs one at a time `app cmd parameter`
 # Runs the command on a list of parameters. `app cmd 1 2 3 4…` 
-rpt() {
+rpt-app-cmd() {
   local app=$1
   shift
   local cmd=$1
