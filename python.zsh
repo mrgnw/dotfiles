@@ -1,4 +1,9 @@
+# prevent .pyc files and __pycache__
+export PYTHONDONTWRITEBYTECODE=1
+
 alias py='python'
+alias py2='python2'
+alias py3='python3'
 alias jupy='jupyter notebook'
 
 # Create & activate in the project base folder
@@ -16,7 +21,7 @@ mkenv() {
   venv;
 }
 
-venv() { 
+venv() {
   local THISDIR=${PWD##*/}
   if [ ! -d ~/.virtualenvs/$THISDIR ]; then
     echo "Creating $THISDIR"
@@ -29,7 +34,7 @@ venv() {
 
 pip_show_all() {
   for i in "$@"
-  do 
+  do
     local info=$(pip show ${i} | sed -n 3p)
     echo $i $info
   done

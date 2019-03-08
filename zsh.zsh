@@ -41,14 +41,14 @@ alias ohmyzsh="atom ~/.oh-my-zsh"
 #--------------------------
 
 # Takes a command that runs one at a time `app cmd parameter`
-# Runs the command on a list of parameters. `app cmd 1 2 3 4…` 
+# Runs the command on a list of parameters. `app cmd 1 2 3 4…`
 rpt() {
   local app=$1
   shift
   local cmd=$1
   shift
   for i in "$@"
-  do 
+  do
     $app $cmd "$i"
   done
 }
