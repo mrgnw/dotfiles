@@ -64,9 +64,10 @@ if [[ $(uname) == "Darwin" ]]; then
 
   standardApps() {
     casks=(
+      1password
+      1password-cli
       # alfred
       bartender
-      bitwarden
       brave-browser
       # chrome-remote-desktop-host
       firefox
