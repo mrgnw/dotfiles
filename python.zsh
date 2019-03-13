@@ -6,12 +6,22 @@ alias py2='python2'
 alias py3='python3'
 alias jupy='jupyter notebook'
 
+mkv3() {
+  mkvirtualenv --python=$(which python3) $1
+}
+
 # Create & activate in the project base folder
 # env works off current directory
 # Which means project folder names need to be unique
 
-create_env() { virtualenv -p python ~/.virtualenvs/${PWD##*/} }
-activate_env() { source ~/.virtualenvs/${PWD##*/}/bin/activate }
+create_env() {
+  virtualenv -p python ~/.virtualenvs/${PWD##*/}
+}
+activate_env() {
+  local VENVNAME=${1:-${PWD##*/}}
+
+  source ~/.virtualenvs/${VENVNAME}/bin/activate
+}
 rmenv() { rm -rf ~/.virtualenvs/${PWD##*/} }
 alias venvs='cd ~/.virtualenvs'
 
@@ -22,9 +32,9 @@ mkenv() {
 }
 
 venv() {
-  local THISDIR=${PWD##*/}
-  if [ ! -d ~/.virtualenvs/$THISDIR ]; then
-    echo "Creating $THISDIR"
+  local VENVNAME=${1:-${PWD##*/}}  #$1 or current dir name
+  if [ ! -d ~/.virtualenvs/$VENVNAME ]; then
+    echo "Creating $VENVNAME"
     create_env
   fi
 
