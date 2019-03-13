@@ -26,7 +26,7 @@ rmenv() { rm -rf ~/.virtualenvs/${PWD##*/} }
 alias venvs='cd ~/.virtualenvs'
 
 mkenv() {
-  mkcd $1;
+  mcd $1;
   curl https://www.gitignore.io/api/python > .gitignore
   venv;
 }

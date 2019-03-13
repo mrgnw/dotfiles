@@ -1,3 +1,4 @@
+#!/bin/zsh
 # Base
 alias sv='svelte'
 
