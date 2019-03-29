@@ -5,7 +5,7 @@
 
 alias ❯=''
 
-mcd() { ([ -d $1 ] || mkdir $1); cd $1; }
+mcd() { mkdir -p $1; cd $1 }
 
 alias cdd='cd ~/Downloads/'
 
