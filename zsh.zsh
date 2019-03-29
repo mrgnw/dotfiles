@@ -5,7 +5,8 @@
 
 alias ❯=''
 
-mkcd() { mkdir $1; cd $1; }
+mcd() { ([ -d $1 ] || mkdir $1); cd $1; }
+
 alias cdd='cd ~/Downloads/'
 
 alias xz='echo "exec zsh => restart shell "; exec zsh;' # restart zsh, reload scripts
