@@ -1,54 +1,51 @@
-# prevent .pyc files and __pycache__
-export PYTHONDONTWRITEBYTECODE=1
-
 alias py='python'
 alias py2='python2'
 alias py3='python3'
 alias jupy='jupyter notebook'
+alias pi='pip install'
+alias pu='pip uninstall'
+alias pf='pip freeze'
+alias w='workon'
 
-mkv3() {
-  mkvirtualenv --python=$(which python3) $1
-}
 
-# Create & activate in the project base folder
-# env works off current directory
-# Which means project folder names need to be unique
 
-create_env() {
-  virtualenv -p python ~/.virtualenvs/${PWD##*/}
-}
-activate_env() {
-  local VENVNAME=${1:-${PWD##*/}}
+# py() {
+#   # python ${1%.*}.py "${@:2}"
+#   # this ignores the extension altogether and runs filename.py
+#   # py a » python a.py
+#   # py a.py » python a.py
+#   # py movie.mp4 » python movie.py  <-- Not intended use. Maybe fix someday.
+# }
 
-  source ~/.virtualenvs/${VENVNAME}/bin/activate
-}
-rmenv() { rm -rf ~/.virtualenvs/${PWD##*/} }
-alias venvs='cd ~/.virtualenvs'
+# allows things like `pip install vibora[fast]`
+setopt +o nomatch
 
-mkenv() {
-  mcd $1;
-  curl https://www.gitignore.io/api/python > .gitignore
-  venv;
-}
-
-venv() {
+# requires virtualenvwrapper
+v() {
   local VENVNAME=${1:-${PWD##*/}}  #$1 or current dir name
   if [ ! -d ~/.virtualenvs/$VENVNAME ]; then
-    echo "Creating $VENVNAME"
-    create_env
+    mkvirtualenv --python=$(which python3) ${1:-${PWD##*/}}
+  else
+    workon $VENVNAME
   fi
-
-  activate_env;
-
 }
 
-pip_show_all() {
-  for i in "$@"
-  do
-    local info=$(pip show ${i} | sed -n 3p)
-    echo $i $info
-  done
++v() {
+  mkvirtualenv --python=$(which python3) ${1:-${PWD##*/}}
 }
+
+-v() {
+  deactivate
+  rmvirtualenv ${1:-${PWD##*/}}
+}
+
++py() {
+  mkdir $1;
+  cd $1;
+  (curl https://www.gitignore.io/api/python > .gitignore) & +venv
+}
+
+alias venvs='cd ~/.virtualenvs'
 
 # zen of python
 zen(){
