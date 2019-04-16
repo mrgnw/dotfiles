@@ -38,7 +38,7 @@ if [[ $(uname) == "Darwin" ]]; then
         webpquicklook
       )
 
-    brew cask install ${caskList[@]} 
+    brew cask install ${caskList[@]}
 
     # restart quicklook manager
     qlmanage -r
@@ -57,7 +57,7 @@ if [[ $(uname) == "Darwin" ]]; then
       tree
       youtube-dl
     )
-    echo "  🍺 brew installing " ${brews[@]} 
+    echo "  🍺 brew installing " ${brews[@]}
     brew install ${brews[@]}
     brew cleanup
   }
@@ -90,7 +90,7 @@ if [[ $(uname) == "Darwin" ]]; then
       # webtorrent
 
     )
-    echo "  🍺 installing " ${casks[@]} 
+    echo "  🍺 installing " ${casks[@]}
     brew cask install ${casks[@]}
 
     appstore=(
@@ -111,7 +111,7 @@ if [[ $(uname) == "Darwin" ]]; then
   # untested
   terminalThemes() {
     # todo: make a variable for this directory
-    mkdir ~/Downloads/macos-terminal-themes
+    mcd ~/Downloads/macos-terminal-themes
     curl -L https://github.com/mrgnw/macos-terminal/zipball/master > ~/Downloads/macos-terminal-themes/macos_terminal_themes.zip
     unzip ~/Downloads/macos-terminal-themes/macos_terminal_themes -d ~/Downloads/macos-terminal-themes
     open ~/Downloads/macos-terminal-themes/**/*.terminal
@@ -139,7 +139,7 @@ if [[ $(uname) == "Darwin" ]]; then
     done
   }
 
-  
+
   #   mas install ${appstore[@]}
 
   initMac() {

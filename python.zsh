@@ -1,4 +1,3 @@
-alias py='python'
 alias py2='python2'
 alias py3='python3'
 alias jupy='jupyter notebook'
@@ -7,6 +6,13 @@ alias pu='pip uninstall'
 alias pf='pip freeze'
 alias w='workon'
 
+py(){
+  if [ "$#" -eq  "0" ]
+    then python
+  else
+    python -m $@  # `py run` runs `run` or `run.py`
+  fi
+}
 
 
 # py() {
