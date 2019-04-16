@@ -35,6 +35,10 @@ alias z='source ~/.zshrc'
 
 alias ohmyzsh="subl ~/.oh-my-zsh"
 
+# firefox black tab
+alias xul='subl "/Users/mwilliams/Library/Application Support/Firefox/Profiles"/*/chrome/*.css'
+alias ffcss='xul'
+
 #--------------------------
 # Additional configuration
 #--------------------------
