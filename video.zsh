@@ -21,14 +21,13 @@ xmv(){
 hvc(){
     case $# in
     0) tagvc-dir;;
-    1) taghvc $1;;
+    1) taghvc "$1";;
   esac
 }
 
 # perform on individual file
 x265(){
   local filename=$1:t:r
-  local path=${2:-}
 
   if ffmpeg -i "$1" -c:v libx265 -c:a copy -crf 25 -maxrate 25M -tag:v hvc1 "$filename"_x265.mp4; then
     trash "$1"
