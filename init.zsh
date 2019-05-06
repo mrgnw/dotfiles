@@ -50,6 +50,7 @@ if [[ $(uname) == "Darwin" ]]; then
       ffmpeg
       git
       httpie
+      hub
       jq
       mas
       node
