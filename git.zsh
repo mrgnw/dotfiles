@@ -36,9 +36,6 @@ alias gitc='git commit -m'
 alias gitp='git push;'
 alias ush=''
 
-# for quick commits to personal projects
-# alias glazy="gita; gitc 'quick commit - minor changes';"
-
 # find all .git directories and exec "git pull" on the parent.
 # function gitrecursive {
 #     find . -type d -name .git -exec sh -c "cd \"{}\"/../ && pwd && git pull" \;
@@ -54,3 +51,8 @@ rsa(){
   echo "rsa copied"
 }
 
+
+extract_untracked(){
+  rsync -R `git ls-files --others` "$1"
+  git clean -f
+}
