@@ -30,6 +30,8 @@ plugins=(git gibo osx cp colorize vagrant python pip virtualenv
 alias zd="cd ~/.oh-my-zsh/custom/"
 alias zed="subl ~/.oh-my-zsh/custom/"
 alias dev='cd ~/dev'
+alias typora='open -a typora'
+alias tp='typora'
 
 alias z='source ~/.zshrc'
 
