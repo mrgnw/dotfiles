@@ -93,6 +93,8 @@ if [[ $(uname) == "Darwin" ]]; then
     echo "  🍺 installing " ${casks[@]}
     brew cask install ${casks[@]}
 
+    brew tap homebrew/cask-fonts && brew cask install font-source-code-pro
+
     appstore=(
       727593140   # VPN Unlimited
       1065907486  # CiderTV - AppleTV remote!
