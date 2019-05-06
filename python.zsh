@@ -14,14 +14,11 @@ py(){
   fi
 }
 
-
-# py() {
-#   # python ${1%.*}.py "${@:2}"
-#   # this ignores the extension altogether and runs filename.py
-#   # py a » python a.py
-#   # py a.py » python a.py
-#   # py movie.mp4 » python movie.py  <-- Not intended use. Maybe fix someday.
-# }
++py() {
+  mkdir $1;
+  cd $1;
+  (curl https://www.gitignore.io/api/python > .gitignore) & +venv
+}
 
 # allows things like `pip install vibora[fast]`
 setopt +o nomatch
@@ -43,12 +40,6 @@ v() {
 -v() {
   deactivate
   rmvirtualenv ${1:-${PWD##*/}}
-}
-
-+py() {
-  mkdir $1;
-  cd $1;
-  (curl https://www.gitignore.io/api/python > .gitignore) & +venv
 }
 
 alias venvs='cd ~/.virtualenvs'
