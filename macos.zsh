@@ -48,25 +48,6 @@ if [[ $(uname) == "Darwin" ]]; then
   }
 
 
-  # this should already be loading from oh-my-zsh
-  trash() {
-    local trash_dir="${HOME}/.Trash"
-    local temp_ifs="$IFS"
-    IFS=$'\n'
-    for item in "$@"; do
-      if [[ -e "$item" ]]; then
-        item_name="$(basename $item)"
-        if [[ -e "${trash_dir}/${item_name}" ]]; then
-          mv -f "$item" "${trash_dir}/${item_name} $(date "+%H-%M-%S")"
-        else
-          mv -f "$item" "${trash_dir}/"
-        fi
-      fi
-    done
-    IFS=$temp_ifs
-  }
-
-
   nocorners() {
     defaults write com.apple.dock wvous-bl-corner -int 0
     defaults write com.apple.dock wvous-br-corner -int 0
