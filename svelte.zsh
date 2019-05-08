@@ -5,12 +5,15 @@ sv() {
 	npm run ${1:-dev}
 }
 
-+sv() {
-	degit sveltejs/template $1
-	cd $1
-	npm install
-	npm run dev
++sv(){
+	degit sveltejs/template "$1"
+	cd "$1"
+	pnpm install code . -g src/App.svelte
+	open http://localhost:5000
+	pnpm run dev
 }
 
 
 # Production
+
+
