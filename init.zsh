@@ -23,9 +23,11 @@ if [[ $(uname) == "Darwin" ]]; then
   }
 
   standardNode () {
-    
+
     nodeApps=(
+      degit
       now
+      pnpm
       spoof
       surge
     )
@@ -48,7 +50,7 @@ if [[ $(uname) == "Darwin" ]]; then
       )
 
     brew cask install ${qlList[@]}
-    
+
 
     # restart quicklook manager
     qlmanage -r
