@@ -1,9 +1,8 @@
 # node defaults
 
-standardNode() {
-  npm install -g now
-  npm install -g spoof
-}
+
+
+
 
 
 # MacOS customizations
@@ -22,7 +21,17 @@ if [[ $(uname) == "Darwin" ]]; then
   screenshotName () {
     defaults write com.apple.screencapture name $1; killall SystemUIServer
   }
-  #
+
+  standardNode () {
+    
+    nodeApps=(
+      now
+      spoof
+      surge
+    )
+    npm install --global ${nodeApps[@]}
+
+  }
 
   quicklookApps () {
     # github.com/sindresorhus/quick-look-plugins
@@ -38,7 +47,8 @@ if [[ $(uname) == "Darwin" ]]; then
         webpquicklook
       )
 
-    brew cask install ${caskList[@]}
+    brew cask install ${qlList[@]}
+    
 
     # restart quicklook manager
     qlmanage -r
