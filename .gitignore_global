@@ -7,6 +7,7 @@
 *.o
 *.so
 *.pyc
+__pycache__/*
 
 # Packages #
 ############
@@ -57,6 +58,7 @@ Thumbs.db
 .idea/dictionaries
 
 # Sensitive or high-churn files:
+*.env
 .idea/**/dataSources/
 .idea/**/dataSources.ids
 .idea/**/dataSources.xml
