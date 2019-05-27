@@ -12,21 +12,9 @@ alias setglobalgitignore='git config --global core.excludesfile ~/.oh-my-zsh/cus
   # gl = git pull
   #
 
-
-function mv {
-	# from https://twitter.com/captainsafia/status/1062151829067325441
-    if git rev-parse --git-dir > /dev/null 2>&1; then
-        git mv "$@"
-    else
-        mv "$@"
-    fi
-}
-
-alias gall='git add --all'
 alias gp='git pull'
 alias gs='git status'
 alias gc='git commit -m'
-alias gcd='git checkout develop'
 alias gcnb='git checkout -b'
 alias gits='git status'
 alias gita='git add --all'
