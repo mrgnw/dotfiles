@@ -99,7 +99,7 @@ if [[ $(uname) == "Darwin" ]]; then
       sublime-text
       # transmission
       typora
-      visual-studio-code
+      vscodium # visual-studio-code built from source
       # webtorrent
 
     )
