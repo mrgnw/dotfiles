@@ -35,7 +35,9 @@ alias tp='typora'
 
 alias z='source ~/.zshrc'
 
-alias ohmyzsh="subl ~/.oh-my-zsh"
+alias ohmyzsh='subl ~/.oh-my-zsh'
+
+alias lsl='ls -l --block-size=M'
 
 # firefox black tab
 alias xul='subl "/Users/mwilliams/Library/Application Support/Firefox/Profiles"/*/chrome/*.css'
