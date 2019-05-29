@@ -28,19 +28,19 @@ plugins=(git gibo osx cp colorize vagrant python pip virtualenv
   jsontools zsh-syntax-highlighting colored-man themes)
 
 alias zd="cd ~/.oh-my-zsh/custom/"
-alias zed="subl ~/.oh-my-zsh/custom/"
+alias zed="edit ~/.oh-my-zsh/custom/"
 alias dev='cd ~/dev'
 alias typora='open -a typora'
 alias tp='typora'
 
 alias z='source ~/.zshrc'
 
-alias ohmyzsh='subl ~/.oh-my-zsh'
+alias ohmyzsh='edit ~/.oh-my-zsh'
 
 alias lsl='ls -l --block-size=M'
 
 # firefox black tab
-alias xul='subl "/Users/mwilliams/Library/Application Support/Firefox/Profiles"/*/chrome/*.css'
+alias xul='edit "/Users/mwilliams/Library/Application Support/Firefox/Profiles"/*/chrome/*.css'
 alias ffcss='xul'
 
 #--------------------------
