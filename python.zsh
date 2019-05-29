@@ -18,7 +18,7 @@ py(){
 +py() {
   mkdir $1;
   cd $1;
-  (curl https://www.gitignore.io/api/python > .gitignore) & +venv
+  (curl https://www.gitignore.io/api/python > .gitignore) & +v
 }
 
 # allows things like `pip install vibora[fast]`
