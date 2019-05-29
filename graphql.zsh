@@ -13,7 +13,7 @@ agq-init() {
 	git add .
 	git commit -m '🚀 Init Apollo-GraphQL!'
 
-	open index.js # or `subl .` ?
+	edit index.js
 }
 
 +apollo() {

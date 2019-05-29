@@ -10,14 +10,9 @@ alias ip='curl -sS ipinfo.io | jq --sort-keys'
 alias chrome-rd='launchctl start org.chromium.chromoting && echo "chrome remote desktop should be running now"'
 
 # todo: mass install by appname, instead of id.
-# e.g. mas install lanscan = mas search lanscan » mas install 472226235 
+# e.g. mas install lanscan = mas search lanscan » mas install 472226235
 
 if [[ $(uname) == "Darwin" ]]; then
-
-  # Sublime stuff
-  # alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl --new-window $@'
-  # deprecated. initMac now sets up subl link to the subl binary
-  export EDITOR='subl'
 
   # alias f='open .'
   alias editHosts='sudo $EDITOR /etc/hosts'
