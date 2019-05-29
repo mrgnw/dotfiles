@@ -1,6 +1,8 @@
 
+alias dockerrun='docker run -it $(docker build -q .)'
+
 dockerPulls(){
-	
+
 	standardDocks=(
 		linuxserver/radarr
 		linuxserver/sonarr
@@ -9,7 +11,7 @@ dockerPulls(){
 		)
 
 	for d in $standardDocks; do
-		echo "🍺 loading the docks 🚢 🐳" 
+		echo "🍺 loading the docks 🚢 🐳"
 		docker pull $d
 	done
 
@@ -21,7 +23,7 @@ dkr(){
 	docker_command=$1
 	shift
 	for i in "$@"
-	do 
+	do
 		docker $docker_command "$i"
 	done
 }
