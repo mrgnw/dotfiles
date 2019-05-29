@@ -192,8 +192,8 @@ if [[ $(uname) == "Darwin" ]]; then
     safariDefaults
 
     # set global gitignore to this file
-    git config --global core.excludesfile ~/.oh-my-zsh/custom/.gitignore_global
-    # gitignore.io is also a good resource
+    git config --global core.excludesfile '~/.oh-my-zsh/custom/.gitignore_global'
+    ln -s ~/.oh-my-zsh/custom/.gitignore_global ~/.config/git/ignore
 
     echo "standardBrews"
     standardBrews
