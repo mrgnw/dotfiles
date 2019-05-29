@@ -169,18 +169,18 @@ if [[ $(uname) == "Darwin" ]]; then
 
     # Move apps that I rarely use into the Utilities folder
     buryThese=(
-     Automator
-     Chess
-     DVD\ Player
-     Font\ Book
-     Image\ Capture
-     Launchpad
-     Mail
-     Mission\ Control
-     Photo\ Booth
-     Stickies
-     TextEdit
-     Time\ Machine
+     'Automator'
+     'Chess'
+     'DVD Player'
+     'Font Book'
+     'Image Capture'
+     'Launchpad'
+     'Mail'
+     'Mission Control'
+     'Photo Booth'
+     'Stickies'
+     'TextEdit'
+     'Time Machine'
      )
     echo "Burying rarely used apps to Utilities"
     sudo buryApp ${buryThese[@]}
@@ -354,7 +354,7 @@ if [[ $(uname) == "Darwin" ]]; then
   configApps () {
 
     echo "Sublime binary symlink"
-    ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+    ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 
 
     echo "📈  CPU usage shows in Activity Monitor Dock icon"
