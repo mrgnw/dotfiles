@@ -87,6 +87,7 @@ if [[ $(uname) == "Darwin" ]]; then
       fork
       google-chrome
       # handbrake
+      github
       iina
       iterm2
       keycastr
