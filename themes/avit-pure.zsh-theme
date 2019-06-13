@@ -6,6 +6,7 @@ precmd() { print "" }
 if [[ -n $SSH_CONNECTION ]]; then
   PROMPT='%c $(git_prompt_info)
 📡 '
+  EDITOR='nano'
 else
   PROMPT='%c $(git_prompt_info)
 ❯ '
