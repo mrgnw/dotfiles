@@ -67,7 +67,8 @@ if [[ $(uname) == "Darwin" ]]; then
       jq
       mas
       node
-      # thefuck
+      pyenv
+      pyenv-virtualenv
       tree
       youtube-dl
     )
