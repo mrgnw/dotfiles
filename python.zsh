@@ -26,20 +26,19 @@ setopt +o nomatch
 # requires virtualenvwrapper
 v() {
   local VENVNAME=${1:-${PWD##*/}}  #$1 or current dir name
-  if [ ! -d ~/.virtualenvs/$VENVNAME ]; then
-    mkvirtualenv --python=$(which python3) ${1:-${PWD##*/}}
+  if [ ! -d ~/.pyenv/versions/$VENVNAME ]; then
+    +v
   else
-    workon $VENVNAME
+    pyenv activate $VENVNAME
   fi
 }
 
 +v() {
-  mkvirtualenv --python=$(which python3) ${1:-${PWD##*/}}
+  pyenv virtualenv 3.7.3 ${1:-${PWD##*/}}
 }
 
 -v() {
-  deactivate
-  rmvirtualenv ${1:-${PWD##*/}}
+  pyenv uninstall ${1:-${PWD##*/}}
 }
 
 alias venvs='cd ~/.virtualenvs'

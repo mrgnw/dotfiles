@@ -9,8 +9,8 @@
 *.pyc
 __pycache__/*
 .python-version
-.Pipfile
-.pipfile.lock
+Pipfile
+pipfile.lock
 
 # Packages #
 ############
