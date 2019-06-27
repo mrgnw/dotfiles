@@ -8,6 +8,9 @@
 *.so
 *.pyc
 __pycache__/*
+.python-version
+Pipfile
+pipfile.lock
 
 # Packages #
 ############

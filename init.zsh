@@ -58,6 +58,7 @@ if [[ $(uname) == "Darwin" ]]; then
 
   standardBrews() {
     brews=(
+      coreutils
       docker
       ffmpeg
       git
@@ -66,6 +67,8 @@ if [[ $(uname) == "Darwin" ]]; then
       jq
       mas
       node
+      pyenv
+      pyenv-virtualenv
       tree
       youtube-dl
       zsh-autosuggestions
@@ -88,6 +91,7 @@ if [[ $(uname) == "Darwin" ]]; then
       fork
       google-chrome
       # handbrake
+      github
       iina
       iterm2
       keycastr

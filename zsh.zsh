@@ -27,8 +27,10 @@ ZSH_THEME="avit-pure"
 plugins=(git gibo osx cp colorize vagrant python pip virtualenv
   jsontools zsh-syntax-highlighting zsh-autosuggestions colored-man themes)
 
-alias zd="cd ~/.oh-my-zsh/custom/"
-alias zed="edit ~/.oh-my-zsh/custom/"
+alias zdir="cd ~/.oh-my-zsh/custom/"
+alias zedit="edit ~/.oh-my-zsh/custom/"
+alias zed=zedit
+alias zd=zdir
 alias dev='cd ~/dev'
 alias typora='open -a typora'
 alias tp='typora'
