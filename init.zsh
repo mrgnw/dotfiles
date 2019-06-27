@@ -66,9 +66,9 @@ if [[ $(uname) == "Darwin" ]]; then
       jq
       mas
       node
-      # thefuck
       tree
       youtube-dl
+      zsh-autosuggestions
     )
     echo "  🍺 brew installing " ${brews[@]}
     brew install ${brews[@]}
@@ -79,7 +79,8 @@ if [[ $(uname) == "Darwin" ]]; then
     casks=(
       1password
       1password-cli
-      # alfred
+      # adobe-creative-cloud
+      alfred
       bartender
       brave-browser
       # chrome-remote-desktop-host
