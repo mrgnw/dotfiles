@@ -19,6 +19,13 @@ alias gcnb='git checkout -b'
 alias gits='git status'
 alias gita='git add --all'
 alias gitc='git commit -m'
+alias gitglobal='git config --global --edit'
+
+yolo(){
+  git add --all;
+  git commit -m 'quick update';
+  git push;
+}
 
 # gitp ush
 alias gitp='git push;'

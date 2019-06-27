@@ -1,6 +1,10 @@
 #!/bin/zsh
 # Convert to h265 without changing resolution.
 
+gif(){
+
+}
+
 # shortcuts determine whether to run on one file or directory
 xv(){
   case $# in
@@ -47,14 +51,14 @@ xmov(){
 
 # loop through directory
 x265-dir(){
-  # ignore mp4's 
+  # ignore mp4's
   setopt extended_glob
   for vid in **/*.(mp4|mkv|m4v);
   x265 "$vid";
 }
 
 xmov-dir(){
-  # ignore mp4's 
+  # ignore mp4's
   local dest=$1
   setopt extended_glob
   for vid in **/*.(mp4|mkv|m4v);
