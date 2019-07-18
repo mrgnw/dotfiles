@@ -36,7 +36,24 @@ alias ush=''
 #     find . -type d -name .git -exec sh -c "cd \"{}\"/../ && pwd && git pull" \;
 # }
 
-# make_rsa is in init.zsh
+
+# Git: Make rsa key & copy to clipboard
+make_rsa(){
+  GIT_EMAIL=$(git config --global user.email)
+  echo "\nJust push enter on these\n"
+  # todo: Config email if doesn't exist
+  # todo: return to original directory when done
+  # cd ~/.ssh/
+  ssh-keygen -t rsa -b 4096 -C "$GIT_EMAIL"
+
+  # copy clipboard
+  pbcopy < ~/.ssh/id_rsa.pub  # only works if you use default rsa
+  echo "Copied key to clipboard."
+  echo "Opening browser"
+  open https://github.com/settings/ssh
+
+}
+
 rsa(){
   if [[ ! -a ~/.ssh/id_rsa.pub ]]; then
    make_rsa

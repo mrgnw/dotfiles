@@ -1,4 +1,5 @@
 # homebrew, etc.
+alias y='youtube-dl'
 
 brew-list-info() {
 	# Print summary of each brew package
@@ -11,13 +12,14 @@ brew-list-info() {
 		done
 }
 
-alias ydl='youtube-dl'
-alias y='youtube-dl'
-
 alias cask='brew cask'
 
-# git
-# lastpass-cli
-# mas
-# youtube-dl
-# zsh
+# fetch packages concurrently as others install
+brewin() {
+	(brew install $@) &
+	(brew fetch ${@:2})
+}
+caskin() {
+	(cask install $@) & 
+	(cask fetch ${@:2})
+}

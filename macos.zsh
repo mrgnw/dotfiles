@@ -14,9 +14,15 @@ alias chrome-rd='launchctl start org.chromium.chromoting && echo "chrome remote 
 
 if [[ $(uname) == "Darwin" ]]; then
 
+  # change screenshot directory
+  screenshotDir() {
+	# todo: see if directory exists & create if it doesn't
+	defaults write com.apple.screencapture location $@; killall SystemUIServer
+  }
+
   # alias f='open .'
   alias editHosts='sudo $EDITOR /etc/hosts'
-  alias icloud="cd /Users/mw/Library/Mobile\ Documents/com\~apple\~CloudDocs"
+  alias icloud="cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs"
   alias showHiddenFiles='defaults write com.apple.finder ShowAllFiles TRUE; killall Finder'
   alias hideHiddenFiles='defaults write com.apple.finder ShowAllFiles FALSE; killall Finder'
 
@@ -96,3 +102,23 @@ if [[ $(uname) == "Darwin" ]]; then
   # ]
 
 fi
+
+ # Move the apps you never use to /Applications/Utilities
+  # ex: TextEdit || TextEdit.app || /Applications/TextEdit.app
+  buryApp() {
+	for x in $@; do
+	  app=$(basename "$x")
+	  app="${app%.*}"
+
+	  if [ -e /Applications/$app.app ]
+	  then
+		sudo mv /Applications/$app.app /Applications/Utilities/$app.app
+	  else if [ -e /Applications/Utilities/$app.app ]
+		then # It's already in Utilities
+		  # echo " ➡️  Utilities $app"
+		else # It's not in Applications or Utilities
+		  # echo "$app not in Applications or Utilities"
+		fi
+	  fi
+	done
+  }
