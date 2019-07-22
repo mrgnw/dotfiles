@@ -1,3 +1,13 @@
+# todo: set background dir to icloud
+
+#  - set background to images in directory to $BG_DIR (defined in macos.zsh)
+# download: use github.com/farnots/iCloudDownloader
+    # brew install icloud-downloader / icd
+    # icd $ICLOUD/images/background
+    # icd $ICLOUD/images/background/vertical
+
+#  - set $BG_DIR as background dir
+
 echo "📈  CPU usage shows in Activity Monitor Dock icon"
 defaults write com.apple.ActivityMonitor IconType -int 5
 

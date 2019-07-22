@@ -57,6 +57,7 @@ BREWS=(
     jq
     tree
     youtube-dl
+    switchaudio-osx
 )
 echo "  🍺 installing " $BREWS
 brewin $BREWS

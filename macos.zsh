@@ -1,13 +1,24 @@
 #!/bin/zsh
 alias o='open .'
-alias terminalcheat='open https://github.com/0nn0/terminal-mac-cheatsheet'
+alias ip='curl -sS ipinfo.io | jq --sort-keys'
+alias mic='SwitchAudioSource -t input -s "MacBook Pro Microphone"'
+
+alias bgdir='cd $BG_DIR'
+alias icloud="cd $ICLOUD"
+export BG_DIR='$ICLOUD/Images/background'
+export ICLOUD='~/Library/Mobile\ Documents/com\~apple\~CloudDocs'
+
 alias speed='speed-test' # install with npm install --global speed-test
 
-alias o='open .'
 alias osa='osascript'
 alias osajs='osascript -il JavaScript'
-alias ip='curl -sS ipinfo.io | jq --sort-keys'
+alias terminalcheat='open https://github.com/0nn0/terminal-mac-cheatsheet'
 alias chrome-rd='launchctl start org.chromium.chromoting && echo "chrome remote desktop should be running now"'
+
+#   Update all Wallpapers
+function wallpaper() {
+    sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$1'" && killall Dock 
+}
 
 # todo: mass install by appname, instead of id.
 # e.g. mas install lanscan = mas search lanscan » mas install 472226235
@@ -22,7 +33,6 @@ if [[ $(uname) == "Darwin" ]]; then
 
   # alias f='open .'
   alias editHosts='sudo $EDITOR /etc/hosts'
-  alias icloud="cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs"
   alias showHiddenFiles='defaults write com.apple.finder ShowAllFiles TRUE; killall Finder'
   alias hideHiddenFiles='defaults write com.apple.finder ShowAllFiles FALSE; killall Finder'
 
@@ -100,25 +110,25 @@ if [[ $(uname) == "Darwin" ]]; then
   # "bl 0 0",
   # "tr 0 0"
   # ]
-
-fi
-
- # Move the apps you never use to /Applications/Utilities
+  
+  # Move the apps you never use to /Applications/Utilities
   # ex: TextEdit || TextEdit.app || /Applications/TextEdit.app
   buryApp() {
-	for x in $@; do
-	  app=$(basename "$x")
-	  app="${app%.*}"
+    for x in $@; do
+      app=$(basename "$x")
+      app="${app%.*}"
 
-	  if [ -e /Applications/$app.app ]
-	  then
-		sudo mv /Applications/$app.app /Applications/Utilities/$app.app
-	  else if [ -e /Applications/Utilities/$app.app ]
-		then # It's already in Utilities
-		  # echo " ➡️  Utilities $app"
-		else # It's not in Applications or Utilities
-		  # echo "$app not in Applications or Utilities"
-		fi
-	  fi
-	done
-  }
+      if [ -e /Applications/$app.app ]
+      then
+      sudo mv /Applications/$app.app /Applications/Utilities/$app.app
+      else if [ -e /Applications/Utilities/$app.app ]
+        then # It's already in Utilities
+          # echo " ➡️  Utilities $app"
+        else # It's not in Applications or Utilities
+          # echo "$app not in Applications or Utilities"
+        fi
+      fi
+    done
+    }
+
+fi
