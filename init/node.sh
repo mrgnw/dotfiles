@@ -1,5 +1,5 @@
 brew install node
-npm install pnpm
+npm install --global pnpm
 
 NPMS=(
     degit
