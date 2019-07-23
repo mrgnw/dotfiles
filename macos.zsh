@@ -4,7 +4,7 @@ alias ip='curl -sS ipinfo.io | jq --sort-keys'
 alias mic='SwitchAudioSource -t input -s "MacBook Pro Microphone"'
 
 if [[ "$OSTYPE" == "darwin18"* ]]; then
-  export ICLOUD = "$HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs"
+  export ICLOUD="$HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs"
 # else assuming catalina or later
 else
   export ICLOUD="$HOME/Library/CloudStorage/iCloud\ Drive"
