@@ -4,6 +4,11 @@
 #--------------------------
 
 alias ❯=''
+export ZD="~/.oh-my-zsh/custom"
+alias zdir="cd $ZDIR"
+alias zedit="edit $ZDIR"
+alias zed=zedit
+alias zd=zdir
 
 mcd() { mkdir -p $1; cd $1 }
 
@@ -27,10 +32,6 @@ ZSH_THEME="avit-pure"
 plugins=(git gibo osx cp colorize vagrant python pip virtualenv
   jsontools zsh-syntax-highlighting zsh-autosuggestions colored-man themes)
 
-alias zdir="cd ~/.oh-my-zsh/custom/"
-alias zedit="edit ~/.oh-my-zsh/custom/"
-alias zed=zedit
-alias zd=zdir
 alias dev='cd ~/dev'
 alias typora='open -a typora'
 alias tp='typora'
@@ -70,11 +71,6 @@ simpleping() {
    gsub("icmp_seq=","");\
    print $5"\t" $7 " " $8 }'\
    OFMT="%.0f";
-
-  # improvements
- 	# Set time unit (s, ms, "way too long")
- 	# Down time is an incrementing time counter ("Down 5s" turns into "Down 6s")
-
 };
 
 sp() { simpleping $1 }
