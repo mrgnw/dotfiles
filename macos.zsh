@@ -14,9 +14,17 @@ alias chrome-rd='launchctl start org.chromium.chromoting && echo "chrome remote 
 
 if [[ $(uname) == "Darwin" ]]; then
 
-  # alias f='open .'
+  # mojave
+  if [[ "$OSTYPE" == "darwin18"* ]]; then
+    ICLOUD = "/Users/mw/Library/Mobile\ Documents/com\~apple\~CloudDocs"
+  # else assuming catalina or later
+  else
+    ICLOUD="$HOME/Library/CloudStorage/iCloud\ Drive/"
+  fi
+  
   alias editHosts='sudo $EDITOR /etc/hosts'
-  alias icloud="cd /Users/mw/Library/Mobile\ Documents/com\~apple\~CloudDocs"
+  
+  alias icloud="cd $ICLOUD"
   alias showHiddenFiles='defaults write com.apple.finder ShowAllFiles TRUE; killall Finder'
   alias hideHiddenFiles='defaults write com.apple.finder ShowAllFiles FALSE; killall Finder'
 
