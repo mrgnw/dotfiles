@@ -1,10 +1,12 @@
-#--------------------------
-
-# zsh basic configuration
-#--------------------------
+# Plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(zsh-nvm git osx cp jsontools zsh-syntax-highlighting zsh-autosuggestions)
+plugins+=(python pip virtualenv)
+plugins+=(vagrant)
+plugins+=(colorize colored-man themes)
 
 alias ❯=''
-export ZD="~/.oh-my-zsh/custom"
+export ZDIR="$(PWD)/.oh-my-zsh/custom"
 alias zdir="cd $ZDIR"
 alias zedit="edit $ZDIR"
 alias zed=zedit
@@ -13,8 +15,6 @@ alias zd=zdir
 mcd() { mkdir -p $1; cd $1 }
 
 alias cdd='cd ~/Downloads/'
-
-alias xz='echo "exec zsh => restart shell "; exec zsh;' # restart zsh, reload scripts
 
 # oh-my-zsh commands:
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
@@ -27,24 +27,10 @@ promptinit
 # avit, pure, avit-pure, "random" does  a random theme
 ZSH_THEME="avit-pure"
 
-# Plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git gibo osx cp colorize vagrant python pip virtualenv
-  jsontools zsh-syntax-highlighting zsh-autosuggestions colored-man themes)
-
-alias dev='cd ~/dev'
-alias typora='open -a typora'
-alias tp='typora'
-
+alias dev='mcd ~/dev'
 alias z='source ~/.zshrc'
 
-alias ohmyzsh='edit ~/.oh-my-zsh'
-
 alias lsl='ls -l --block-size=M'
-
-# firefox black tab
-alias xul='edit "/Users/mwilliams/Library/Application Support/Firefox/Profiles"/*/chrome/*.css'
-alias ffcss='xul'
 
 #--------------------------
 # Additional configuration
@@ -77,9 +63,6 @@ sp() { simpleping $1 }
 sping() { simpleping $1 }
 spg() { sp google.com }
 sp8() { sp 8.8.8.8 }
-p8() { sp8 }
-pg() { spg }
-
 
 
 historySummary() {
@@ -93,7 +76,7 @@ historySummary() {
 # zsh_stats does this - but only does 20, not a flexible amount
 hist() {
   if [ $# -eq 0 ]; then
-    historySummary 5
+    historySummary 10
   else
     historySummary $1
   fi
