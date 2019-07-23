@@ -3,16 +3,16 @@ alias o='open .'
 alias ip='curl -sS ipinfo.io | jq --sort-keys'
 alias mic='SwitchAudioSource -t input -s "MacBook Pro Microphone"'
 
-alias bgdir='cd $BG_DIR'
-
-export BG_DIR='$ICLOUD/Images/background'
 if [[ "$OSTYPE" == "darwin18"* ]]; then
-  ICLOUD = "/Users/mw/Library/Mobile\ Documents/com\~apple\~CloudDocs"
+  export ICLOUD = "$HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs"
 # else assuming catalina or later
 else
-  ICLOUD="$HOME/Library/CloudStorage/iCloud\ Drive/"
+  export ICLOUD="$HOME/Library/CloudStorage/iCloud\ Drive"
 fi
-alias icloud="cd $ICLOUD" 
+alias icloud="cd $ICLOUD"
+export BG_DIR="$ICLOUD/Images/background"
+alias bgdir="cd $BG_DIR"
+
 
 alias speed='speed-test' # install with npm install --global speed-test
 
