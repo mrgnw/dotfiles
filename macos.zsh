@@ -3,11 +3,12 @@ alias o='open .'
 alias ip='curl -sS ipinfo.io | jq --sort-keys'
 alias mic='SwitchAudioSource -t input -s "MacBook Pro Microphone"'
 
-if [[ "$OSTYPE" == "darwin18"* ]]; then
-  export ICLOUD = "$HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs"
-# else assuming catalina or later
-else
+
+# >= macOS 10.15 Catalina
+if (defaults read loginwindow SystemVersionStampAsString >= 10.15); then
   export ICLOUD="$HOME/Library/CloudStorage/iCloud\ Drive"
+else
+  export ICLOUD = "$HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs"
 fi
 alias icloud="cd $ICLOUD"
 export BG_DIR="$ICLOUD/Images/background"
