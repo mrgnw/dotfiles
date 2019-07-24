@@ -6,6 +6,16 @@ alias pu='pip uninstall'
 alias pf='pip freeze'
 alias w='workon'
 
+alias activate='v'
+alias deactivate='pyenv deactivate'
+
+# lazy load pyenv
+# pyenv() {
+#   eval "$(command pyenv init -)"
+#   pyenv "$@"
+# }
+
+
 py(){
   if [ "$#" -eq  "0" ]
     then python
@@ -34,7 +44,12 @@ v() {
 }
 
 +v() {
-  pyenv virtualenv 3.7.3 ${1:-${PWD##*/}}
+  # pyenv virtualenv 3.7.3 ${1:-${PWD##*/}}
+  case $# in
+    0) pyenv virtualenv 3.7.4 ${PWD##*/};;
+    1) pyenv virtualenv "$1" ${PWD##*/};;
+    2) pyenv virtualenv "$1" "$2";;
+  esac
 }
 
 -v() {

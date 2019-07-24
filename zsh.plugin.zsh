@@ -1,9 +1,21 @@
-# Plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-nvm git osx cp jsontools zsh-syntax-highlighting zsh-autosuggestions)
-plugins+=(python pip virtualenv)
-plugins+=(vagrant)
-plugins+=(colorize colored-man themes)
+# autoload / lazy load functions 
+# http://zsh.sourceforge.net/Doc/Release/Functions.html#Autoloading-Functions
+
+# fpath+=("$HOME/.oh-my-zsh/custom/lazy")
+# autoload $HOME/.oh-my-zsh/custom/lazy/*
+# source $HOME/.oh-my-zsh/custom/lazy/*
+# source $HOME/.oh-my-zsh/custom/lazy/nvm.sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
+
+timezsh() {
+  for i in $(seq 1 8); 
+    do /usr/bin/time $SHELL -ilc -c exit; 
+  done
+}
+
+setopt autocd
+alias ..='cd ..'
 
 alias ❯=''
 export ZDIR="$(PWD)/.oh-my-zsh/custom"
@@ -16,19 +28,8 @@ mcd() { mkdir -p $1; cd $1 }
 
 alias cdd='cd ~/Downloads/'
 
-# oh-my-zsh commands:
-# https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
-alias zsheet='open https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet'
-
-autoload -U promptinit
-promptinit
-
-# More themes in ~/.oh-my-zsh/themes/
-# avit, pure, avit-pure, "random" does  a random theme
-ZSH_THEME="avit-pure"
-
 alias dev='mcd ~/dev'
-alias z='source ~/.zshrc'
+alias z="source $HOME/.zshrc"
 
 alias lsl='ls -l --block-size=M'
 
