@@ -5,11 +5,11 @@ alias mic='SwitchAudioSource -t input -s "MacBook Pro Microphone"'
 
 
 # >= macOS 10.15 Catalina
-if (defaults read loginwindow SystemVersionStampAsString >= 10.15); then
-  export ICLOUD="$HOME/Library/CloudStorage/iCloud\ Drive"
-else
-  export ICLOUD = "$HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs"
-fi
+# if (defaults read loginwindow SystemVersionStampAsString > 10.15); then
+#   export ICLOUD="$HOME/Library/CloudStorage/iCloud\ Drive"
+# else
+export ICLOUD="$HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs"
+# fi
 alias icloud="cd $ICLOUD"
 export BG_DIR="$ICLOUD/Images/background"
 alias bgdir="cd $BG_DIR"

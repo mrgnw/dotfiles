@@ -76,3 +76,5 @@ taghvc-dir(){
   for vid in *.*;
   taghvc "$vid";
 }
+
+zplg times
