@@ -1,6 +1,8 @@
-# 276
-py2(){'python2'}
-py3(){'python3'}
+zplugin ice pick"zsh-pyenv-lazy-load"
+zplugin snippet \
+  https://raw.githubusercontent.com/erikced/zsh-pyenv-lazy-load/master/zsh-pyenv-lazy-load.zsh
+
+
 jupy(){'jupyter notebook'}
 pi(){'pip install'}
 pu(){'pip uninstall'}
