@@ -3,6 +3,7 @@ alias ..='cd ..'
 alias lsl='ls -l --block-size=M'
 
 alias ❯=""
+export $ZDIR="$HOME/.zsh"
 alias zd="cd $ZDIR"
 alias zed="edit $ZDIR"
 
