@@ -11,6 +11,10 @@ alias zed="edit $ZDIR"
 alias dev="mcd $HOME/dev"
 z(){zplg update}  # ; source $HOME/.zshrc
 
+# highlighters
+zplugin ice silent wait"0";
+zplugin load zdharma/fast-syntax-highlighting
+
 HISTFILE=~/.zsh_history
 HISTSIZE=5555
 SAVEHIST=5555
