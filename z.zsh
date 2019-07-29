@@ -9,7 +9,12 @@ alias zed="edit $ZDIR"
 +d() { mkdir -p $1; cd $1 }
 
 alias dev="mcd $HOME/dev"
-alias z="source $HOME/.zshrc"
+z(){zplg update}  # ; source $HOME/.zshrc
+
+HISTFILE=~/.zsh_history
+HISTSIZE=5555
+SAVEHIST=5555
+setopt appendhistory
 
 # simple ping function
 simpleping() {

@@ -18,6 +18,33 @@ for f in $Z/*.zsh; do
 done
 ```
 
+### Example: prioritizing load order
+
+The above loads all ~/.zsh/ scripts after a delay.
+
+Below, we load `_*.zsh` files first,  then everything not in LARGE_SCRIPTS, then large scripts.
+
+```
+export Z="$HOME/.zsh"
+# private local files first
+for f in $Z/_*.zsh; do
+    zplugin ice silent; zplugin snippet "$f"
+done
+
+LARGE_SCRIPTS=(envs video)
+for f in $Z/*.zsh; do
+    fname=$f:t:r
+    
+    # delays loading LARGE_SCRIPTS
+    (( ${LARGE_SCRIPTS[(I)fname]} )) \
+        && zplugin ice silent \
+        || zplugin ice silent wait"2";
+    zplugin snippet "$f"
+     
+    # zplugin ice silent wait"1"; zplugin snippet "$f"
+done
+```
+
 
 
 ### init.zsh
