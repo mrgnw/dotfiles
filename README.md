@@ -4,7 +4,7 @@
 
 2. Clone or [degit](https://github.com/Rich-Harris/degit) this project to ~/.zsh
 
-   ```degit github.com/mrgnw/mzsh ~/.zsh```
+   ```degit https://github.com/mrgnw/mzsh ~/.zsh```
 
 3. Add to ~/.zshrc:
 
