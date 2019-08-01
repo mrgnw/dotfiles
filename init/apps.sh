@@ -26,6 +26,7 @@ CASKS=(
     macmediakeyforwarder
     
     sublime-text
+    aerial  # aerial screensavers as on TV
     fork
 )
 echo "  🍺 installing " $CASKS
