@@ -13,11 +13,31 @@ pf(){'pip freeze'}
 # allows pip install x[y]
 setopt +o nomatch
 
+# find latest python3 version on pyenv
+PYTHON3_VERSION="$(pyenv install -l | grep -e '3.[0-9].[0-9]' | grep -v - | tail -1)"
+
 py(){
   if [ "$#" -eq  "0" ]
     then python
   else
     python -m $@
+  fi
+}
+
+# create venv, set as directory default
++v() {
+  pyenv virtualenv $PYTHON3_VERSION ${1:-${PWD##*/}}
+  pyenv local ${1:-${PWD##*/}}
+  # I basically always need cython
+  pip install cython
+}
+
+v() {
+  local VENVNAME=${1:-${PWD##*/}}  #$1 or current dir name
+  if [ ! -d ~/.pyenv/versions/$VENVNAME ]; then
+    +v
+  else
+    pyenv activate $VENVNAME
   fi
 }
 
