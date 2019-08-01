@@ -15,7 +15,6 @@ alias zed="edit $ZDIR"
 
 +d() { mkdir -p $1; cd $1 }
 
-alias dev="mcd $HOME/dev"
 z(){zplg update}  # ; source $HOME/.zshrc
 
 # highlighters
