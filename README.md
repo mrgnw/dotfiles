@@ -1,7 +1,11 @@
 # mzsh
 
 1. [Install zplugin](https://github.com/zdharma/zplugin#installation)
-2. Clone this repository to `~/.zsh/*.zsh`
+
+2. Clone or [degit](https://github.com/Rich-Harris/degit) this project to ~/.zsh
+
+   ```degit github.com/mrgnw/mzsh ~/.zsh```
+
 3. Add to ~/.zshrc:
 
 ```shell
