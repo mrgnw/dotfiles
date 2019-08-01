@@ -16,11 +16,6 @@ z(){zplg update}  # ; source $HOME/.zshrc
 zplugin ice silent wait"0";
 zplugin load zdharma/fast-syntax-highlighting
 
-HISTFILE=~/.zsh_history
-HISTSIZE=5555
-SAVEHIST=5555
-setopt appendhistory
-
 # simple ping function
 simpleping() {
   ping $1 | awk \
