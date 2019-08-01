@@ -1,6 +1,6 @@
 # mzsh
 
-1. Install zplugin
+1. [Install zplugin](https://github.com/zdharma/zplugin#installation)
 2. Clone this repository to `~/.zsh/*.zsh`
 3. Add to ~/.zshrc:
 
