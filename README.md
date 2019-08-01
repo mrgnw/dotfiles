@@ -29,7 +29,7 @@
 
 ### Example: prioritizing load order
 
-The above loads all ~/.zsh/ scripts after a delay.
+The above loads all zsh scripts after a delay.
 
 Below, we load `_*.zsh` files first,  then everything not in LARGE_SCRIPTS, then large scripts.
 
