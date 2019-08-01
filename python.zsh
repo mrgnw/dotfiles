@@ -1,8 +1,8 @@
-zplugin ice pick"zsh-pyenv-lazy-load"
-zplugin snippet \
-  https://raw.githubusercontent.com/erikced/zsh-pyenv-lazy-load/master/zsh-pyenv-lazy-load.zsh
-
-
+# zplugin ice pick"zsh-pyenv-lazy-load"
+# zplugin snippet \
+#   https://raw.githubusercontent.com/erikced/zsh-pyenv-lazy-load/master/zsh-pyenv-lazy-load.zsh
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 
 jupy(){'jupyter notebook'}
