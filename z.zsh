@@ -1,4 +1,10 @@
 setopt autocd
+
+nukez(){
+  rm -rf ~/.zplugin;
+  degit https://github.com/zdharma/zplugin.git ~/.zplugin/bin;
+}
+
 alias ..='cd ..'
 alias lsl='ls -l --block-size=M'
 
