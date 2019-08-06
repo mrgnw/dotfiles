@@ -1,6 +1,8 @@
 # homebrew, etc.
-# runs after session loads; only displays errors
-brew update > /dev/null;
+
+HOMEBREW_NO_AUTO_UPDATE=1
+# or run after every session loads; only displays errors
+# brew update > /dev/null;
 
 alias y='youtube-dl'
 
@@ -18,6 +20,7 @@ brewin() {
 		1) brew install $1;;
 		2) (brew install $@) & (brew fetch ${@:2});;
 	esac
+	brew update
 }
 caskin() {
 	case $# in
@@ -25,4 +28,5 @@ caskin() {
 		1) cask install $1;;
 		2) (cask install $@) & (cask fetch ${@:2});;
 	esac
+	brew update
 }
