@@ -1,4 +1,7 @@
 # homebrew, etc.
+# runs after session loads; only displays errors
+brew update > /dev/null;
+
 alias y='youtube-dl'
 
 brew-list-info() {
