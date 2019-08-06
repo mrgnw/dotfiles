@@ -22,6 +22,6 @@ Or do it manually:
 
 3. Copy [zshrc_template](init/zshrc_template) into ~/.zshrc:
 
-
 ### [init/](init)
 
+After the above setup, you can open a new tab and type `mzsh` to run all of the `.sh` scripts in the `init/` folder
