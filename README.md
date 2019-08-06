@@ -24,4 +24,8 @@ Or do it manually:
 
 ### [init/](init)
 
-After the above setup, you can open a new tab and type `mzsh` to run all of the `.sh` scripts in the `init/` folder
+After the above setup, you can open a new tab and type `mzsh` to run all of the `.sh` scripts in the `init/` folder. These install apps, etc.
+
+#### Why a separate folder?
+
+These only need to happen once per computer setup, they don't need to be sourced every time you open a new shell.
