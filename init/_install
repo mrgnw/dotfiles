@@ -8,4 +8,6 @@ else
     echo "~/.zshrc already contains mzsh";
 fi
 
-echo "Once installed, open a new tab."
+echo ""
+echo "Open a new tab and type this to run setup scripts:"
+echo "mzsh"
