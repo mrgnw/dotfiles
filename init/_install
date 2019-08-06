@@ -9,5 +9,5 @@ else
 fi
 
 echo ""
-echo "Open a new tab and type this to run setup scripts:"
+echo "To run setup scripts, open a new terminal and type:"
 echo "mzsh"
