@@ -1,0 +1,28 @@
+
+
+# copied .zshrc file from github.com/mrgnw/mzsh
+source "$HOME/.zplugin/bin/zplugin.zsh"
+(( ${+_comps} )) && _comps[zplugin]=_zplugin
+
+# theme
+zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
+
+export Z="$HOME/.zsh"
+# private local files first
+for f in $Z/_*.zsh; do
+    zplugin ice lucid; zplugin snippet "$f"
+done
+
+# load all *.zsh; delay loading LARGE_SCRIPTS
+LARGE_SCRIPTS=(envs python video)
+for f in $Z/*.zsh; do
+    fname=$f:t:r
+    
+    (( ${LARGE_SCRIPTS[(I)fname]} )) \
+        && zplugin ice lucid \
+        || zplugin ice lucid wait"2";
+    zplugin snippet "$f"
+     
+    # zplugin ice silent wait"1"; zplugin snippet "$f"
+done
+# end mzsh zshrc
