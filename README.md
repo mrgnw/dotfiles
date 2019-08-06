@@ -1,5 +1,12 @@
 # mzsh
 
+Dotifles that use [zplugin](https://github.com/zdharma/zplugin) for a really fast shell.
+
+### [_install.sh](init/_install.sh)
+
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/mrgnw/mzsh/master/init/_install.sh)"
+```
 
 Or do it manually:
 
