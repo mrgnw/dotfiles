@@ -5,7 +5,7 @@ Dotifles that use [zplugin](https://github.com/zdharma/zplugin) for a really fas
 ### [_install.sh](init/_install.sh)
 
 ```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/mrgnw/mzsh/master/init/_install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/mrgnw/mzsh/master/init/_install)"
 ```
 
 Or do it manually:
@@ -21,4 +21,7 @@ Or do it manually:
     ```
 
 3. Copy [zshrc_template](init/zshrc_template) into ~/.zshrc:
+
+
+### [init/](init)
 

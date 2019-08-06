@@ -2,7 +2,7 @@
 # https://github.com/lra/mackup
 brew install mackup
 
-cp ~/.oh-my-zsh/custom/init/mackup.cfg ~/.mackup.cfg
+cp ~/.zsh/custom/init/mackup.cfg ~/.mackup.cfg
 # echo "[storage]" >> ~/.mackup.cfg
 # echo "engine = icloud" >> ~/.mackup.cfg
 

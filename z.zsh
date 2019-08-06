@@ -1,5 +1,12 @@
 setopt autocd
 
+mzsh(){
+  for f in $Z/init/**.sh; do
+    echo "init $f";
+    source $f;
+  done
+}
+
 nukez(){
   rm -rf ~/.zplugin;
   degit https://github.com/zdharma/zplugin.git ~/.zplugin/bin;
