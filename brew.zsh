@@ -4,25 +4,25 @@ brew update > /dev/null;
 
 alias y='youtube-dl'
 
-brew-list-info() {
-	# Print summary of each brew package
-	# Generally it's the second line of brew info ____
-	for x in `brew list`
-		do 
-			printf $x;
-			printf "\t";
-			brew info $x | sed -n '2p' ;
-		done
+# list installed homebrews
+brews() {	
+	brew info --json=v1 --installed | jq -r '. [] | "\(.name)||\(.desc)"' | column -t -s '||';
 }
 
 alias cask='brew cask'
 
 # fetch packages concurrently as others install
 brewin() {
-	(brew install $@) &
-	(brew fetch ${@:2})
+	case $# in
+		0) brew install;;
+		1) brew install $1;;
+		2) (brew install $@) & (brew fetch ${@:2});;
+	esac
 }
 caskin() {
-	(cask install $@) & 
-	(cask fetch ${@:2})
+	case $# in
+		0) cask install;;
+		1) cask install $1;;
+		2) (cask install $@) & (cask fetch ${@:2});;
+	esac
 }
