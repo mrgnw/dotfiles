@@ -14,7 +14,7 @@ pf(){'pip freeze'}
 setopt +o nomatch
 
 # find latest python3 version on pyenv
-PYTHON3_VERSION="$(pyenv install -l | grep -e '3.[0-9].[0-9]' | grep -v - | tail -1)"
+PYTHON3_VERSION="$(pyenv install -l | grep -e '3.[0-9].[0-9]' | grep -v - | tail -1 | awk '{$1=$1};1')"
 
 py(){
   if [ "$#" -eq  "0" ]
