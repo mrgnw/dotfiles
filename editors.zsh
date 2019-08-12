@@ -1,10 +1,8 @@
 #!/bin/zsh
 
 export EDITOR='code'
-alias edit=$EDITOR
-function e() {
-    edit ${1:-.}
-}
+edit(){$EDITOR $@}
+e() { edit ${1:-.zd} }
 
 alias typora='open -a typora'
 alias tp='typora'
