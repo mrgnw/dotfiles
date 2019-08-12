@@ -37,8 +37,18 @@ simpleping() {
    OFMT="%.0f";
 };
 
-sp() { simpleping $1 }
-sping() { simpleping $1 }
+sp() { simpleping $@ }
+sping() { simpleping $@ }
 spg() { sp google.com }
 sp8() { sp 8.8.8.8 }
 
+daily(){
+  RAND_MIN=$(rand 30)
+  echo "10 $RAND_MIN * * 1-5"
+  (crontab -l ; echo "10 $RAND_MIN * * 1-5 $@") | crontab
+  crontab -l
+}
+
+rand(){
+  python -c "from random import randrange; print(randrange(0, $1))"  
+}
