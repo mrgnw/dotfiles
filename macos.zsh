@@ -27,6 +27,21 @@ function wallpaper() {
     sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$1'" && killall Dock 
 }
 
+
+
+# goal: index screenshot text using ocr
+ocr_meta(){
+  ocr=$(tesseract "$1" stdout)
+  # https://tinyapps.org/blog/201011300700_os_x_edit_metadata.html
+  # xattr -w "com.apple.metadata:kMDItem_ocr_capture" "$ocr" "$1"
+  xattr -w "com.apple.metadata:kMDItemFinderComment" "$ocr" "$1"
+  # saves it, but doesn't show up in file info or Spotlight
+}
+  
+
+
+
+
 # todo: mass install by appname, instead of id.
 # e.g. mas install lanscan = mas search lanscan » mas install 472226235
 
