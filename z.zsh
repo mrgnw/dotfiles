@@ -3,15 +3,11 @@ setopt autocd
 mzsh(){
   for f in $Z/init/**.sh; do
     echo "init $f";
-    source $f;
+    source "$f";
   done
 }
 
-nukez(){
-  rm -rf ~/.zplugin;
-  degit https://github.com/zdharma/zplugin.git ~/.zplugin/bin;
-}
-
+alias cdd='cd ~/Downloads'
 alias ..='cd ..'
 alias lsl='ls -l --block-size=M'
 
@@ -45,10 +41,16 @@ sp8() { sp 8.8.8.8 }
 daily(){
   RAND_MIN=$(rand 30)
   echo "10 $RAND_MIN * * 1-5"
-  (crontab -l ; echo "10 $RAND_MIN * * 1-5 $@") | crontab
+  (crontab -l ; echo "SHELL=/bin/zsh; 10 $RAND_MIN * * 1-5 $@") | crontab
   crontab -l
 }
 
 rand(){
-  python -c "from random import randrange; print(randrange(0, $1))"  
+  python -c "from random import randrange; print(randrange(0, $1))"
+}
+
+ksh() {(klist -s || kinit) && ssh $@}
+
+killport(){
+  lsof -ti:$1 | xargs kill
 }
