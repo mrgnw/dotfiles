@@ -15,6 +15,10 @@ export BG_DIR="$ICLOUD/Images/background"
 alias bgdir="cd $BG_DIR"
 
 
+text(){
+  open "sms://open?addresses=$1/&body=$2"
+}
+
 alias speed='speed-test' # install with npm install --global speed-test
 
 alias osa='osascript'
