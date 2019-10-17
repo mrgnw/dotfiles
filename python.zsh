@@ -4,11 +4,6 @@
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# pipx
-autoload -U bashcompinit
-bashcompinit
-eval "$(register-python-argcomplete pipx)"
-
 jupy(){'jupyter notebook'}
 pi(){'pip install'}
 pu(){'pip uninstall'}
