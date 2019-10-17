@@ -21,7 +21,7 @@ caskin() {
 		done
 	)
 	brew update
-}}
+}
 brewin() {
 	(brew fetch ${@:2}) &
 	(
@@ -31,4 +31,4 @@ brewin() {
 		done
 	)
 	brew update
-}}
+}
