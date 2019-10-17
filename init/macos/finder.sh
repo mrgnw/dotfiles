@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 echo ""
 	echo "📁  FINDER & Dock"
 	# echo "🌒  Dark mode"

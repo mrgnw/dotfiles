@@ -1,4 +1,4 @@
-# todo: set background dir to icloud
+#!/usr/bin/env zsh
 
 #  - set background to images in directory to $BG_DIR (defined in macos.zsh)
 # download: use github.com/farnots/iCloudDownloader

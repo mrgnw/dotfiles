@@ -1,9 +1,11 @@
+#!/usr/bin/env zsh
+
 # brewin & caskin download packages concurrently as apps install
 CASKS=(
     1password
     pastebot
     spotify
-    vscodium  # visual-studio-code built from source
+    vscodium
     typora
     slack
     firefox
@@ -13,10 +15,6 @@ CASKS=(
     
     bartender
     brave-browser
-    zoomus
-    
-    nightowl
-
     docker
     kitematic
     insomnia
@@ -26,22 +24,25 @@ CASKS=(
     macmediakeyforwarder
     
     sublime-text
-    aerial  # aerial screensavers as on TV
-    fork
+    aerial
 )
 echo "  🍺 installing " $CASKS
 caskin $CASKS
 
 # MAS
 # requires manual sign in first. https://github.com/mas-cli/mas/issues/164
+brew install mas
 export MAS_APPS=(
     975890633   # HotKey App (1.3.1)
     441258766   # Magnet window manager
+    413857545   # divvy
+    419330170   # moom
+    1438243180  # dark reader
     1055511498  # Day One
-    1006087419  # SnippetsLab
+    # 1006087419  # SnippetsLab
     727593140   # VPN Unlimited
 )
-brew install mas && mas install $MAS_APPS
+ mas install $MAS_APPS
 
 
 BREWS=(
