@@ -21,7 +21,7 @@ alias zed="edit $ZDIR"
 z(){zplg update}  # ; source $HOME/.zshrc
 
 # highlighters
-zplugin ice silent wait"0";
+zplugin ice lucid wait"0";
 zplugin load zdharma/fast-syntax-highlighting
 
 # simple ping function

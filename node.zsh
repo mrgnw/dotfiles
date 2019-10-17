@@ -1,6 +1,3 @@
 # lazy load zsh-nvm
 export NVM_LAZY_LOAD=true
-zplugin ice; zplugin load "lukechilds/zsh-nvm"
-
-alias np='now --public'
-alias mpw='now'
+zplugin ice lucid wait"0"; zplugin load "lukechilds/zsh-nvm"

@@ -1,8 +1,5 @@
-# zplugin ice pick"zsh-pyenv-lazy-load"
-# zplugin snippet \
-#   https://raw.githubusercontent.com/erikced/zsh-pyenv-lazy-load/master/zsh-pyenv-lazy-load.zsh
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+zplugin ice OMZ::davidparsson/zsh-pyenv-lazy silent wait"0";
+zplugin load davidparsson/zsh-pyenv-lazy
 
 jupy(){'jupyter notebook'}
 pi(){'pip install'}
@@ -13,7 +10,9 @@ pf(){'pip freeze'}
 setopt +o nomatch
 
 # find latest python3 version on pyenv
-PYTHON3_VERSION="$(pyenv install -l | grep -e '3.[0-9].[0-9]' | grep -v - | tail -1 | awk '{$1=$1};1')"
+PYTHON3_VERSION(){
+  pyenv install -l | grep -e '3.[0-9].[0-9]' | grep -v - | tail -1 | awk '{$1=$1};1'
+}
 
 py(){
   if [ "$#" -eq  "0" ]
