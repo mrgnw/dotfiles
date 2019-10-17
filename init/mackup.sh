@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 # sync app settings & configs with mackup
 # https://github.com/lra/mackup
 brew install mackup
