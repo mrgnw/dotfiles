@@ -1,7 +1,7 @@
 setopt autocd
 
 mzsh(){
-  for f in $Z/init/**.sh; do
+  for f in $Z/init/**/*.sh; do
     echo "init $f";
     source "$f";
   done
