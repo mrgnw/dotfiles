@@ -15,13 +15,13 @@ for f in $Z/_*(.N).zsh; do
 done
 
 # load all *.zsh; delay loading LARGE_SCRIPTS
-LARGE_SCRIPTS=(envs python video)
+LARGE_SCRIPTS=(envs video)
 for f in $Z/*.zsh; do
     fname=$f:t:r
     
     (( ${LARGE_SCRIPTS[(I)fname]} )) \
         && zplugin ice lucid \
-        || zplugin ice lucid wait"2";
+        || zplugin ice lucid wait"0";
     zplugin snippet "$f"
      
     # zplugin ice silent wait"1"; zplugin snippet "$f"

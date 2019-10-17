@@ -1,6 +1,4 @@
 #!/bin/zsh
-# Base
-
 sv() {
 	npm run ${1:-dev}
 }
@@ -12,8 +10,3 @@ sv() {
 	pnpm run dev
 	open http://localhost:5000
 }
-
-
-# Production
-
-
