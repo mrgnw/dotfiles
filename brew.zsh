@@ -5,28 +5,30 @@ HOMEBREW_NO_AUTO_UPDATE=1
 # brew update > /dev/null;
 
 alias y='youtube-dl'
+alias cask='brew cask'
 
 # list installed homebrews
 brews() {	
 	brew info --json=v1 --installed | jq -r '. [] | "\(.name)||\(.desc)"' | column -t -s '||';
 }
 
-alias cask='brew cask'
-
-# fetch packages concurrently as others install
-brewin() {
-	case $# in
-		0) brew install;;
-		1) brew install $1;;
-		2) (brew install $@) & (brew fetch ${@:2});;
-	esac
-	brew update
-}
 caskin() {
-	case $# in
-		0) cask install;;
-		1) cask install $1;;
-		2) (cask install $@) & (cask fetch ${@:2});;
-	esac
+	(brew cask fetch ${@:2}) &
+	(
+		for INSTALL in "$@"
+		do
+			brew cask install $INSTALL
+		done
+	)
 	brew update
-}
+}}
+brewin() {
+	(brew fetch ${@:2}) &
+	(
+		for INSTALL in "$@"
+		do
+			brew install $INSTALL
+		done
+	)
+	brew update
+}}
