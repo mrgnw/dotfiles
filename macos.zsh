@@ -1,95 +1,37 @@
 #!/bin/zsh
-alias o='open .'
-alias ip='curl -sS ipinfo.io | jq --sort-keys'
-alias mic='SwitchAudioSource -t input -s "MacBook Pro Microphone"'
-
-
-# >= macOS 10.15 Catalina
-# if (defaults read loginwindow SystemVersionStampAsString > 10.15); then
-#   export ICLOUD="$HOME/Library/CloudStorage/iCloud\ Drive"
-# else
-export ICLOUD="$HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs"
-# fi
-alias icloud="cd $ICLOUD"
-export BG_DIR="$ICLOUD/Images/background"
-alias bgdir="cd $BG_DIR"
-
-
-text(){
-  open "sms://open?addresses=$1/&body=$2"
-}
-
-alias speed='speed-test' # install with npm install --global speed-test
-
-alias osa='osascript'
-alias osajs='osascript -il JavaScript'
-alias terminalcheat='open https://github.com/0nn0/terminal-mac-cheatsheet'
-alias chrome-rd='launchctl start org.chromium.chromoting && echo "chrome remote desktop should be running now"'
-
-#   Update all Wallpapers
-function wallpaper() {
-    sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$1'" && killall Dock 
-}
-
-
-
-# goal: index screenshot text using ocr
-ocr_meta(){
-  ocr=$(tesseract "$1" stdout)
-  # https://tinyapps.org/blog/201011300700_os_x_edit_metadata.html
-  # xattr -w "com.apple.metadata:kMDItem_ocr_capture" "$ocr" "$1"
-  xattr -w "com.apple.metadata:kMDItemFinderComment" "$ocr" "$1"
-  # saves it, but doesn't show up in file info or Spotlight
-}
-  
-
-
-
-
-# todo: mass install by appname, instead of id.
-# e.g. mas install lanscan = mas search lanscan » mas install 472226235
-
 if [[ $(uname) == "Darwin" ]]; then
+  alias o='open .'
+  alias ip='curl -sS ipinfo.io | jq --sort-keys'
+  alias mic='SwitchAudioSource -t input -s "MacBook Pro Microphone"'
 
-  # mojave
-  
-  
-  alias editHosts='sudo $EDITOR /etc/hosts'
-  
+  export ICLOUD="$HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs"
+  export BG_DIR="$ICLOUD/Images/background"
   alias icloud="cd $ICLOUD"
-  # change screenshot directory
-  screenshotDir() {
-	# todo: see if directory exists & create if it doesn't
-	defaults write com.apple.screencapture location $@; killall SystemUIServer
+  alias bgdir="cd $BG_DIR"
+
+  screenshotDir(){defaults write com.apple.screencapture location $@; killall SystemUIServer}
+  showFiles(){defaults write com.apple.finder ShowAllFiles TRUE; killall Finder}
+  hideFiles(){defaults write com.apple.finder ShowAllFiles FALSE; killall Finder}
+
+  sms(){
+    open "sms://open?addresses=$1/&body=$2"
+  }
+  alias osa='osascript'
+  alias js='osascript -il JavaScript'
+  # alias terminalcheat='open https://github.com/0nn0/terminal-mac-cheatsheet'
+  # alias chrome-rd='launchctl start org.chromium.chromoting && echo "chrome remote desktop should be running now"'
+
+  #   Update all Wallpapers
+  function wallpaper() {
+      sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$1'" && killall Dock
   }
 
-  # alias f='open .'
-  alias editHosts='sudo $EDITOR /etc/hosts'
-  alias showHiddenFiles='defaults write com.apple.finder ShowAllFiles TRUE; killall Finder'
-  alias hideHiddenFiles='defaults write com.apple.finder ShowAllFiles FALSE; killall Finder'
-
-  alias power='pmset -g'
-
   # Merge one folder into another.
-  # Like clicking & dragging it in, except it merges files
   merge() {
     echo "Merging $(basename $1) into $(basename $2)"
     ditto $@
     trash $1
   }
-
-  openGate() {
-    echo "Gatekeeper deactivated"
-    sudo spctl --master-disable
-    defaults write com.apple.LaunchServices LSQuarantine -bool NO
-  }
-
-  closeGate() {
-    echo "Gatekeeper re-activated"
-    sudo spctl --master-enable
-    defaults write com.apple.LaunchServices LSQuarantine -bool YES
-  }
-
 
   nocorners() {
     defaults write com.apple.dock wvous-bl-corner -int 0
@@ -142,7 +84,7 @@ if [[ $(uname) == "Darwin" ]]; then
   # "bl 0 0",
   # "tr 0 0"
   # ]
-  
+
   # Move the apps you never use to /Applications/Utilities
   # ex: TextEdit || TextEdit.app || /Applications/TextEdit.app
   buryApp() {
