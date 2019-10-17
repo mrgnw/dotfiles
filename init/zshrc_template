@@ -9,7 +9,8 @@ zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
 
 export Z="$HOME/.zsh"
 # private local files first
-for f in $Z/_*.zsh; do
+setopt null_glob  # (.N) returns '' if glob returns nothing
+for f in $Z/_*(.N).zsh; do
     zplugin ice lucid; zplugin snippet "$f"
 done
 
