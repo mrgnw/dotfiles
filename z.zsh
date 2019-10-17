@@ -1,5 +1,11 @@
 setopt autocd
 
+zplugin ice OMZ::zsh-users/zsh-autosuggestions silent wait"0";
+zplugin load zsh-users/zsh-autosuggestions
+
+# zplugin ice OMZ::zsh-users/zsh-history-substring-search silent wait"0";
+# zplugin load zsh-users/zsh-history-substring-search
+
 mzsh(){
   for f in $Z/init/**/*.sh; do
     echo "init $f";
