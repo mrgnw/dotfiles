@@ -7,6 +7,7 @@ CASKS=(
     spotify
     vscodium
     typora
+    notion
     slack
     firefox
     github
