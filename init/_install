@@ -1,4 +1,6 @@
 # download both at the same time
+xcode-select --install
+
 git clone https://github.com/mrgnw/mzsh ~/.zsh &
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
 
