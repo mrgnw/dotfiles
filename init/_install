@@ -1,15 +1,22 @@
-# download both at the same time
-xcode-select --install
+# step 1: quick download; we'll set up git later
+download_repo() {
+    tmp='~/Downloads/mzsh.zip'
+    curl -LG0 https://github.com/mrgnw/mzsh -o $tmp &&
+        unzip $tmp -d ~/.zsh &&
+        rm -f $tmp
 
-git clone https://github.com/mrgnw/mzsh ~/.zsh &
+    if ! grep -q mzsh ~/.zshrc; then
+        cat ~/.zsh/init/zshrc_template >>~/.zshrc
+    else
+        echo "~/.zshrc already contains mzsh"
+    fi
+}
+
+# download both at the same time
+download_repo &
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
 
-if ! grep -q mzsh ~/.zshrc; then
-    cat ~/.zsh/init/zshrc_template >> ~/.zshrc
-else 
-    echo "~/.zshrc already contains mzsh";
-fi
-
+# Step 2: Run the full install process
 echo ""
-echo "To run setup scripts, open a new terminal and type:"
+echo "To run set up scripts, open a new terminal and type:"
 echo "mzsh"
