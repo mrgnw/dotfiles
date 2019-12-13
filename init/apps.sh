@@ -1,5 +1,9 @@
 #!/usr/bin/env zsh
 
+# install homebrew if necessary
+which brew ||  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew update
+
 # brewin & caskin download packages concurrently as apps install
 CASKS=(
     1password
