@@ -1,9 +1,9 @@
 # step 1: quick download; we'll set up git later
 download_repo() {
-    tmp='~/Downloads/mzsh.zip'
-    curl -LG0 https://github.com/mrgnw/mzsh -o $tmp &&
-        unzip $tmp -d ~/.zsh &&
-        rm -f $tmp
+    tmp="$HOME/Downloads/mzsh.zip"
+    curl -LG https://github.com/mrgnw/mzsh/archive/master.zip -o "$tmp" &&
+        unzip -j "$tmp" -d ~/.zsh &&
+        rm -f "$tmp"
 
     if ! grep -q mzsh ~/.zshrc; then
         cat ~/.zsh/init/zshrc_template >>~/.zshrc
