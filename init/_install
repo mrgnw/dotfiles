@@ -1,7 +1,7 @@
 # step 1: quick download; we'll set up git later
 download_repo() {
     tmp="$HOME/Downloads/mzsh.zip"
-    curl -LG https://github.com/mrgnw/mzsh/archive/master.zip -o "$tmp" &&
+    curl -LGfsSL https://github.com/mrgnw/mzsh/archive/master.zip -o "$tmp" &&
         unzip -j "$tmp" -d ~/.zsh &&
         rm -f "$tmp"
 
