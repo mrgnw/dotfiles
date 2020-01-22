@@ -3,8 +3,10 @@ alias o='open .'
 ip(){curl -sS ipinfo.io | jq --sort-keys}
 mic(){SwitchAudioSource -t input -s "MacBook Pro Microphone"}
 
-icloud(){cd "$HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs"}
-bgdir(){cd "$HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs"}
+ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+
+icloud(){cd "$ICLOUD"}
+bgdir(){cd "$ICLOUD/Images/background"}
 
 screenshotDir(){defaults write com.apple.screencapture location $@; killall SystemUIServer}
 showFiles(){defaults write com.apple.finder ShowAllFiles TRUE; killall Finder}
