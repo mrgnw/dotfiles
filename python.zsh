@@ -22,12 +22,16 @@ py() {
 	fi
 }
 
+# default installs for most projects
++pips(){
+	pip install cython python-dotenv black
+}
+
 # create venv, set as directory default
 +v() {
-	pyenv virtualenv $PYTHON3_VERSION ${1:-${PWD##*/}}
+	pyenv virtualenv $(PYTHON3_VERSION) ${1:-${PWD##*/}}
 	pyenv local ${1:-${PWD##*/}}
-	# I basically always need cython
-	pip install cython
+	+pips
 }
 
 v() {
