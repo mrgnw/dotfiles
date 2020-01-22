@@ -17,7 +17,7 @@ alias cdd='cd ~/Downloads'
 alias ..='cd ..'
 alias lsl='ls -l --block-size=M'
 
-alias ❯=""
+❯(){""}
 export ZDIR="$HOME/.zsh"
 alias zd="cd $ZDIR"
 alias zed="edit $ZDIR"
@@ -56,6 +56,10 @@ rand(){
 }
 
 ksh() {(klist -s || kinit) && ssh $@}
+kshtail() {
+  ksh -t $1 "tail -f $2"
+}
+
 
 killport(){
   lsof -ti:$1 | xargs kill
