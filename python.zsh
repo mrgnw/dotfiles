@@ -39,11 +39,11 @@ v() {
 	fi
 }
 
+# new python env with gitignore & directory
 +py() {
-	# if no args:
+	# only mkdir + cd if specified
 	if [ "$#" -ge 1 ]; then
-		mkdir $1
-		cd $1
+		+d $1
 	fi
 	+v &
 	(curl https://www.gitignore.io/api/python >.gitignore)
@@ -51,4 +51,10 @@ v() {
 
 -v() {
 	pyenv uninstall ${1:-${PWD##*/}}
+}
+
+# fastapi starter
++fast() {
+	+py $1
+	pip install fastapi uvicorn
 }
