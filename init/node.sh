@@ -5,6 +5,8 @@ npm install --global pnpm
 
 NPMS=(
     degit
+    nanoid
+    nanoid-cli
     now
     npx
     speed-test
