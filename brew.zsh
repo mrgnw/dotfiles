@@ -8,12 +8,13 @@ alias y='youtube-dl'
 alias cask='brew cask'
 
 # list installed homebrews
-brews() {	
+brews() {
 	brew info --json=v1 --installed | jq -r '. [] | "\(.name)||\(.desc)"' | column -t -s '||';
 }
 
 caskin() {
-	(brew cask fetch ${@:2}) &
+	# only fetch if there are multiple
+	([[ "$#" -gt 1 ]] && (brew cask fetch ${@:2}) ) &
 	(
 		for INSTALL in "$@"
 		do
@@ -23,7 +24,8 @@ caskin() {
 	brew update
 }
 brewin() {
-	(brew fetch ${@:2}) &
+	# only fetch if there are multiple
+	([[ "$#" -gt 1 ]] && (brew fetch ${@:2}) ) &
 	(
 		for INSTALL in "$@"
 		do
