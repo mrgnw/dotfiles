@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+is_macos || return 1
 
 echo ""
 	echo "📁  FINDER & Dock"

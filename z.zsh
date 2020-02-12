@@ -6,6 +6,10 @@ zplugin load zsh-users/zsh-autosuggestions
 # zplugin ice OMZ::zsh-users/zsh-history-substring-search silent wait"0";
 # zplugin load zsh-users/zsh-history-substring-search
 
+# OS detection
+function is_macos() {
+  [[ "$OSTYPE" =~ ^darwin ]] || return 1
+
 mzsh(){
   for f in $Z/init/**/*.sh; do
     echo "init $f";

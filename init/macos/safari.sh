@@ -1,4 +1,6 @@
 #!/usr/bin/env zsh
+is_macos || return 1
+
 echo ""
 echo "🗺 Safari Dev tools"
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
