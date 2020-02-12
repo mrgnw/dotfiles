@@ -4,7 +4,7 @@ is_macos || return 1
 echo ""
 	echo "📁  FINDER & Dock"
 	# echo "🌒  Dark mode"
-	
+
 	echo "Start with a completely fresh dock"
 	defaults write com.apple.dock persistent-apps -array
 
@@ -22,8 +22,8 @@ echo ""
 	printf "Trackpad - Enable tap to click for current user and the login screen\n"
 	defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 	defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-	defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 
-	
+	defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int
+
 	printf "Trackpad - Use CONTROL (^) with scroll to zoom\n"
 	defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 	defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
@@ -46,7 +46,7 @@ echo ""
 	# Follow the keyboard focus while zoomed in
 	defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
-	
+
 
 	echo "   ♨️  Hot corners"
 	# Possible values:
