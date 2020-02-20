@@ -9,7 +9,7 @@ zplugin load zsh-users/zsh-autosuggestions
 # OS detection
 function is_macos() {
   [[ "$OSTYPE" =~ ^darwin ]] || return 1
-
+}
 mzsh(){
   for f in $Z/init/**/*.sh; do
     echo "init $f";
