@@ -42,23 +42,8 @@ buryThese=(
 echo "Burying rarely used apps to Utilities"
 sudo buryApp ${buryThese[@]}
 
-# Enable apps from everywhere - makes getting set up easier
-openGate
-
-finderDefaults
-safariDefaults
-
 git config --global core.excludesfile '~/.oh-my-zsh/custom/.gitignore_global'
 ln -s ~/.oh-my-zsh/custom/.gitignore_global ~/.config/git/ignore
-
-echo "App Store"
-init_mas
-echo "Homebrew"
-init_brew
-echo "Node"
-init_node
-
-configApps
 
 # Disable smart quotes. Ain't nobody need those
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
