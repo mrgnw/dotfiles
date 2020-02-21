@@ -1,0 +1,3 @@
+nrd(){
+	npm run dev
+}
