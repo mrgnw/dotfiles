@@ -62,6 +62,7 @@ BREWS=(
     httpie
     hub
     jq
+    spoof-mac
     tree
     youtube-dl
     switchaudio-osx
