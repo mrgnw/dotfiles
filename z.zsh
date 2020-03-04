@@ -6,6 +6,15 @@ zplugin load zsh-users/zsh-autosuggestions
 # zplugin ice OMZ::zsh-users/zsh-history-substring-search silent wait"0";
 # zplugin load zsh-users/zsh-history-substring-search
 
+# cd into the file's directory if it's a file
+function cd() {
+    if [ -d $1 ] ; then
+        builtin cd "$1"
+    else 
+        builtin cd "$(dirname $1)"
+    fi
+}
+
 # OS detection
 function is_macos() {
   [[ "$OSTYPE" =~ ^darwin ]] || return 1
