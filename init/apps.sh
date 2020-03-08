@@ -70,18 +70,21 @@ BREWS=(
 echo "  🍺 installing " $BREWS
 brewin $BREWS
 
-# source code pro
-brew tap homebrew/cask-fonts && brew cask install font-source-code-pro
+# `brew install user/repo/formula_name` does both `brew tap` & `brew install`
+TAPS=(
+    homebrew/cask-fonts/font-source-code-pro
+    federico-terzi/espanso/espanso
+)
+brewin $TAPS
+
 
 # github.com/sindresorhus/quick-look-plugins
 QUICKLOOKS=(
-    # quicklookase
     qlcolorcode
     qlimagesize
     qlmarkdown
     qlstephen
     qlvideo
-    quicklook-csv
     quicklook-json
     webpquicklook
 )
