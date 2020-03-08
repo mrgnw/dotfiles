@@ -7,6 +7,7 @@ ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 
 icloud(){cd "$ICLOUD"}
 bgdir(){cd "$ICLOUD/Images/background"}
+dev(){cd "$ICLOUD/dev/"}
 
 screenshotDir(){defaults write com.apple.screencapture location $@; killall SystemUIServer}
 showFiles(){defaults write com.apple.finder ShowAllFiles TRUE; killall Finder}
