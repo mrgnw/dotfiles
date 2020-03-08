@@ -15,6 +15,8 @@ function cd() {
     fi
 }
 
+export EDITOR=code
+
 # OS detection
 function is_macos() {
   [[ "$OSTYPE" =~ ^darwin ]] || return 1
