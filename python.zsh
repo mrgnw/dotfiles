@@ -34,7 +34,8 @@ py() {
 	+pips
 }
 
-v() {
+# activate env
+»() {
 	local VENVNAME=${1:-${PWD##*/}} #$1 or current dir name
 	if [ ! -d ~/.pyenv/versions/$VENVNAME ]; then
 		+v
