@@ -10,12 +10,15 @@ zplugin load zsh-users/zsh-autosuggestions
 function cd() {
     if [ -d $1 ] ; then
         builtin cd "$1"
-    else 
+    else
         builtin cd "$(dirname $1)"
     fi
 }
 
 export EDITOR=code
+edit(){
+  $EDITOR $A
+}
 
 # OS detection
 function is_macos() {
