@@ -3,9 +3,13 @@
 Dotifles that use [zplugin](https://github.com/zdharma/zplugin) for a really fast shell.
 
 ### [_install](init/_install)
-
+mac
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/mrgnw/mzsh/master/init/_install)"
+```
+linux
+```
+wget -O - https://raw.githubusercontent.com/mrgnw/mzsh/master/init/_install | bash
 ```
 
 Or do it manually:
