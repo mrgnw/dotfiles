@@ -1,0 +1,64 @@
+{
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": true,
+    "editor.tabSize": 4,
+    "editor.minimap.enabled": false,
+    "workbench.settings.editor": "json",
+    "workbench.activityBar.visible": false,
+    "editor.fontFamily": "SF Mono, Menlo, Monaco, 'Courier New', monospace",
+
+    "autoDarkMode.darkTheme": "Unicorn",
+    "autoDarkMode.lightTheme": "Eva Light",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "explorer.confirmDelete": false,
+    // "workbench.sideBar.location": "right",
+    "window.zoomLevel": 3,
+    "files.defaultLanguage": "python",
+    "files.exclude": {
+        "**/*.pyc": true
+    },
+    "editor.rulers": [
+        {
+            "column": 79,
+            "color": "#afdaff"
+        },
+        {
+            "column": 88,
+            "color": "#ff5100"
+        },
+    ],
+    "files.trimTrailingWhitespace": true,
+    "editor.trimAutoWhitespace": true,
+    "python.formatting.provider": "black",
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.jediEnabled": false,
+    "aws.profile": "profile:default",
+    "aws.telemetry": false,
+    "liveshare.audio.startCallOnShare": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "kite.showWelcomeNotificationOnStartup": false,
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "explorer.confirmDragAndDrop": false,
+    "gitlens.codeLens.enabled": false,
+    "git.autofetch": true,
+    "workbench.colorTheme": "Unicorn",
+    "breadcrumbs.enabled": false,
+    "editor.renderWhitespace": "all",
+    "vscode_custom_css.imports": [""],
+    "vscode_custom_css.policy": true,
+    "workbench.startupEditor": "newUntitledFile",
+}
