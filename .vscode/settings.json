@@ -61,4 +61,5 @@
     "vscode_custom_css.imports": [""],
     "vscode_custom_css.policy": true,
     "workbench.startupEditor": "newUntitledFile",
+    "rust-analyzer.checkOnSave.command": "clippy"
 }
