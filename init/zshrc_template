@@ -1,17 +1,17 @@
 
 
 # copied .zshrc file from github.com/mrgnw/dotfiles
-source "$HOME/.zplugin/bin/zplugin.zsh"
-(( ${+_comps} )) && _comps[zplugin]=_zplugin
+source "$HOME/.zinit/bin/zinit.zsh"
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
 # theme
-zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
+zinit ice pick"async.zsh" src"pure.zsh"; zinit light sindresorhus/pure
 
 export Z="$HOME/.zsh"
 # private local files first
 setopt null_glob  # (.N) returns '' if glob returns nothing
 for f in $Z/_*(.N).zsh; do
-    zplugin ice lucid; zplugin snippet "$f"
+    zinit ice lucid; zinit snippet "$f"
 done
 
 # load all *.zsh; delay loading LARGE_SCRIPTS
@@ -20,10 +20,10 @@ for f in $Z/*.zsh; do
     fname=$f:t:r
     
     (( ${LARGE_SCRIPTS[(I)fname]} )) \
-        && zplugin ice lucid \
-        || zplugin ice lucid wait"0";
-    zplugin snippet "$f"
+        && zinit ice lucid \
+        || zinit ice lucid wait"0";
+    zinit snippet "$f"
      
-    # zplugin ice silent wait"1"; zplugin snippet "$f"
+    # zinit ice silent wait"1"; zinit snippet "$f"
 done
 # end dotfiles zshrc
