@@ -1,6 +1,6 @@
 
 
-# copied .zshrc file from github.com/mrgnw/mzsh
+# copied .zshrc file from github.com/mrgnw/dotfiles
 source "$HOME/.zplugin/bin/zplugin.zsh"
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 
@@ -26,4 +26,4 @@ for f in $Z/*.zsh; do
      
     # zplugin ice silent wait"1"; zplugin snippet "$f"
 done
-# end mzsh zshrc
+# end dotfiles zshrc
