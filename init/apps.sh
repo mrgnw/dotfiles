@@ -1,35 +1,31 @@
 #!/usr/bin/env zsh
 
-# install homebrew if necessary
+# install/update homebrew
 which brew ||  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update
 
 # brewin & caskin download packages concurrently as apps install
 CASKS=(
     1password
-    pastebot
-    spotify
-    vscodium
-    typora
-    notion
-    slack
+    aerial
+    bartender
+    brave-browser
+    discord
+    docker
     firefox
     github
     iina
     istat-menus
-    
-    bartender
-    brave-browser
-    docker
-    kitematic
-    insomnia
-
-    alfred
     keycastr
+    kitematic
     macmediakeyforwarder
-    
-    sublime-text
-    aerial
+    notion
+    osxfuse
+    pastebot
+    slack
+    spotify
+    typora
+    visual-studio-code
 )
 echo "  🍺 installing " $CASKS
 caskin $CASKS
@@ -38,34 +34,32 @@ caskin $CASKS
 # requires manual sign in first. https://github.com/mas-cli/mas/issues/164
 brew install mas
 export MAS_APPS=(
-    975890633   # HotKey App (1.3.1)
-    441258766   # Magnet window manager
-    413857545   # divvy
-    419330170   # moom
-    1438243180  # dark reader
-    1055511498  # Day One
-    # 1006087419  # SnippetsLab
-    727593140   # VPN Unlimited
+    1438243180 # Dark Reader safari
+    1055511498 # Day One
+    413857545  # Divvy
+    975890633  # HotKey App (1.3.1)
+    441258766  # Magnet window manager
+    419330170  # Moom
+    727593140  # VPN Unlimited
 )
  mas install $MAS_APPS
 
 
 BREWS=(
-    git
-    node
-    pyenv
-    pyenv-virtualenv
-
     coreutils
     docker
     ffmpeg
+    git
     httpie
     hub
     jq
+    node
+    pyenv
+    pyenv-virtualenv
     spoof-mac
+    switchaudio-osx
     tree
     youtube-dl
-    switchaudio-osx
 )
 echo "  🍺 installing " $BREWS
 brewin $BREWS
