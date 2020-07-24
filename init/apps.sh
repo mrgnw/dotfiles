@@ -26,6 +26,7 @@ CASKS=(
     spotify
     typora
     visual-studio-code
+    zoomus
 )
 echo "  🍺 installing " $CASKS
 caskin $CASKS
@@ -39,6 +40,7 @@ export MAS_APPS=(
     413857545  # Divvy
     975890633  # HotKey App (1.3.1)
     441258766  # Magnet window manager
+    1510445899 # Meeter for Zoom, Teams & Co
     419330170  # Moom
     727593140  # VPN Unlimited
 )
