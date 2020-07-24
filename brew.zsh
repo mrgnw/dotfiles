@@ -11,38 +11,39 @@ export HOMEBREW_NO_GITHUB_API=1  # exclude issues in brew search
 alias y='youtube-dl'
 alias cask='brew cask'
 
-# list installed homebrews
+# list installed homebrews name & desc
 brews() {
 	brew info --json=v1 --installed | jq -r '. [] | "\(.name)||\(.desc)"' | column -t -s '||';
 }
 
-caskin() {
-	# only fetch if there are multiple
-	([[ "$#" -gt 1 ]] && (brew cask fetch ${@:2}) ) &
-	(
-		for INSTALL in "$@"
-		do
-			brew cask install $INSTALL
-		done
-	)
-	brew update
-}
-
-fetchdeps(){
-	for dep in $(brew deps $1); do
-		coproc brew fetch $dep; sleep .4;
+# install @ 10x parallel download
+b+() {
+	# TODO: check if it's installed before fetching
+	# downloads start with dependencies 💣
+	for INSTALL in "$@"; do
+		# todo: fix error when you try b+ user/repotap. Still works, but shows error
+		brew deps $INSTALL |
+			xargs -n 1 -P 10 -I -r '{}' zsh -c 'brew fetch {}'
+	done \
+	&
+	for INSTALL in "$@"; do
+		brew install $INSTALL
 	done
 }
 
-
-brewin() {
-	# only fetch if there are multiple
-	([[ "$#" -gt 1 ]] && (brew fetch ${@:2}) ) &
-	(
-		for INSTALL in "$@"
-		do
-			brew install $INSTALL
-		done
-	)
-	brew update
+# cask install @ 10x parallel download
+c+() {
+	# TODO: check if it's installed before fetching
+	# fetch casks
+	echo "${@}" | xargs -n 1 -P 8 -I '{}' zsh -c 'brew cask fetch {}' \
+	&
+	for INSTALL in "$@"; do
+		brew cask install $INSTALL
+	done
 }
+
+b-(){ echo "${@}" | xargs -n 1 -P 4 -I '{}' zsh -c 'brew uninstall {}' }
+b^(){ echo "${@}" | xargs -n 1 -P 8 -I '{}' zsh -c 'brew reinstall {}' }
+b»(){ echo "${@}" | xargs -n 1 -P 8 -I '{}' zsh -c 'brew upgrade {}' }
+caskun(){ echo "${@}" | xargs -n 1 -P 4 -I '{}' zsh -c 'brew cask uninstall {}' }
+caskre(){ echo "${@}" | xargs -n 1 -P 8 -I '{}' zsh -c 'brew cask reinstall {}'}
