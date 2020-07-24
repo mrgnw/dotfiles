@@ -1,6 +1,10 @@
 # homebrew, etc.
 
-HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_AUTO_UPDATE_SECS=300
+export HOMEBREW_CLEANUP_MAX_AGE_DAYS=30
+export HOMEBREW_DISPLAY_INSTALL_TIMES=1
+export HOMEBREW_NO_GITHUB_API=1  # exclude issues in brew search
 # or run after every session loads; only displays errors
 # brew update > /dev/null;
 
