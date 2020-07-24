@@ -19,10 +19,6 @@
     },
     "editor.rulers": [
         {
-            "column": 79,
-            "color": "#afdaff"
-        },
-        {
             "column": 88,
             "color": "#ff5100"
         },
@@ -60,5 +56,5 @@
     "editor.renderWhitespace": "all",
     "vscode_custom_css.imports": [""],
     "vscode_custom_css.policy": true,
-    "workbench.startupEditor": "newUntitledFile",
+
 }
