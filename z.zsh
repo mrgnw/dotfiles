@@ -17,7 +17,7 @@ function cd() {
 
 export EDITOR=code
 edit(){
-  $EDITOR $A
+  $EDITOR $@
 }
 
 # OS detection
