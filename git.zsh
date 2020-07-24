@@ -9,8 +9,8 @@ alias setglobalgitignore='git config --global core.excludesfile ~/.oh-my-zsh/cus
 
 # See pre-set git
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet#git
-  # gl = git pull
-  #
+# gl = git pull
+#
 
 alias gp='git pull'
 alias gs='git status'
@@ -21,12 +21,6 @@ alias gita='git add --all'
 alias gitc='git commit -m'
 alias gitglobal='git config --global --edit'
 
-yolo(){
-  git add --all;
-  git commit -m 'quick update';
-  git push;
-}
-
 # gitp ush
 alias gitp='git push;'
 alias ush=''
@@ -36,17 +30,37 @@ alias ush=''
 #     find . -type d -name .git -exec sh -c "cd \"{}\"/../ && pwd && git pull" \;
 # }
 
-rsa(){
-  if [[ ! -a ~/.ssh/id_rsa.pub ]]; then
-   ssh-keygen -t rsa -b 4096 -C morganfwilliams@gmail.com
- else
-   pbcopy < ~/.ssh/id_rsa.pub
+rsa() {
+  if [[ ! -e ~/.ssh/id_rsa.pub ]]; then
+    ssh-keygen -t rsa -b 4096 -C morganfwilliams@gmail.com
+  else
+    pbcopy <~/.ssh/id_rsa.pub
   fi
   echo "rsa copied"
 }
 
+# custom git command prototypes
 
-extract_untracked(){
-  rsync -R `git ls-files --others` "$1"
+yolo() {
+  # Only run on main
+  git add --all
+  git commit -m 'quick update'
+  git push
+}
+
+clear_merged_branches(){
+  git branch -d $(git branch --merged=master | grep -v master)
+}
+
+clear_old_branches() {
+  git branch -D $(git branch --sort=-committerdate |
+                  grep -v 'master\|main' |
+                  tail +16 |
+                  tr '\n' ' '
+                )
+}
+
+extract_untracked() {
+  rsync -R $(git ls-files --others) "$1"
   git clean -f
 }
