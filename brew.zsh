@@ -27,6 +27,14 @@ caskin() {
 	)
 	brew update
 }
+
+fetchdeps(){
+	for dep in $(brew deps $1); do
+		coproc brew fetch $dep; sleep .4;
+	done
+}
+
+
 brewin() {
 	# only fetch if there are multiple
 	([[ "$#" -gt 1 ]] && (brew fetch ${@:2}) ) &
