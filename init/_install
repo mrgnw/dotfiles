@@ -1,22 +1,3 @@
-# step 1: quick download; we'll set up git later
-download_repo() {
-    tmp="$HOME/Downloads/dotfiles.zip"
-    curl -LGfsSL https://github.com/mrgnw/dotfiles/archive/master.zip -o "$tmp" &&
-        unzip -j "$tmp" -d ~/.zsh &&
-        rm -f "$tmp"
-
-    if ! grep -q mrgnw/dotfiles ~/.zshrc; then
-        cat ~/.zsh/init/zshrc_template >>~/.zshrc
-    else
-        echo "~/.zshrc already references mrgnw/dotfiles"
-    fi
-}
-
-# download both at the same time
-download_repo &
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
-
-# Step 2: Run the full install process
-echo ""
-echo "To run set up scripts, open a new terminal and type:"
-echo "mzsh"
+sh -c "$(curl -fsSL https://git.io/zinit_install)" \
+  & git clone https://github.com/mrgnw/dotfiles ~/.zsh
+ln -s ~/.zsh/.zshrc ~/.zshrc

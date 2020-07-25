@@ -1,35 +1,19 @@
-# mzsh
+# mrgnw  dotfiles
 
-Dotifles that use [zplugin](https://github.com/zdharma/zplugin) for a really fast shell.
+### [Installation script](init/_install)
 
-### [_install](init/_install)
-mac
-```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/mrgnw/mzsh/master/init/_install)"
-```
-linux
-```
-wget -O - https://raw.githubusercontent.com/mrgnw/mzsh/master/init/_install | bash
-```
-
-Or do it manually:
-
-1. [Install zplugin](https://github.com/zdharma/zplugin#installation)
-
-2. Clone or [degit](https://github.com/Rich-Harris/degit) this project to ~/.zsh
+1. Run:
     ```sh
-    git clone https://github.com/mrgnw/mzsh ~/.zsh
-    ```
-    ```sh
-    degit https://github.com/mrgnw/mzsh ~/.zsh
+    # chsh -s /bin/zsh
+    sh -c "$(curl -fsSL https://git.io/mw_dotfiles)"
     ```
 
-3. Copy [zshrc_template](init/zshrc_template) into ~/.zshrc:
+2. Open a new terminal
 
-### [init/](init) setup scripts folder
+3. Run [install scripts](init)
 
-After the above setup, you can open a new tab and type `mzsh` to run all of the `.sh` scripts in the `init/` folder. These install apps, etc.
-
-#### Why a separate folder?
-
-These only need to happen once per computer setup, they don't need to be sourced every time you open a new shell.
+    ```
+    mzsh
+    ```
+    
+    
