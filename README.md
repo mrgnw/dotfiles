@@ -10,7 +10,7 @@
 
 2. Open a new terminal
 
-3. Run these [install scripts](init)
+3. To run the [install scripts](init):
 
     ```
     mzsh
