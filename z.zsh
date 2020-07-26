@@ -42,7 +42,7 @@ alias zed="edit $ZDIR"
 
 +d() { mkdir -p $1; cd $1 }
 
-zz(){zpl update}  # ; source $HOME/.zshrc
+zz(){zpl update -q}  # ; source $HOME/.zshrc
 
 # highlighters
 zplugin ice lucid wait"0";
