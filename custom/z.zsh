@@ -18,7 +18,7 @@ function cd() {
 }
 
 export EDITOR=code
-edit(){
+e(){
   $EDITOR $@
 }
 
@@ -40,7 +40,7 @@ alias lsl='ls -l --block-size=M'
 ❯(){""}
 export ZDIR="$HOME/.zsh"
 alias zd="cd $ZDIR"
-alias zed="edit $ZDIR"
+alias zed="e $ZDIR"
 
 +d() { mkdir -p $1; cd $1 }
 
