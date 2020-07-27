@@ -1,6 +1,12 @@
 setopt autocd
-setopt interactivecomments
+setopt auto_list
+setopt auto_menu
+setopt correct
+setopt auto_param_keys
+setopt hist_ignore_dups
+setopt interactive_comments
 
+export GREP_OPTIONS='--color=always'
 
 # cd into the file's directory if it's a file
 function cd() {
