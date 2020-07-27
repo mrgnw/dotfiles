@@ -1,10 +1,3 @@
-#!/bin/zsh
-# Convert to h265 without changing resolution.
-
-gif(){
-
-}
-
 # shortcuts determine whether to run on one file or directory
 xv(){
   case $# in

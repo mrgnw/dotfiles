@@ -1,4 +1,7 @@
-#!/bin/zsh
+nrd(){
+	npm run dev
+}
+
 sv() {
 	npm run ${1:-dev}
 }

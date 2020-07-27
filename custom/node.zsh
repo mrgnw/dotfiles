@@ -1,3 +1,0 @@
-nrd(){
-	npm run dev
-}

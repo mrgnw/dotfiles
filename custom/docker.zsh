@@ -2,7 +2,6 @@
 alias dockerrun='docker run -it $(docker build -q .)'
 
 dockerPulls(){
-
 	standardDocks=(
 		linuxserver/radarr
 		linuxserver/sonarr
@@ -14,7 +13,6 @@ dockerPulls(){
 		echo "🍺 loading the docks 🚢 🐳"
 		docker pull $d
 	done
-
 }
 
 # Run a docker command on multiple items
