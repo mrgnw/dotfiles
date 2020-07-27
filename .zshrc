@@ -16,9 +16,14 @@ zinit ice pick"async.zsh" src"pure.zsh";
 zinit light sindresorhus/pure
 
 # plugins
-zinit wait lucid for \
-        junegunn/fzf \
-        tj/git-extras
+zinit wait lucid light-mode for \
+    b4b4r07/enhancd \
+    junegunn/fzf \
+    tj/git-extras \
+    zdharma/history-search-multi-word \
+    zsh-users/zsh-autosuggestions \
+    zsh-users/zsh-completions \
+    zsh-users/zsh-syntax-highlighting
 
 # mrgnw/dotfiles
 export Z="$HOME/.zsh"
