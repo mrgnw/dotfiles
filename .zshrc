@@ -28,7 +28,6 @@ zinit wait lucid light-mode for \
 # mrgnw/dotfiles
 export Z="$HOME/.zsh"
 for f in $Z/**/*.zsh; do
-    zinit ice lucid wait"0";
-    zinit snippet "$f"
+    source "$f"
 done
 
