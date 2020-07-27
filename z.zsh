@@ -1,4 +1,5 @@
 setopt autocd
+setopt interactivecomments
 
 zplugin ice OMZ::zsh-users/zsh-autosuggestions silent wait"0";
 zplugin load zsh-users/zsh-autosuggestions

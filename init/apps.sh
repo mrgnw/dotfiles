@@ -4,7 +4,6 @@
 which brew ||  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update
 
-# brewin & caskin download packages concurrently as apps install
 CASKS=(
     1password
     aerial
@@ -15,6 +14,7 @@ CASKS=(
     firefox
     github
     iina
+    insomnia
     istat-menus
     keycastr
     kitematic
@@ -29,7 +29,8 @@ CASKS=(
     zoomus
 )
 echo "  🍺 installing " $CASKS
-caskin $CASKS
+# parallelized cask download + install
+c+ $CASKS
 
 # MAS
 # requires manual sign in first. https://github.com/mas-cli/mas/issues/164
@@ -64,14 +65,15 @@ BREWS=(
     youtube-dl
 )
 echo "  🍺 installing " $BREWS
-brewin $BREWS
+# parallelized brew download + install
+b+ $BREWS
 
 # `brew install user/repo/formula_name` does both `brew tap` & `brew install`
 TAPS=(
     homebrew/cask-fonts/font-source-code-pro
     federico-terzi/espanso/espanso
 )
-brewin $TAPS
+b+ $TAPS
 
 
 # github.com/sindresorhus/quick-look-plugins
@@ -84,7 +86,7 @@ QUICKLOOKS=(
     quicklook-json
     webpquicklook
 )
-caskin $QUICKLOOKS
+c+ $QUICKLOOKS
 # restart quicklook manager
 qlmanage -r
 brew cleanup
