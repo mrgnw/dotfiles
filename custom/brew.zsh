@@ -14,8 +14,8 @@ brews() {
 
 # parallel brew/cask
 b-(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew uninstall {}' }
-b^(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew reinstall {}' }
-b»(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew upgrade {}' }
+b»(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew reinstall {}' }
+b^(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew upgrade {}' }
 c+(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew cask install {}'}
 caskun(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew cask uninstall {}' }
 caskre(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew cask reinstall {}'}
