@@ -1,3 +1,4 @@
-sh -c "$(curl -fsSL https://git.io/zinit_install)" \
-  & git clone https://github.com/mrgnw/dotfiles ~/.zsh
+xcode-select --install
+git clone https://github.com/mrgnw/dotfiles ~/.zsh
 ln -s ~/.zsh/.zshrc ~/.zshrc
+sh -c "$(curl -fsSL https://git.io/zinit_install)"
