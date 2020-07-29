@@ -9,8 +9,6 @@ is_macos || return 1
 
 #  - set $BG_DIR as background dir
 
-xcode-select --install
-
 echo "📈  CPU usage shows in Activity Monitor Dock icon"
 defaults write com.apple.ActivityMonitor IconType -int 5
 
