@@ -4,7 +4,6 @@
 
 1. Install [zinit](https://github.com/zdharma/zinit) & these dotfiles:
     ```sh
-    # chsh -s /bin/zsh
     sh -c "$(curl -fsSL https://git.io/mw_init)"
     ```
 
