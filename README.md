@@ -12,6 +12,6 @@
 3. To run the [install scripts](init):
 
     ```
-    mzsh
+    .install
     ```
 
