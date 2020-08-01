@@ -6,7 +6,7 @@ brew cask
 
 CASKS=(
     1password
-    aerial
+    # aerial
     bartender
     brave-browser
     discord
@@ -37,6 +37,7 @@ brew install mas
 export MAS_APPS=(
     1438243180 # Dark Reader safari
     1055511498 # Day One
+    411643860  # Daisy Disk
     413857545  # Divvy
     975890633  # HotKey App (1.3.1)
     441258766  # Magnet window manager
@@ -65,20 +66,7 @@ BREWS=(
 echo "  🍺 installing " $BREWS
 # parallelized brew download + install
 b+ $BREWS
-
-# github.com/sindresorhus/quick-look-plugins
-QUICKLOOKS=(
-    qlcolorcode
-    qlimagesize
-    qlmarkdown
-    qlstephen
-    quicklook-json
-    webpquicklook
-)
-c+ $QUICKLOOKS
-# restart quicklook manager
-qlmanage -r
 brew cleanup
 
 # interactive 🗝
-brew cask install qlvideo zoomus
+brew cask install zoomus
