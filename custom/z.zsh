@@ -1,24 +1,15 @@
 setopt autocd
+setopt auto_list
+setopt auto_menu
+setopt correct
+setopt auto_param_keys
+setopt hist_ignore_dups
+setopt interactive_comments
 
-zplugin ice OMZ::zsh-users/zsh-autosuggestions silent wait"0";
-zplugin load zsh-users/zsh-autosuggestions
-
-# zplugin ice OMZ::zsh-users/zsh-history-substring-search silent wait"0";
-# zplugin load zsh-users/zsh-history-substring-search
-
-# cd into the file's directory if it's a file
-function cd() {
-    if [ -d $1 ] ; then
-        builtin cd "$1"
-    else
-        builtin cd "$(dirname $1)"
-    fi
-}
+export GREP_OPTIONS='--color=always'
 
 export EDITOR=code
-edit(){
-  $EDITOR $@
-}
+edit(){ $EDITOR $@ }
 
 # OS detection
 function is_macos() {
@@ -62,23 +53,10 @@ sping() { simpleping $@ }
 spg() { sp google.com }
 sp8() { sp 8.8.8.8 }
 
-daily(){
-  RAND_MIN=$(rand 30)
-  echo "10 $RAND_MIN * * 1-5"
-  (crontab -l ; echo "SHELL=/bin/zsh; 10 $RAND_MIN * * 1-5 $@") | crontab
-  crontab -l
-}
-
 rand(){
   python -c "from random import randrange; print(randrange(0, $1))"
 }
 
 ksh() {(klist -s || kinit) && ssh $@}
-kshtail() {
-  ksh -t $1 "tail -f $2"
-}
-
-
-killport(){
-  lsof -ti:$1 | xargs kill
-}
+kshtail() { ksh -t $1 "tail -f $2" }
+killport(){ lsof -ti:$1 | xargs kill }
