@@ -1,19 +1,5 @@
-
+#!/bin/zsh
 alias dockerrun='docker run -it $(docker build -q .)'
-
-dockerPulls(){
-	standardDocks=(
-		linuxserver/radarr
-		linuxserver/sonarr
-		linuxserver/transmission
-		jstewig/docker-vpn-unlimited
-		)
-
-	for d in $standardDocks; do
-		echo "🍺 loading the docks 🚢 🐳"
-		docker pull $d
-	done
-}
 
 # Run a docker command on multiple items
 # e.g. `dkr pull a b` = docker pull a; docker pull b;
