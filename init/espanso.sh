@@ -7,4 +7,4 @@ espanso install mac-symbols
 espanso install misspell-en_US --external
 
 espanso register
-# espanso restart
+espanso start
