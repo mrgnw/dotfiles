@@ -1,3 +1,4 @@
+#!/bin/zsh
 alias y='youtube-dl'
 alias cask='brew cask'
 
