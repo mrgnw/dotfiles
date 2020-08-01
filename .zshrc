@@ -17,13 +17,9 @@ zinit light sindresorhus/pure
 
 # plugins
 zinit wait lucid light-mode for \
-    b4b4r07/enhancd \
-    junegunn/fzf \
-    tj/git-extras \
     zdharma/history-search-multi-word \
     zsh-users/zsh-autosuggestions \
-    zsh-users/zsh-completions \
-    zsh-users/zsh-syntax-highlighting
+    zsh-users/zsh-completions
 
 # mrgnw/dotfiles
 export Z="$HOME/.zsh"

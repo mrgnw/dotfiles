@@ -49,7 +49,8 @@ export MAS_APPS=(
 BREWS=(
     docker
     ffmpeg
-    git
+    fzf
+    git-extras
     httpie
     jq
     node
