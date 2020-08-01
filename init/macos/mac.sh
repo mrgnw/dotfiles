@@ -39,7 +39,11 @@ buryThese=(
     'Time Machine'
     )
 echo "Burying rarely used apps to Utilities"
-sudo buryApp ${buryThese[@]}
+for x in $buryThese; do
+    app=$(basename "$x")
+    app="${app%.*}"
+    sudo mv /Applications/$app.app /Applications/Utilities/$app.app
+  done
 
 git config --global core.excludesfile '~/.oh-my-zsh/custom/.gitignore_global'
 ln -s ~/.oh-my-zsh/custom/.gitignore_global ~/.config/git/ignore
