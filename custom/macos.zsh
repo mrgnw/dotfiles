@@ -34,74 +34,43 @@ merge() {
   trash $1
 }
 
-nocorners() {
-  defaults write com.apple.dock wvous-bl-corner -int 0
-  defaults write com.apple.dock wvous-br-corner -int 0
-  defaults write com.apple.dock wvous-tl-corner -int 0
-  defaults write com.apple.dock wvous-tl-corner -int 0
-  defaults write com.apple.dock wvous-br-modifier -int 0
-  defaults write com.apple.dock wvous-bl-modifier -int 0
-  defaults write com.apple.dock wvous-tl-modifier -int 0
-  defaults write com.apple.dock wvous-t4-modifier -int 0
-}
-
 corner() {
-  base='defaults write com.apple.dock wvous-'
-
-  # modifiers
-  mod_none=0
-  mod_shift=131072
-  mod_control=262144
-  mod_option=524288
-  mod_cmd=1048576
-
-  # Possible values:
-  # tl, tr, bl, br = topleft, topright, bottomleft, bottomright
-  #  0: nothing
-  #  2: Mission Control
-  #  3: Show application windows
-  #  4: Desktop
-  #  5: Start screen saver
-  #  6: Disable screen saver
-  #  7: Dashboard
-  # 10: Sleep display
-  # 11: Launchpad
-  # 12: Notification Center
-  # 13: Lock screen
-
-  # $1 = $corner
-  # $2 = $action
-  # $3 = modifier
-
-  # ex: `corner tl 11 0`
-  echo "$base-$1-corner -int $2"
-  echo "$base-$1-modifier -int $3"
-
+  # args: corner action modifier
+  # ex: `corner tl launchpad`
+  
+  # $1 corners: 
+  #   tl, tr, bl, br = topleft, topright, bottomleft, bottomright
+  
+  # $2 action from this array
+  actions=(
+    -  # Nothing
+    mission_control
+    app_windows
+    desktop
+    start_screen_saver
+    disable_screen_saver
+    dashboard
+    8  # placeholder
+    9  # placeholder
+    sleep_display
+    launchpad
+    notification_center
+    lock_screen
+  )
+  action_input=$2
+  # get index of action
+  action_value="${actions[(ie)${action_input:-0}]}"
+  
+  
+  set_cmd='defaults write com.apple.dock wvous-'
+  # set corner
+  "$set_cmd-$1-corner -int $action_value"
+  # set modifier (shift/control/option/cmd)
+  "$set_cmd-$1-modifier -int ${3:-0}"  
+  
+  # $3 modifier default 0
+  #   131072  # shift
+  #   262144  # control
+  #   524288  # option
+  #   1048576 # cmd
 }
-
-# corner-defaults = [
-# "tl 0 0",
-# "tr 0 0",
-# "bl 0 0",
-# "tr 0 0"
-# ]
-
-# Move the apps you never use to /Applications/Utilities
-# ex: TextEdit || TextEdit.app || /Applications/TextEdit.app
-buryApp() {
-  for x in $@; do
-    app=$(basename "$x")
-    app="${app%.*}"
-
-    if [ -e /Applications/$app.app ]
-    then
-    sudo mv /Applications/$app.app /Applications/Utilities/$app.app
-    else if [ -e /Applications/Utilities/$app.app ]
-      then # It's already in Utilities
-        # echo " ➡️  Utilities $app"
-      else # It's not in Applications or Utilities
-        # echo "$app not in Applications or Utilities"
-      fi
-    fi
-  done
-  }
