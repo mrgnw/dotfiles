@@ -11,8 +11,6 @@ bgdir(){cd "$ICLOUD/Images/background"}
 dev(){cd "$ICLOUD/dev/"}
 
 screenshotDir(){defaults write com.apple.screencapture location $@; killall SystemUIServer}
-showFiles(){defaults write com.apple.finder ShowAllFiles TRUE; killall Finder}
-hideFiles(){defaults write com.apple.finder ShowAllFiles FALSE; killall Finder}
 
 sms(){
   open "sms://open?addresses=$1/&body=$2"
