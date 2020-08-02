@@ -31,6 +31,11 @@ echo "  🍺 installing " $CASKS
 # parallelized cask download + install
 c+ $CASKS
 
+# 1password extensions
+open -gj -a Safari https://1password.com/downloads/mac/#browsers
+open -gj -a firefox https://1password.com/browsers/firefox/
+open -gj -a "Brave Browser" https://chrome.google.com/webstore/detail/1password-extension-deskt/aomjjhallfgjeglblehebfpbcfeobpgk
+
 # MAS
 # requires manual sign in first. https://github.com/mas-cli/mas/issues/164
 brew install mas
