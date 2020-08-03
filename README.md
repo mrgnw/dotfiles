@@ -7,9 +7,7 @@
     sh -c "$(curl -fsSL https://git.io/mw_init)"
     ```
 
-2. Open a new terminal
-
-3. To run the [install scripts](init):
+1. To run the [install scripts](init), open a new terminal and run:
 
     ```
     .install
