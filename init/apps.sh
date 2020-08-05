@@ -56,6 +56,7 @@ BREWS=(
     docker
     ffmpeg
     fzf
+    git-delta
     git-extras
     httpie
     jq
