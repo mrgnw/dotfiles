@@ -8,7 +8,7 @@ Install [zinit](https://github.com/zdharma/zinit) & these dotfiles with:
 sh -c "$(curl -fsSL https://git.io/mw_init)"
 ```
 
-Then run [install scripts](init) in a new terminal:
+Then in a new terminal run the [install scripts](init):
 
 ```
 .install
