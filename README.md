@@ -2,16 +2,15 @@
 
 ### [Installation script](init/_install)
 
-1. Install [zinit](https://github.com/zdharma/zinit) & these dotfiles:
-    ```sh
-    sh -c "$(curl -fsSL https://git.io/mw_init)"
-    ```
+Install [zinit](https://github.com/zdharma/zinit) & these dotfiles with:
 
-2. Open a new terminal
+```sh
+sh -c "$(curl -fsSL https://git.io/mw_init)"
+```
 
-3. To run the [install scripts](init):
+Then in a new terminal run the [install scripts](init):
 
-    ```
-    .install
-    ```
+```
+.install
+```
 

@@ -16,7 +16,7 @@ edit(){ $EDITOR $@ }
 
 # simple ping function
 simpleping() {
-  ping $1 | awk \
+  ping $@ | awk \
   '{ gsub("time=", "") ;\
    gsub("icmp_seq=","");\
    print $5"\t" $7 " " $8 }'\
@@ -24,6 +24,10 @@ simpleping() {
 };
 sping() { simpleping ${@:-"8.8.8.8"} }
 alias sp='sping'
+
+pg_ping(){
+  pg_isready $@  && sleep 3 && pg_ping $@ || afplay /System/Library/Sounds/Ping.aiff
+}
 
 rand(){
   python -c "from random import randrange; print(randrange(0, $1))"
