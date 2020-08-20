@@ -36,7 +36,7 @@ py() {
 
 # activate env
 »() {
-	pyenv activate ${1:-}|| +v
+	pyenv activate ${1:-} # || +v
 }
 
 # new python env with gitignore & directory
