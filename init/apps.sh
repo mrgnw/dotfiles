@@ -17,9 +17,7 @@ CASKS=(
     insomnia
     istat-menus
     keycastr
-    kitematic
     macmediakeyforwarder
-    notion
     osxfuse
     pastebot
     slack
@@ -47,6 +45,7 @@ export MAS_APPS=(
     975890633  # HotKey App (1.3.1)
     441258766  # Magnet window manager
     1510445899 # Meeter for Zoom, Teams & Co
+    1153157709 # Speedtest by Ookla
     727593140  # VPN Unlimited
 )
  mas install $MAS_APPS
