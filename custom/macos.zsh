@@ -31,3 +31,10 @@ merge() {
   ditto $@
   trash $1
 }
+
+ramdisk() {
+  # 
+  ramdisksize=$(($1 * 2048 * 1024))
+  echo $ramdisksize
+  diskutil erasevolume HFS+ "RAM Disk $1gb" `hdiutil attach -nobrowse -nomount ram://$ramdisksize`
+}
