@@ -72,7 +72,7 @@ xmov(){
 x265-dir(){
   # ignore mp4's
   setopt extended_glob
-  for vid in **/*.(mp4|mkv|m4v);
+  for vid in **/*.(avi|mkv|wmv);
   x265 "$vid";
 }
 
