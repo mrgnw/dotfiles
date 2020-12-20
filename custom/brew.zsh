@@ -1,5 +1,4 @@
 #!/bin/zsh
-alias y='youtube-dl'
 alias cask='brew cask'
 
 export HOMEBREW_NO_AUTO_UPDATE=1
