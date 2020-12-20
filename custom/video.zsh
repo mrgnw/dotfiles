@@ -28,6 +28,26 @@ hvc(){
   esac
 }
 
+xwmv(){
+  local filename=$1:t:r
+  ffmpeg -hwaccel videotoolbox -i $1 -c:v libx265 -crf ${2:-25} -c:a aac -q:a 100 $filename.mp4
+}
+
+wmvv(){
+  for vid in */*.wmv;
+  xwmv "$vid"
+}
+
+av1(){
+  local filename=$1:t:r
+  ffmpeg -i $1 -c:v libaom-av1 -strict -2 $filename.mp4
+}
+
+bitrate-sample(){
+  ffprobe -i "$1" -select_streams v -show_entries packet=size:stream=duration -print_format compact=p=0:nk=1 \
+    -read_intervals "01:23%+#999"
+}
+
 # perform on individual file
 x265(){
   local filename=$1:t:r
