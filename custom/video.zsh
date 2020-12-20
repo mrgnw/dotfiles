@@ -1,4 +1,10 @@
 # shortcuts determine whether to run on one file or directory
+y() { youtube-dl $@ }
+yy() { echo "${@}" | xargs -n 1 -P 6 -I '{}' zsh -c 'youtube-dl "{}"' }
+y4(){
+  youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' $@
+}
+
 xv(){
   case $# in
     0) x265-dir;;
