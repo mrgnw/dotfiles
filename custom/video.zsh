@@ -58,7 +58,7 @@ xmov-dir(){
   # ignore mp4's
   local dest=$1
   setopt extended_glob
-  for vid in **/*.(mp4|mkv|m4v);
+  for vid in **/*.(avi|mkv|wmv);
   xmov "$vid" $dest;
 }
 
