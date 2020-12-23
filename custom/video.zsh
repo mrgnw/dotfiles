@@ -1,4 +1,7 @@
 # shortcuts determine whether to run on one file or directory
+ym4(){
+  youtube-dl https://www.youtube.com/watch?v=8B340ZkHU4Y $@
+}
 xv(){
   case $# in
     0) x265-dir;;
