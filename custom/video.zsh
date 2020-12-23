@@ -50,7 +50,7 @@ x265-dir(){
   # ignore mp4's
   setopt extended_glob
   for vid in **/*.(avi|mkv|wmv);
-  hevc "$vid";
+  x265 "$vid";
 }
 unblack(){
 	for vid in **/*.(avi|mkv|wmv);
