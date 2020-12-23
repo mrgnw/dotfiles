@@ -49,6 +49,10 @@ x265-dir(){
   for vid in **/*.(avi|mkv|wmv);
   hevc "$vid";
 }
+unblack(){
+	for vid in **/*.(avi|mkv|wmv);
+	ffmpeg -i "$vid"  -bsf:v mpeg4_unpack_bframes -vcodec copy "$vid"_unpack.mp4;
+}
 
 xmov-dir(){
   # ignore mp4's
