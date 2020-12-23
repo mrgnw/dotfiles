@@ -46,8 +46,8 @@ xmov(){
 x265-dir(){
   # ignore mp4's
   setopt extended_glob
-  for vid in **/*.(mp4|mkv|m4v);
-  x265 "$vid";
+  for vid in **/*.(avi|mkv|wmv);
+  hevc "$vid";
 }
 
 xmov-dir(){
