@@ -29,6 +29,8 @@ pg_ping(){
   pg_isready $@  && sleep 3 && pg_ping $@ || afplay /System/Library/Sounds/Ping.aiff
 }
 
+alias copylast="!-1 | pbcopy"
+
 rand(){
   python -c "from random import randrange; print(randrange(0, $1))"
 }

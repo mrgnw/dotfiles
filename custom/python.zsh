@@ -1,5 +1,6 @@
-zinit ice OMZ::davidparsson/zsh-pyenv-lazy silent wait"0b"
-zinit load davidparsson/zsh-pyenv-lazy
+# zinit ice OMZ::davidparsson/zsh-pyenv-lazy silent wait"0b"
+# zinit load davidparsson/zsh-pyenv-lazy
+
 
 jupy() {'jupyter notebook'}
 pi() {'pip install'}
@@ -11,7 +12,7 @@ setopt +o nomatch
 
 # find latest python3 version on pyenv
 PYTHON3_VERSION() {
-	pyenv install -l | grep -e '3.[0-9].[0-9]' | grep -v - | tail -1 | awk '{$1=$1};1'
+	pyenv install -l | grep -e '3.[0-9].[0-9]$' | grep -v - | tail -1 | awk '{$1=$1};1'
 }
 
 py() {
@@ -29,7 +30,7 @@ py() {
 
 # create venv, set as directory default
 +v() {
-	pyenv virtualenv $(PYTHON3_VERSION) ${1:-${PWD##*/}}
+	pyenv virtualenv "$(PYTHON3_VERSION)" ${1:-${PWD##*/}}
 	pyenv local ${1:-${PWD##*/}}
 	+pips
 }

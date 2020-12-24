@@ -1,7 +1,10 @@
 # shortcuts determine whether to run on one file or directory
-ym4(){
-  youtube-dl https://www.youtube.com/watch?v=8B340ZkHU4Y $@
+y() { youtube-dl $@ }
+yy() { echo "${@}" | xargs -n 1 -P 6 -I '{}' zsh -c 'youtube-dl "{}"' }
+y4(){
+  youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' $@
 }
+
 xv(){
   case $# in
     0) x265-dir;;
@@ -23,6 +26,26 @@ hvc(){
     0) tagvc-dir;;
     1) taghvc "$1";;
   esac
+}
+
+xwmv(){
+  local filename=$1:t:r
+  ffmpeg -hwaccel videotoolbox -i $1 -c:v libx265 -crf ${2:-25} -c:a aac -q:a 100 $filename.mp4
+}
+
+wmvv(){
+  for vid in */*.wmv;
+  xwmv "$vid"
+}
+
+av1(){
+  local filename=$1:t:r
+  ffmpeg -i $1 -c:v libaom-av1 -strict -2 $filename.mp4
+}
+
+bitrate-sample(){
+  ffprobe -i "$1" -select_streams v -show_entries packet=size:stream=duration -print_format compact=p=0:nk=1 \
+    -read_intervals "01:23%+#999"
 }
 
 # perform on individual file
