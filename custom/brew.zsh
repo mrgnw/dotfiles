@@ -16,13 +16,12 @@ brews() {
 b-(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew uninstall {}' }
 b»(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew reinstall {}' }
 b^(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew upgrade {}' }
-c+(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew cask install {}'}
+c+(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew install --cask {}'}
 caskun(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew cask uninstall {}' }
 caskre(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew cask reinstall {}'}
 
 # install @ 10x parallel download
 b+() {
-	# TODO: check if it's installed before fetching
 	# downloads start with dependencies 💣
 	for INSTALL in "$@"; do
 		# todo: fix error when you try b+ user/repotap. Still works, but shows error
