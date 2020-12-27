@@ -52,7 +52,7 @@ bitrate-sample(){
 x265(){
   local filename=$1:t:r
 
-  if ffmpeg -i "$1" -c:v libx265 -c:a copy -crf 25 -maxrate 25M -tag:v hvc1 "$filename"_x265.mp4; then
+  if ffmpeg -i "$1" -c:v libx265 -c:a copy -crf 20 -tag:v hvc1 "$filename"_x265.mp4; then
     trash "$1"
   else
     trash "$filename"_x265.mp4
