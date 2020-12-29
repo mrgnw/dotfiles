@@ -1,9 +1,6 @@
-# shortcuts determine whether to run on one file or directory
 y() { youtube-dl $@ }
 yy() { echo "${@}" | xargs -n 1 -P 6 -I '{}' zsh -c 'youtube-dl "{}"' }
-y4(){
-  youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' $@
-}
+y4(){ youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' $@ }
 
 xv(){
   case $# in
@@ -46,7 +43,7 @@ bitrate-sample(){
 # perform on individual file
 x265(){
   local filename=$1:t:r
-  if ffmpeg -i "$1" -c:v libx265 -c:a copy -crf 20 -maxrate 40M "$filename"_x265.mp4; then
+  if ffmpeg -i "$1" -c:v libx265 -c:a copy -crf 20 -tag:v hvc1 "$filename"_x265.mp4; then
     trash "$1"
   else
     trash "$filename"_x265.mp4

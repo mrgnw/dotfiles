@@ -1,7 +1,6 @@
 #!/bin/zsh
-function is_macos() {
-  [[ "$OSTYPE" =~ ^darwin ]] || return 1
-}
+function is_macos() { [[ "$OSTYPE" =~ ^darwin ]] || return 1 }
+function is_m1(){ [[ "Apple M1" == $(sysctl -n machdep.cpu.brand_string) ]] || return 1 }
 
 setopt autocd
 setopt auto_list
