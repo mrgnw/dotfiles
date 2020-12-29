@@ -30,17 +30,12 @@ hvc(){
 
 xwmv(){
   local filename=$1:t:r
-  ffmpeg -hwaccel videotoolbox -i $1 -c:v libx265 -crf ${2:-25} -c:a aac -q:a 100 $filename.mp4
+  ffmpeg -hwaccel videotoolbox -i $1 -c:v libx265 -crf 18 -c:a aac -q:a 100 $filename.mp4
 }
 
 wmvv(){
   for vid in */*.wmv;
   xwmv "$vid"
-}
-
-av1(){
-  local filename=$1:t:r
-  ffmpeg -i $1 -c:v libaom-av1 -strict -2 $filename.mp4
 }
 
 bitrate-sample(){
@@ -51,8 +46,7 @@ bitrate-sample(){
 # perform on individual file
 x265(){
   local filename=$1:t:r
-
-  if ffmpeg -i "$1" -c:v libx265 -c:a copy -crf 25 -maxrate 25M -tag:v hvc1 "$filename"_x265.mp4; then
+  if ffmpeg -i "$1" -c:v libx265 -c:a copy -crf 20 -maxrate 40M "$filename"_x265.mp4; then
     trash "$1"
   else
     trash "$filename"_x265.mp4
