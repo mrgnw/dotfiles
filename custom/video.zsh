@@ -62,6 +62,10 @@ xmov(){
   fi
 }
 
+mux(){
+  ffmpeg -i "$1" -c copy -c:s mov_text "$1".mp4
+}
+
 # loop through directory
 x265-dir(){
   # ignore mp4's

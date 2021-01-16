@@ -1,10 +1,16 @@
-# todo: show commands per file?
-
 alias cdd='cd ~/Downloads'
 alias ..='cd ..'
 alias ls='ls -h'
 alias la='ls -lah'
 +d() { mkdir -p $1; cd $1 }
+
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=1_000_000
+SAVEHIST=1_000_000
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt SHARE_HISTORY        # Share history between all sessions.
+# setopt INC_APPEND_HISTORY   # Write to the history file immediately, not when shell exits.
 
 ❯(){""}
 export ZDIR="$HOME/.zsh"

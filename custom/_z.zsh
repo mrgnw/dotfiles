@@ -8,6 +8,7 @@ setopt auto_menu
 setopt correct
 setopt auto_param_keys
 setopt hist_ignore_dups
+setopt null_glob
 setopt interactive_comments
 
 .install(){
