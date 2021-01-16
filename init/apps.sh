@@ -13,6 +13,7 @@ CASKS=(
     docker
     firefox
     github
+    golang
     iina
     insomnia
     istat-menus
