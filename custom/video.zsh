@@ -1,5 +1,8 @@
 y() { youtube-dl $@ }
-yy() { echo "${@}" | xargs -n 1 -P 6 -I '{}' zsh -c 'youtube-dl "{}"' }
+yy() { echo "${@}" | xargs -n 1 -P 6 -I '{}' zsh -c 'youtube-dl "{}" ' }
+yf() {
+    cat "${@}" | xargs -n 1 -P 8 -I '{}' zsh -c 'youtube-dl -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4" "{}"'
+}
 y4(){ youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' $@ }
 
 xv(){
@@ -27,7 +30,7 @@ hvc(){
 
 xwmv(){
   local filename=$1:t:r
-  ffmpeg -hwaccel videotoolbox -i $1 -c:v libx265 -crf 18 -c:a aac -q:a 100 $filename.mp4
+  ffmpeg -hwaccel videotoolbox -i "$1" -c:v libx265 -crf 18 -c:a aac -q:a 100 $filename.mp4
 }
 
 wmvv(){
@@ -63,8 +66,7 @@ xmov(){
 x265-dir(){
   # ignore mp4's
   setopt extended_glob
-  for vid in **/*.(avi|mkv|wmv);
-  x265 "$vid";
+  for vid in **/*.(avi|mkv|wmv); x265 "$vid";
 }
 unblack(){
 	for vid in **/*.(avi|mkv|wmv);
@@ -89,4 +91,8 @@ taghvc-dir(){
   setopt extended_glob
   for vid in *.*;
   taghvc "$vid";
+}
+
+mux(){
+  ffmpeg -i "$1" -c copy -c:s mov_text "$1".mp4
 }
