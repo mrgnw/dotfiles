@@ -1,6 +1,13 @@
 #!/usr/bin/env zsh
 is_macos || return 1
 
+ln -s "$ICLOUD"  icloud
+ln -s "$ICLOUD/dev"  idev
+ln -s "$spanso/shared"    "$(espanso path config)/user/shared"
+ln -s "$spanso/$(pcname)" "$(espanso path config)/user/$(pcname)"
+
+# ln -s $(scutil --get ComputerName)
+
 #  - set background to images in directory to $BG_DIR (defined in macos.zsh)
 # download: use github.com/farnots/iCloudDownloader
     # brew install icloud-downloader / icd
