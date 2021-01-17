@@ -1,20 +1,27 @@
 is_macos || return 1
+
+# icloud + synced private configs
 ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
-_dev="$ICLOUD/dev"
-bgdir="$ICLOUD/Images/background"}
+icfg="$ICLOUD/.config"
+spanso="$icfg/espanso"
+pcname() { scutil --get ComputerName }
+device="$icfg/devices/$(pcname)"
+
+for f in $device/*.zsh; do source "$f"; done
+
+icloud() { cd $ICLOUD }
+bgdir="$ICLOUD/Images/background"
+bgs() {cd $bgdir }
 
 alias o='open .'
-
-# icloud folder for syncing custom device scripts
-_device="$ICLOUD/.devices/$(sysctl -n hw.model)"
-mkdir -p $_device
-for f in $_device_cfg/*.zsh; do source "$f"; done
 
 ip() {curl -sS ipinfo.io | jq --sort-keys}
 mic() {SwitchAudioSource -t input -s "MacBook Pro Microphone"}
 
-screendir() {defaults write com.apple.screencapture location $@
-killall SystemUIServer}
+screens() {
+    defaults write com.apple.screencapture location $@
+    killall SystemUIServer
+}
 
 sms() {
     open "sms://open?addresses=$1/&body=$2"
