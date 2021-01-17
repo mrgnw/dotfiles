@@ -1,18 +1,18 @@
 #!/usr/bin/env zsh
 is_macos || return 1
 
-ln -s "$ICLOUD"  icloud
-ln -s "$ICLOUD/dev"  idev
-ln -s "$spanso/shared"    "$(espanso path config)/user/shared"
+ln -s "$ICLOUD" icloud
+ln -s "$ICLOUD/dev" idev
+ln -s "$spanso/shared" "$(espanso path config)/user/shared"
 ln -s "$spanso/$(pcname)" "$(espanso path config)/user/$(pcname)"
 
 # ln -s $(scutil --get ComputerName)
 
 #  - set background to images in directory to $BG_DIR (defined in macos.zsh)
 # download: use github.com/farnots/iCloudDownloader
-    # brew install icloud-downloader / icd
-    # icd $ICLOUD/images/background
-    # icd $ICLOUD/images/background/vertical
+# brew install icloud-downloader / icd
+# icd $ICLOUD/images/background
+# icd $ICLOUD/images/background/vertical
 
 #  - set $BG_DIR as background dir
 
@@ -28,29 +28,30 @@ echo "   📂 ~/Pictures/Screenshots "
 mkdir ~/Pictures/Screenshots
 screenshotDir ~/Pictures/Screenshots
 echo "   🏷 Name =  {date & time}.png"
-defaults write com.apple.screencapture name ; killall SystemUIServer
+defaults write com.apple.screencapture name 
+killall SystemUIServer
 
 # Move apps that I rarely use into the Utilities folder
 buryThese=(
-    'Automator'
-    'Chess'
-    'DVD Player'
-    'Font Book'
-    'Image Capture'
-    'Launchpad'
-    'Mail'
-    'Mission Control'
-    'Photo Booth'
-    'Stickies'
-    'TextEdit'
-    'Time Machine'
-    )
+	'Automator'
+	'Chess'
+	'DVD Player'
+	'Font Book'
+	'Image Capture'
+	'Launchpad'
+	'Mail'
+	'Mission Control'
+	'Photo Booth'
+	'Stickies'
+	'TextEdit'
+	'Time Machine'
+)
 echo "Burying rarely used apps to Utilities"
 for x in $buryThese; do
-    app=$(basename "$x")
-    app="${app%.*}"
-    sudo mv /Applications/$app.app /Applications/Utilities/$app.app
-  done
+	app=$(basename "$x")
+	app="${app%.*}"
+	sudo mv /Applications/$app.app /Applications/Utilities/$app.app
+done
 
 git config --global core.excludesfile '~/.oh-my-zsh/custom/.gitignore_global'
 ln -s ~/.oh-my-zsh/custom/.gitignore_global ~/.config/git/ignore

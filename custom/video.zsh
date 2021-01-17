@@ -1,7 +1,8 @@
 y() { youtube-dl $@ }
 yy() { echo "${@}" | xargs -n 1 -P 6 -I '{}' zsh -c 'youtube-dl "{}" ' }
 yf() {
-    cat "${@}" | xargs -n 1 -P 8 -I '{}' zsh -c 'youtube-dl -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4" "{}"'
+    xargs -n 1 -P 8 -I '{}' \
+    zsh -c 'youtube-dl -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4" "{}"' < $1
 }
 y4(){ youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' $@ }
 

@@ -8,7 +8,7 @@ setopt auto_menu
 setopt correct
 setopt auto_param_keys
 setopt hist_ignore_dups
-setopt null_glob
+setopt null_glob  # don't error if glob returns nothing
 setopt interactive_comments
 
 .install(){
@@ -17,3 +17,4 @@ setopt interactive_comments
     source "$f";
   done
 }
+
