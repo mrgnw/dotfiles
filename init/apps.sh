@@ -72,6 +72,23 @@ BREWS=(
 echo "  🍺 installing " $BREWS
 # parallelized brew download + install
 b+ $BREWS
+
+espanso install mac-symbols
+
+
+quicklooks=(
+    qlcolorcode
+    qlstephen
+    qlmarkdown
+    quicklook-json
+    qlimagesize
+    suspicious-package
+    apparency
+    quicklookasel
+    qlvideo
+)
+b+ $quicklooks
+
 brew cleanup
 
 # interactive 🗝
