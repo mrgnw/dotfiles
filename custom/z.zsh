@@ -42,8 +42,8 @@ rand(){
 }
 
 sshake(){
-    ssh-keygen -t rsa
-    ssh-copy-id $@
+    ls $HOME/.ssh/id_rsa || ssh-keygen -t rsa;
+    ssh-copy-id $@;
 }
 
 ksh() {(klist -s || kinit) && ssh $@}
