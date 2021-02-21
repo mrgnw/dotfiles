@@ -2,10 +2,12 @@ is_macos || return 1
 
 # icloud + synced private configs
 ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+
+# assumes folders don't conflict with $(pcname)
 icfg="$ICLOUD/.config"
-spanso="$icfg/espanso"
+device="$icfg/$(pcname)"
+
 pcname() { scutil --get ComputerName }
-device="$icfg/devices/$(pcname)"
 
 for f in $device/*.zsh; do source "$f"; done
 

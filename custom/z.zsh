@@ -41,6 +41,11 @@ rand(){
   python -c "from random import randrange; print(randrange(0, $1))"
 }
 
+sshake(){
+    ls $HOME/.ssh/id_rsa || ssh-keygen -t rsa;
+    ssh-copy-id $@;
+}
+
 ksh() {(klist -s || kinit) && ssh $@}
 kshtail() { ksh -t $1 "tail -f $2" }
 killport(){ lsof -ti:$1 | xargs kill }
