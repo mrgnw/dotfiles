@@ -57,5 +57,4 @@ shtime() {
 }
 alias sht='shtime'
 
-export GREP_OPTIONS='--color=always'
 export CLICOLOR=1
