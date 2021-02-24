@@ -1,10 +1,11 @@
-
 nr() {
 	npm run ${1:-dev}
 }
 
-+s(){
-	npx create-snowpack-app $1 --template @snowpack/app-template-svelte
-	cd $1
-    npm install svelte mdsvex --save
++s() {
+	appdir="${1:-sv$(randomword) }"
+	npx create-snowpack-app $appdir --template @snowpack/app-template-svelte --use-yarn
+	cd $appdir
+	yarn add svelte mdsvex
+	yarn add snowpack-plugin-mdsvex -D
 }
