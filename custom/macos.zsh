@@ -8,6 +8,7 @@ ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 icfg="$ICLOUD/.config"
 device="$icfg/$(pcname)"
 
+for f in $icfg/*.zsh; do source "$f"; done
 for f in $device/*.zsh; do source "$f"; done
 
 icloud() { cd $ICLOUD }
