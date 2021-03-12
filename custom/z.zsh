@@ -57,5 +57,7 @@ shtime() {
 }
 alias sht='shtime'
 
-export GREP_OPTIONS='--color=always'
 export CLICOLOR=1
+
+randomword(){ sed `perl -e "print int rand(99999)"`"q;d" /usr/share/dict/words }
+alias word='echo $(randomword)'

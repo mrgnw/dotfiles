@@ -12,3 +12,8 @@ rsa() {
   fi
   echo "rsa copied"
 }
+
+deg() {
+    degit $@
+    cd $1
+}
