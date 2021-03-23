@@ -4,8 +4,8 @@ nr() {
 
 +s() {
 	appdir="${1:-sv$(randomword) }"
-	npx create-snowpack-app $appdir --template @snowpack/app-template-svelte --use-yarn
-	cd $appdir
-	yarn add svelte mdsvex
-	yarn add snowpack-plugin-mdsvex -D
+    git clone https://github.com/sveltejs/kit "$appdir"
+    cd $appdir
+    pnpm i
+    pnpm -r build
 }
