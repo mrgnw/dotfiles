@@ -1,7 +1,6 @@
 # zinit ice OMZ::davidparsson/zsh-pyenv-lazy silent wait"0b"
 # zinit load davidparsson/zsh-pyenv-lazy
 
-
 jupy() {'jupyter notebook'}
 pi() {'pip install'}
 pu() {'pip uninstall'}
@@ -17,41 +16,32 @@ PYTHON3_VERSION() {
 }
 
 py() {
-	if [ "$#" -eq "0" ]; then
-		python
-	else
-		python -m $@
+	if [ "$#" -eq "0" ];
+    then python
+	else python -m $@
 	fi
 }
 
 # default installs for most projects
-+pips(){
-	pip install cython python-dotenv black
-}
++pips(){ pip install cython python-dotenv black }
 
-# create venv, set as directory default
+# activate env
+»(){ pyenv activate ${1:-} }
+«(){ pyenv deactivate }
 +v() {
 	pyenv virtualenv "$(PYTHON3_VERSION)" ${1:-${PWD##*/}}
 	pyenv local ${1:-${PWD##*/}}
 	+pips
 }
-
-# activate env
-»(){ pyenv activate ${1:-} }
-«(){ pyenv deactivate }
+-v() { pyenv uninstall ${1:-${PWD##*/}} }
 
 # new python env with gitignore & directory
 +py() {
 	# only mkdir + cd if specified
-	if [ "$#" -ge 1 ]; then
-		+d $1
+	if [ "$#" -ge 1 ];
+    then +d $1
 	fi
-	+v &
-	(curl https://www.gitignore.io/api/python >.gitignore)
-}
-
--v() {
-	pyenv uninstall ${1:-${PWD##*/}}
+	+v & (curl https://www.gitignore.io/api/python >.gitignore)
 }
 
 # fastapi starter
