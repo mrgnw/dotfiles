@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 is_macos || return 1
 
-ln -s "$ICLOUD" icloud
-ln -s "$ICLOUD/dev" idev
+ln -s "$ICLOUD" "$HOME/icloud"
+ln -s "$ICLOUD/dev" "$HOME/idev"
 
 # Setup iCloud synced directories per user & device
 mkdir -p "$device"
