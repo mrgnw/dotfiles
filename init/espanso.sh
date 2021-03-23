@@ -1,4 +1,11 @@
 # my package
+
+if [[ is_macos ]];
+then
+    brew install federico-terzi/espanso/espanso
+else
+    sudo snap install espanso --classic
+fi
 espanso install espansos https://github.com/mrgnw/espansos --external
 
 # community packages

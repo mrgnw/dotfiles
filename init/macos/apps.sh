@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+is_macos || return 1
 
 # install/update homebrew
 which brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"

@@ -1,9 +1,15 @@
 #!/usr/bin/env zsh
 
-brew install node
-npm install --global pnpm
+if [[ is_macos ]]; then
+    brew install node
+    npm install --global pnpm
+fi
+if [[ is_linux ]]; then
+    sudo dnf install -y nodejs
+    npm install --global pnpm
+fi
 
-NPMS=(
+node_apps=(
 	degit
 	nanoid
 	nanoid-cli
@@ -11,6 +17,5 @@ NPMS=(
 	npx
 	speed-test
 	spoof
-	surge
 )
-pnpm install --global $NPMS
+pnpm install --global $node_apps
