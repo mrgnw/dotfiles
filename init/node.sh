@@ -1,19 +1,10 @@
 #!/usr/bin/env zsh
 
-if [[ is_macos ]]; then
-    brew install node
-    npm install --global pnpm
-fi
-if [[ is_linux ]]; then
-    sudo dnf install -y nodejs
-    npm install --global pnpm
-fi
+brew install node || sudo dnf install -y nodejs
+sudo npm install --global pnpm
 
 node_apps=(
 	degit
-	nanoid
-	nanoid-cli
-	now
 	npx
 	speed-test
 	spoof

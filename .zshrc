@@ -13,14 +13,14 @@ autoload -Uz _zinit
 
 # Theme
 zinit ice pick"async.zsh" src"pure.zsh";
-zinit light sindresorhus/pure
+zinit light sindresorhus/pure;
 
 # plugins
 zinit wait lucid light-mode for \
     zdharma/fast-syntax-highlighting \
     zdharma/history-search-multi-word \
     zsh-users/zsh-autosuggestions \
-    zsh-users/zsh-completions
+    zsh-users/zsh-completions;
 
 # mrgnw/dotfiles
 export Z="$HOME/.zsh"
