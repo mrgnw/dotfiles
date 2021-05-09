@@ -5,8 +5,6 @@ apps=(
     openssh-server
     flatpak
     docker-compose
-    # snapd
-    # kde-plasma-desktop
 )
 
 sudo apt-get update
