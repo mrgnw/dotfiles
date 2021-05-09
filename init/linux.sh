@@ -6,7 +6,7 @@ apps=(
     flatpak
     snapd
     docker-compose
-    kde-plasma-desktop
+    # kde-plasma-desktop
 )
 
 sudo apt-get update
