@@ -4,8 +4,8 @@ apps=(
     curl
     openssh-server
     flatpak
-    snapd
     docker-compose
+    # snapd
     # kde-plasma-desktop
 )
 
