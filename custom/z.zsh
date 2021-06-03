@@ -10,10 +10,15 @@ alias ls='ls -h'
 alias la='ls -lah'
 
 +d() { mkdir -p $1; cd $1 }
-
 rand(){ python -c "from random import randrange; print(randrange(0, ${1:-10}))" }
-scr() { screen -D -R -S $1 $@ }
 word(){ sed `perl -e "print int rand(99999)"`"q;d" /usr/share/dict/words }
+
+scr() {
+	if [ "$#" -eq "0" ];
+        then screen -ls;
+	    else screen -D -R -S $1 $@;
+	fi
+}
 
 # CONF
 HISTFILE="$HOME/.zsh_history"
