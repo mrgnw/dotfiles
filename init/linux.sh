@@ -4,9 +4,7 @@ apps=(
     curl
     openssh-server
     flatpak
-    snapd
     docker-compose
-    kde-plasma-desktop
 )
 
 sudo apt-get update
@@ -17,6 +15,7 @@ sudo apt-get install -y $apps
  apps2=(
  	obs-studio
 	lutris
+    latte-dock
  )
  sudo apt-get install -y $apps2
 
