@@ -13,6 +13,9 @@ alias la='ls -lah'
 rand(){ python -c "from random import randrange; print(randrange(0, ${1:-10}))" }
 word(){ sed `perl -e "print int rand(99999)"`"q;d" /usr/share/dict/words }
 
+# add line if it's not already there
++line(){ grep -qF -- "$2" "$1" || echo "$2" >> "$1"}
+
 scr() {
 	if [ "$#" -eq "0" ];
         then screen -ls;
