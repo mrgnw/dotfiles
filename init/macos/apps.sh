@@ -59,6 +59,7 @@ BREWS=(
 	git-delta
 	git-extras
 	httpie
+	gping
 	jq
 	node
 	pyenv
