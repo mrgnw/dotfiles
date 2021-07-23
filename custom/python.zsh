@@ -1,7 +1,7 @@
 # zinit ice OMZ::davidparsson/zsh-pyenv-lazy silent wait"0b"
 # zinit load davidparsson/zsh-pyenv-lazy
 
-jupy() {'jupyter notebook'}
+alias jupy='jupyter notebook'
 pi() {'pip install'}
 pu() {'pip uninstall'}
 pf() {'pip freeze'}
