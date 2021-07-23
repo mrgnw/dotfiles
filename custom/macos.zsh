@@ -17,7 +17,6 @@ bgs() {cd $bgdir }
 
 alias o='open .'
 
-ip() {curl -sS ipinfo.io | jq --sort-keys}
 mic() {SwitchAudioSource -t input -s "MacBook Pro Microphone"}
 
 screens() {

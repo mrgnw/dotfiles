@@ -1,17 +1,27 @@
-sping() {
+# simple ping
+sp() {
   ping ${@:-"1.1.1.1"} | awk \
   '{ gsub("time=", "") ;\
    gsub("icmp_seq=","");\
    print $5"\t" $7 " " $8 }'\
    OFMT="%.0f";
 };
-alias sp='sping'
 
+# ssh
+ksh() {(klist -s || kinit) && ssh $@}
 sshake(){
     ls $HOME/.ssh/id_rsa || ssh-keygen -t rsa;
     ssh-copy-id $@;
 }
-
-ksh() {(klist -s || kinit) && ssh $@}
 kshtail() { ksh -t $1 "less +F $2" }
+
+# ports
 killport(){ lsof -ti:$1 | xargs kill }
+pforward(){
+    FWD_FROM_HOST=$1
+    FWD_FROM_PORT=$2
+    FWD_TO_PORT=${3:-$2}
+    ssh -L $FWD_TO_PORT:$FWD_FROM_HOST:$FWD_FROM_PORT -N 127.0.0.1
+}
+
+ip() {curl -sS ipinfo.io | jq '{ip:.ip, city:.city, country:.country}'}
