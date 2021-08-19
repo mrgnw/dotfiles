@@ -1,5 +1,10 @@
-# Get rds address by identifier
-rds-address(){
-    pyenv activate current
-    aws rds describe-db-instances --db-instance-identifier $1 | jq '.DBInstances[0].Endpoint.Address'
+
+ec2(){
+    filters="$1"
+    baseQuery='.Reservations[].Instances[]'
+    flattenObjs='(.Tags | map( {(.Key): .Value} ) | add)'
+    filterByKeys='with_entries(select([.key] | inside(["PrivateDnsName", "InstanceType"])))'
+
+    aws ec2 describe-instances --filters "$filters" | jq "$baseQuery | $flattenObjs * $filterByKeys"    
+    # todo: jq filter by [key1=value1, key2=value2]
 }
