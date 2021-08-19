@@ -27,8 +27,6 @@ screens() {
 sms() {
     open "sms://open?addresses=$1/&body=$2"
 }
-osa() {osascript}
-js() {osascript -il JavaScript}
 
 #   Update all Wallpapers
 function wallpaper() {
