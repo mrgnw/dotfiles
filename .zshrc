@@ -28,3 +28,4 @@ for f in $Z/**/*.zsh; do
     source "$f"
 done
 
+export PATH="/usr/local/sbin:$PATH"
