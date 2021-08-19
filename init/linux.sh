@@ -9,7 +9,8 @@ apps=(
 	openssh-server
 	flatpak
 	docker-compose
-	ncdu  # disk space analyzer
+	diskonaut
+	ripgrep
 )
 
 sudo apt update
@@ -17,14 +18,16 @@ sudo apt install -y $apps
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install jq tgotwig/linux-dust
-
-apps2=(
-	obs-studio
-	lutris
-	latte-dock
+brews=(
+	jq
+	tealdeer
+	# rs/tap/curlie
+	choose-rust
+	zoxide
+	glances
+	clementtsang/bottom
 )
-sudo apt install -y $apps2
+brew install $brews
 
 # flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
