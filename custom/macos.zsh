@@ -47,8 +47,3 @@ ramdisk() {
     echo $ramdisksize
     diskutil erasevolume HFS+ "RAM Disk $1gb" $(hdiutil attach -nobrowse -nomount ram://$ramdisksize)
 }
-
-is_m1  || return 1
-
-export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
-alias ibrew='arch -x86_64 /usr/local/bin/brew'
