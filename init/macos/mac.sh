@@ -4,21 +4,6 @@ is_macos || return 1
 ln -s "$ICLOUD" "$HOME/icloud"
 ln -s "$ICLOUD/dev" "$HOME/idev"
 
-# Setup iCloud synced directories per user & device
-mkdir -p "$device"
-mkdir -p "$icfg/espanso"
-mkdir -p "$device/espanso"
-ln -s "$icfg/espanso" "$(espanso path config)/user/shared"
-ln -s "$device/espanso" "$(espanso path config)/user/$(pcname)"
-
-#  - set background to images in directory to $BG_DIR (defined in macos.zsh)
-# download: use github.com/farnots/iCloudDownloader
-# brew install icloud-downloader / icd
-# icd $ICLOUD/images/background
-# icd $ICLOUD/images/background/vertical
-
-#  - set $BG_DIR as background dir
-
 echo "📈  CPU usage shows in Activity Monitor Dock icon"
 defaults write com.apple.ActivityMonitor IconType -int 5
 
@@ -34,7 +19,7 @@ echo "   🏷 Name =  {date & time}.png"
 defaults write com.apple.screencapture name 
 killall SystemUIServer
 
-# Move apps that I rarely use into the Utilities folder
+# Rarely used apps -->  Utilities folder
 buryThese=(
 	'Automator'
 	'Chess'
