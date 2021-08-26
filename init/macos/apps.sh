@@ -22,27 +22,6 @@ CASKS=(
 	typora
 	visual-studio-code
 )
-echo "  🍺 installing " $CASKS
-# parallelized cask download + install
-c+ $CASKS
-
-# 1password extensions
-open -gj -a Safari https://1password.com/downloads/mac/#browsers
-
-# MAS
-# requires manual sign in first. https://github.com/mas-cli/mas/issues/164
-brew install mas
-export MAS_APPS=(
-	1438243180 # Dark Reader safari
-	411643860  # Daisy Disk
-	# 413857545  # Divvy
-	975890633  # HotKey App (1.3.1)
-	# 441258766  # Magnet window manager
-	1510445899 # Meeter for Zoom, Teams & Co
-	1153157709 # Speedtest by Ookla
-	# 727593140  # VPN Unlimited
-)
-mas install $MAS_APPS
 
 BREWS=(
 	docker
@@ -67,9 +46,32 @@ BREWS=(
 	choose-rust
 	procs
 )
-echo "  🍺 installing " $BREWS
-# parallelized brew download + install
-b+ $BREWS
+echo "  🍻 Installing casks & brews in parallel! 🍻"
+echo "  🍺 brew install" $BREWS
+echo "  🍺 brew install --cask" $CASKS
+
+c+ $CASKS & b+ $BREWS
+
+espanso install mac-symbols
+
+# 1password extensions
+open -gj -a Safari https://1password.com/downloads/mac/#browsers
+
+# MAS
+# requires manual sign in first. https://github.com/mas-cli/mas/issues/164
+brew install mas
+export MAS_APPS=(
+	1438243180 # Dark Reader safari
+	411643860  # Daisy Disk
+	# 413857545  # Divvy
+	975890633  # HotKey App (1.3.1)
+	# 441258766  # Magnet window manager
+	1510445899 # Meeter for Zoom, Teams & Co
+	1153157709 # Speedtest by Ookla
+	# 727593140  # VPN Unlimited
+)
+mas install $MAS_APPS
+
 
 espanso install mac-symbols
 
