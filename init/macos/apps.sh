@@ -7,23 +7,18 @@ brew cask
 
 CASKS=(
 	1password
-	# aerial
+	aerial
 	bartender
-	brave-browser
-	discord
 	docker
-	firefox
 	github
-	golang
 	iina
 	insomnia
 	istat-menus
 	keycastr
 	macmediakeyforwarder
-	osxfuse
 	pastebot
-	slack
 	spotify
+	sublime-text
 	typora
 	visual-studio-code
 )
@@ -33,42 +28,43 @@ c+ $CASKS
 
 # 1password extensions
 open -gj -a Safari https://1password.com/downloads/mac/#browsers
-open -gj -a firefox https://1password.com/browsers/firefox/
-open -gj -a "Brave Browser" https://chrome.google.com/webstore/detail/1password-extension-deskt/aomjjhallfgjeglblehebfpbcfeobpgk
 
 # MAS
 # requires manual sign in first. https://github.com/mas-cli/mas/issues/164
 brew install mas
 export MAS_APPS=(
 	1438243180 # Dark Reader safari
-	1055511498 # Day One
 	411643860  # Daisy Disk
-	413857545  # Divvy
+	# 413857545  # Divvy
 	975890633  # HotKey App (1.3.1)
-	441258766  # Magnet window manager
+	# 441258766  # Magnet window manager
 	1510445899 # Meeter for Zoom, Teams & Co
 	1153157709 # Speedtest by Ookla
-	727593140  # VPN Unlimited
+	# 727593140  # VPN Unlimited
 )
 mas install $MAS_APPS
 
 BREWS=(
 	docker
+	diskonaut
 	ffmpeg
 	fzf
+	zoxide
 	git-delta
 	git-extras
+	gotop
 	httpie
+	curlie
 	gping
 	jq
 	node
 	pyenv
 	pyenv-virtualenv
-	spoof-mac
-	switchaudio-osx
 	tree
 	youtube-dl
 	federico-terzi/espanso/espanso
+	choose-rust
+	procs
 )
 echo "  🍺 installing " $BREWS
 # parallelized brew download + install
@@ -84,7 +80,6 @@ quicklooks=(
 	qlimagesize
 	suspicious-package
 	apparency
-	quicklookasel
 	qlvideo
 )
 b+ $quicklooks
