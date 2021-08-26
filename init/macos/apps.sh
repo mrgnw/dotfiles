@@ -63,6 +63,7 @@ BREWS=(
 	tree
 	youtube-dl
 	federico-terzi/espanso/espanso
+	jesseduffield/lazydocker/lazydocker
 	choose-rust
 	procs
 )
