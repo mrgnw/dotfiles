@@ -8,6 +8,9 @@ alias cdd='cd ~/Downloads'
 alias copylast="!-1 | pbcopy"
 alias ls='ls -h'
 alias la='ls -lah'
+oy(){
+	echo "${@:-Oy!}"
+}
 
 +d() { mkdir -p $1; cd $1 }
 +line(){ grep -qF -- "$2" "$1" || echo "$2" >> "$1"}
