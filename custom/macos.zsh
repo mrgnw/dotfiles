@@ -1,10 +1,11 @@
 [[ "$OSTYPE" = "darwin"* ]] || return 1
-pcname() { scutil --get ComputerName }
+export EDITOR=subl
 
 # icloud + synced private configs
 ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 
 # assumes folders don't conflict with $(pcname)
+pcname() { scutil --get ComputerName }
 icfg="$ICLOUD/.config"
 device="$icfg/$(pcname)"
 
@@ -44,4 +45,9 @@ ramdisk() {
     ramdisksize=$(($1 * 2048 * 1024))
     echo $ramdisksize
     diskutil erasevolume HFS+ "RAM Disk $1gb" $(hdiutil attach -nobrowse -nomount ram://$ramdisksize)
+}
+
+com.which(){
+    # src https://robservatory.com/easily-see-any-apps-bundle-identifier/
+    osascript -e "id of app \"$1\""
 }
