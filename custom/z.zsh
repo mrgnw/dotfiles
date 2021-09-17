@@ -1,6 +1,7 @@
 export ZDIR="$HOME/.zsh"
 alias zd="cd $ZDIR"
 alias zed="code $ZDIR"
+alias spanso='espanso edit'
 
 alias ❯=''
 alias ..='cd ..'
