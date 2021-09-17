@@ -16,6 +16,7 @@ sshake(){
 kshtail() { ksh -t $1 "less +F $2" }
 
 # ports
+port(){lsof -ti:$1}
 killport(){ lsof -ti:$1 | xargs kill }
 pforward(){
     FWD_FROM_HOST=$1
