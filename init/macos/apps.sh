@@ -9,6 +9,7 @@ CASKS=(
 	1password
 	aerial
 	bartender
+	beekeeper-studio
 	docker
 	github
 	iina
@@ -49,7 +50,6 @@ BREWS=(
 echo "  🍻 Installing casks & brews in parallel! 🍻"
 echo "  🍺 brew install" $BREWS
 echo "  🍺 brew install --cask" $CASKS
-
 c+ $CASKS & b+ $BREWS
 
 espanso install mac-symbols
