@@ -26,3 +26,5 @@ pforward(){
 }
 
 ip() {curl -sS ipinfo.io | jq '{ip:.ip, city:.city, country:.country}'}
+
+alias ttl='sudo sysctl net.inet.ip.ttl=65'
