@@ -5,7 +5,7 @@ alias jupy='jupyter notebook'
 pi() {'pip install'}
 pu() {'pip uninstall'}
 pf() {'pip freeze'}
-alias python="python3"
+# alias python="python3"
 
 # allows pip install x[y]
 setopt +o nomatch
