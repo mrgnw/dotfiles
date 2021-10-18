@@ -21,33 +21,33 @@ alias o='open .'
 mic() {SwitchAudioSource -t input -s "MacBook Pro Microphone"}
 
 screens() {
-    defaults write com.apple.screencapture location $@
-    killall SystemUIServer
+	defaults write com.apple.screencapture location $@
+	killall SystemUIServer
 }
 
 sms() {
-    open "sms://open?addresses=$1/&body=$2"
+	open "sms://open?addresses=$1/&body=$2"
 }
 
 #   Update all Wallpapers
 function wallpaper() {
-    sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$1'" && killall Dock
+	sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$1'" && killall Dock
 }
 
 # Merge one folder into another.
 merge() {
-    echo "Merging $(basename $1) into $(basename $2)"
-    ditto $@
-    trash $1
+	echo "Merging $(basename $1) into $(basename $2)"
+	ditto $@
+	trash $1
 }
 
 ramdisk() {
-    ramdisksize=$(($1 * 2048 * 1024))
-    echo $ramdisksize
-    diskutil erasevolume HFS+ "RAM Disk $1gb" $(hdiutil attach -nobrowse -nomount ram://$ramdisksize)
+	ramdisksize=$(($1 * 2048 * 1024))
+	echo $ramdisksize
+	diskutil erasevolume HFS+ "RAM Disk $1gb" $(hdiutil attach -nobrowse -nomount ram://$ramdisksize)
 }
 
 com.which(){
-    # src https://robservatory.com/easily-see-any-apps-bundle-identifier/
-    osascript -e "id of app \"$1\""
+	local app_name="$*"  # src https://unix.stackexchange.com/a/197794/77873
+	osascript -e "id of app \"$app_name\""  # src https://robservatory.com/easily-see-any-apps-bundle-identifier/
 }

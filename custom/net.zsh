@@ -7,6 +7,7 @@ sp() {
    OFMT="%.0f";
 };
 
+
 # ssh
 ksh() {(klist -s || kinit) && ssh $@}
 sshake(){
@@ -28,3 +29,4 @@ pforward(){
 ip() {curl -sS ipinfo.io | jq '{ip:.ip, city:.city, country:.country}'}
 
 alias ttl='sudo sysctl net.inet.ip.ttl=65'
+alias flushdns='dscacheutil -flushcache'

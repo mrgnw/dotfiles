@@ -2,7 +2,7 @@
 # zinit load davidparsson/zsh-pyenv-lazy
 
 alias jupy='jupyter notebook'
-pi() {'pip install'}
+p+() {'pip install'}
 pu() {'pip uninstall'}
 pf() {'pip freeze'}
 # alias python="python3"

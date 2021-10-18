@@ -16,3 +16,8 @@ nvm(){
     [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
     nvm
 }
+
+distro() {
+	source /etc/os-release && echo $PRETTY_NAME
+	# head /etc/os-release -n 1
+}
