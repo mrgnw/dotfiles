@@ -44,8 +44,10 @@ BREWS=(
 	youtube-dl
 	federico-terzi/espanso/espanso
 	jesseduffield/lazydocker/lazydocker
+	cloudflare/cloudflare/cloudflared
 	choose-rust
 	procs
+	zoxide
 )
 echo "  🍻 Installing casks & brews in parallel! 🍻"
 echo "  🍺 brew install" $BREWS

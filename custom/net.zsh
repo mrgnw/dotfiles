@@ -7,7 +7,6 @@ sp() {
    OFMT="%.0f";
 };
 
-
 # ssh
 ksh() {(klist -s || kinit) && ssh $@}
 sshake(){
