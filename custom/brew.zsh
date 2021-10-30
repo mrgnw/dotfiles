@@ -16,13 +16,11 @@ bs(){ brew search $@ }
 b-(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew uninstall {}' }
 b»(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew reinstall {}' }
 c+(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew install --cask {}'}
-caskun(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew cask uninstall {}' }
+c-(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew uninstall --cask {}' }
 
 # install @ 10x parallel download
 b+() {
-	# downloads start with dependencies 💣
 	for INSTALL in "$@"; do
-		# todo: fix error when you try b+ user/repotap. Still works, but shows error
 		brew deps $INSTALL |
 			xargs -n 1 -P 10 -I -r '{}' zsh -c 'brew fetch {}'
 	done \
