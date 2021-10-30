@@ -22,6 +22,7 @@ CASKS=(
 	sublime-text
 	typora
 	visual-studio-code
+	workflowy
 )
 
 BREWS=(
