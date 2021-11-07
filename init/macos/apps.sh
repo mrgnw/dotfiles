@@ -28,6 +28,8 @@ CASKS=(
 BREWS=(
 	docker
 	diskonaut
+	dust
+	duf
 	ffmpeg
 	fzf
 	zoxide
