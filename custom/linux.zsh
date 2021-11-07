@@ -1,6 +1,10 @@
 function is_linux() { [[ "$OSTYPE" = "linux"* ]] || return 1 }
 is_linux || return 1
 
+alias a+="sudo apt-get -y install "
+alias a»="sudo apt-get -y upgrade "
+alias a-="sudo apt-get -y remove "
+
 open() { xdg-open ${1:-.} }
 alias o='open .'
 
