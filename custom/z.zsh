@@ -47,4 +47,3 @@ denest(){
 	rm -rf "$nested_dir"
 }
 
-eval "$(zoxide init zsh)"
