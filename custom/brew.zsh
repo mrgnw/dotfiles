@@ -22,7 +22,7 @@ c-(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew uninstall --cask {}' }
 b+() {
 	for INSTALL in "$@"; do
 		brew deps $INSTALL |
-			xargs -n 1 -P 10 -I -r '{}' zsh -c 'brew fetch {}'
+			xargs -n 1 -P 10 -I {} -r zsh -c 'brew fetch {}'
 	done \
 	&
 	for INSTALL in "$@"; do
