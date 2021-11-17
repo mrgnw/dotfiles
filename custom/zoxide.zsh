@@ -1,4 +1,4 @@
-z  &> /dev/null || return 1
+zoxide  &> /dev/null || return 1
 # =============================================================================
 #
 # Utility functions for zoxide.
