@@ -1,3 +1,15 @@
+
+gp() {
+	local hosts=(
+		"1.1.1.1"
+		"8.8.8.8"
+		"cloudflare.com"
+		"srv.tiger-lake.ts.net"
+	)
+
+	gping -s $hosts
+}
+
 # simple ping
 sp() {
   ping ${@:-"1.1.1.1"} | awk \
