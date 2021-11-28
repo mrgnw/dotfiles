@@ -1,3 +1,4 @@
+alias dl='http -d'
 
 gp() {
 	local hosts=(
@@ -20,15 +21,15 @@ sp() {
 };
 
 # ssh
-ksh() {(klist -s || kinit) && ssh $@}
+
 sshake(){
     ls $HOME/.ssh/id_rsa || ssh-keygen -t rsa;
     ssh-copy-id $@;
 }
-kshtail() { ksh -t $1 "less +F $2" }
+sshtail() { ssh -t $1 "less +F $2" }
 
 # ports
-port(){lsof -ti:$1}
+port(){ lsof -ti:$1 }
 killport(){ lsof -ti:$1 | xargs kill }
 pforward(){
     FWD_FROM_HOST=$1
