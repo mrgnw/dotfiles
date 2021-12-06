@@ -1,4 +1,3 @@
-zoxide  &> /dev/null || return 1
 # =============================================================================
 #
 # Utility functions for zoxide.
@@ -26,8 +25,8 @@ function __zoxide_hook() {
 }
 
 # Initialize hook.
-if [ "${__zoxide_hooked}" != '1' ]; then
-    __zoxide_hooked='1'
+# shellcheck disable=SC2154
+if [[ ${precmd_functions[(Ie)__zoxide_hook]} -eq 0 ]] && [[ ${chpwd_functions[(Ie)__zoxide_hook]} -eq 0 ]]; then
     chpwd_functions=("${chpwd_functions[@]}" "__zoxide_hook")
 fi
 
@@ -49,19 +48,19 @@ function __zoxide_z() {
             \builtin printf 'zoxide: $OLDPWD is not set'
             return 1
         fi
-    elif [ "$#" -eq 1 ] &&  [ -d "$1" ]; then
+    elif [ "$#" -eq 1 ] && [ -d "$1" ]; then
         __zoxide_cd "$1"
     else
-        \builtin local __zoxide_result
-        __zoxide_result="$(zoxide query --exclude "$(__zoxide_pwd)" -- "$@")" \
-            && __zoxide_cd "${__zoxide_result}"
+        \builtin local result
+        result="$(zoxide query --exclude "$(__zoxide_pwd)" -- "$@")" \
+            && __zoxide_cd "${result}"
     fi
 }
 
 # Jump to a directory using interactive search.
 function __zoxide_zi() {
-    \builtin local __zoxide_result
-    __zoxide_result="$(zoxide query -i -- "$@")" && __zoxide_cd "${__zoxide_result}"
+    \builtin local result
+    result="$(zoxide query -i -- "$@")" && __zoxide_cd "${result}"
 }
 
 # =============================================================================
