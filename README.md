@@ -1,7 +1,7 @@
 # mrgnw  dotfiles
 
 ### Install
-Install [zinit](https://github.com/zdharma/zinit) & these dotfiles with:
+Install [zinit](https://github.com/zdharma-continuum/zinit#install) & these dotfiles with:
 
 ```sh
 sh -c "$(curl -fsSL https://git.io/mw_init)"
