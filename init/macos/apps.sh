@@ -41,6 +41,7 @@ BREWS=(
 	gping
 	jq
 	node
+	pdm
 	pyenv
 	pyenv-virtualenv
 	tree
