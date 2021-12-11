@@ -17,8 +17,6 @@ zinit light sindresorhus/pure;
 
 # plugins
 zinit wait lucid light-mode for \
-    zdharma-continuum/fast-syntax-highlighting \
-    zdharma-continuum/history-search-multi-word \
     zsh-users/zsh-autosuggestions \
     zsh-users/zsh-completions;
 
