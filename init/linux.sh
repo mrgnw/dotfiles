@@ -14,7 +14,7 @@ apps=(
 )
 
 sudo apt update
-sudo apt install -y $apps
+sudo apt install --ignore-missing -y $apps
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
