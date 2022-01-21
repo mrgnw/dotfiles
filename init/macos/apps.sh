@@ -51,6 +51,7 @@ BREWS=(
 	cloudflare/cloudflare/cloudflared
 	choose-rust
 	procs
+	sd # sed alternative
 	zoxide
 )
 echo "  🍻 Installing casks & brews in parallel! 🍻"
