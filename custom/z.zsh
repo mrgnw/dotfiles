@@ -9,6 +9,7 @@ alias ❯=''
 alias ..='cd ..'
 alias cdd='cd ~/Downloads'
 alias copylast="!-1 | pbcopy"
+alias clip='tee >(pbcopy)'
 alias ls='ls -h'
 alias la='ls -lah'
 
