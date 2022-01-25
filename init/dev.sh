@@ -5,8 +5,7 @@ brew install asdf
   asdf install $1 ${2:-latest}
   asdf global $1 ${2:-latest}
 }
-+asdfs(){ for i in $@; do +asdf $i done
-}
++asdfs() { for i in "$@"; do +asdf "$i"; done }
 
 asdf plugin list all
 
