@@ -1,5 +1,3 @@
-export PATH="$PATH:/Users/m1/Library/Python/3.9/bin"
-
 +asdf() {
   asdf plugin-add $1
   asdf install $1 ${2:-latest}
@@ -14,18 +12,19 @@ export PATH="$PATH:/Users/m1/Library/Python/3.9/bin"
 export ZDIR="$HOME/.zsh"
 alias zd="cd $ZDIR"
 alias zed="code $ZDIR"
-alias spanso='espanso edit'
 
 alias ❯=''
 alias ..='cd ..'
 alias cdd='cd ~/Downloads'
 alias copylast="!-1 | pbcopy"
 alias clip='tee >(pbcopy)'
+alias disks='duf -only local,fuse'
 alias ls='ls -h'
 alias la='ls -lah'
+alias spanso='espanso edit'
 
-h(){ tldr "$1" | man "$1" | "$1" --help | "$1" -h }
-alias disks='duf -only local,fuse'
+# Done with tools where `thetool -h` says "No no, it's actually `thetool --help`. Try again."
+h(){ tldr "$1" || man "$1" || "$1" --help || "$1" -h }
 
 +d() { mkdir -p $1; cd $1 }
 +line(){ grep -qF -- "$2" "$1" || echo "$2" >> "$1"}
