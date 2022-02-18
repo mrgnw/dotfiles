@@ -3,12 +3,12 @@
 # create project
 +s() {
 	appdir="${1:-sv$(word)}"
-    pnpm init svelte@next "$appdir"
-    cd $appdir
-    git init && git add -A && git commit -m "🚀 init $appdir"
-    pnpm i
-    pnpm install @sveltejs/adapter-static@next --save-dev
-    pnpm build
+	pnpm init svelte@next "$appdir"
+	cd $appdir
+	pnpm install
+	git init
+	git add .
+	git commit -m "🚀 init $appdir"
 }
 
 # svelte-add to project
