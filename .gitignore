@@ -1,2 +1,3 @@
+# local-only customizations
+# You see `•` first, zsh sees it last
 [_Ω•]*
-local.zsh
