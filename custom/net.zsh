@@ -20,14 +20,6 @@ sp() {
    OFMT="%.0f";
 };
 
-# ssh
-
-sshake(){
-    ls $HOME/.ssh/id_rsa || ssh-keygen -t rsa;
-    ssh-copy-id $@;
-}
-sshtail() { ssh -t $1 "less +F $2" }
-
 # ports
 port(){ lsof -ti:$1 }
 killport(){ lsof -ti:$1 | xargs kill }
@@ -42,3 +34,5 @@ ip() {curl -sS ipinfo.io | jq '{ip:.ip, city:.city, country:.country}'}
 
 alias ttl='sudo sysctl net.inet.ip.ttl=65'
 alias flushdns='dscacheutil -flushcache'
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+

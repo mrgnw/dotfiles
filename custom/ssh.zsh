@@ -1,3 +1,8 @@
+sshake(){
+    ls $HOME/.ssh/id_rsa || ssh-keygen -t rsa;
+    ssh-copy-id $@;
+}
+
 # user micro editor when session is ssh
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   # add these customizations

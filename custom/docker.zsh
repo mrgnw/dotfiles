@@ -1,11 +1,11 @@
 #!/bin/zsh
-alias dockerrun='docker run -it $(docker build -q .)'
+alias dkrun='docker run -it $(docker build -q .)'
 
 export containers="$HOME/.containers"
 
 # Run a docker command on multiple items
 # e.g. `dkr pull a b` = docker pull a; docker pull b;
-dkr(){
+dkdk(){
 	docker_command=$1
 	shift
 	for i in "$@"
