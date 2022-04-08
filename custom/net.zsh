@@ -2,13 +2,14 @@ alias dl='http -d'
 
 gp() {
 	local hosts=(
+		"ax"
+		"psf"
 		"1.1.1.1"
-		"8.8.8.8"
 		"cloudflare.com"
-		"srv.tiger-lake.ts.net"
+		"8.8.8.8"
+		"google.com"
 	)
-
-	gping -s $hosts
+	gping -s ${@:-${hosts[@]}}
 }
 
 # simple ping
