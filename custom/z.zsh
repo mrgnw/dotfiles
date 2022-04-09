@@ -39,6 +39,9 @@ scr() {
 	    else screen -D -R -S $1 $@;
 	fi
 }
+scr-rename() {
+	screen -S "$1" -X sessionname "$2"
+}
 
 # CONF
 HISTFILE="$HOME/.zsh_history"
