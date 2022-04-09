@@ -13,6 +13,7 @@ brews() {
 }
 bs(){ brew search $@ }
 # parallel brew/cask
-b+(){ brew install "$@" }
 b-(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew uninstall {}' }
-b»(){ brew update; brew upgrade; brew doctor; brew cask upgrade; brew cleanup; }
+b?(){ brew outdated $@ | column -t -s ' '; }
+b^(){ brew update; brew upgrade }
+b+(){ brew install "$@" }
