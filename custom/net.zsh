@@ -35,5 +35,7 @@ ip() {curl -sS ipinfo.io | jq '{ip:.ip, city:.city, country:.country}'}
 
 alias ttl='sudo sysctl net.inet.ip.ttl=65'
 alias flushdns='dscacheutil -flushcache'
+
+is_macos || return 1
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
