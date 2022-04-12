@@ -2,10 +2,10 @@
 alias cask='brew cask'
 
 export HOMEBREW_BREWFILE="$CONFIG/Brewfile"
-export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_AUTO_UPDATE_SECS=300
 export HOMEBREW_CLEANUP_MAX_AGE_DAYS=15
 export HOMEBREW_DISPLAY_INSTALL_TIMES=1
+export HOMEBREW_INSTALL_FROM_API=1
 export HOMEBREW_NO_GITHUB_API=1  # exclude issues in brew search
 
 # list installed homebrews name & desc
