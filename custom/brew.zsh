@@ -11,6 +11,7 @@ export HOMEBREW_NO_GITHUB_API=1  # exclude issues in brew search
 brews() {
 	brew info --json=v1 --installed | jq -r '. [] | "\(.name)||\(.desc)"' | column -t -s '||';
 }
+alias b='brew'
 b-(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew uninstall {}' }
 b?(){ brew outdated $@ | column -t -s ' '; }
 b^(){ brew update; brew upgrade }
