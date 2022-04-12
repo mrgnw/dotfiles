@@ -13,7 +13,7 @@ brews() {
 }
 alias b='brew'
 b-(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew uninstall {}' }
-b?(){ brew outdated $@ | column -t -s ' '; }
-b^(){ brew update; brew upgrade }
+b^(){ brew outdated $@ | column -t -s ' '; }
+b»(){ brew update; brew upgrade }
 b+(){ brew install "$@" }
 bs(){ brew search $@ }
