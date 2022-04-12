@@ -12,8 +12,20 @@ brews() {
 	brew info --json=v1 --installed | jq -r '. [] | "\(.name)||\(.desc)"' | column -t -s '||';
 }
 alias b='brew'
-b+(){ brew install "$@" }
-b-(){ echo "${@}" | xargs -n 1 -P 9 -I '{}' zsh -c 'brew uninstall {}' }
+b+(){
+	if [[ $# -gt 0 ]]; then
+		brew install "$@"
+	else
+		echo "brew update; brew upgrade"
+		brew update; brew upgrade; brew cleanup;
+	fi
+	}
+b-(){
+	if [[ $# -gt 0 ]]; then
+		brew uninstall "$@"
+	else
+		brew cleanup -s
+	fi
+	}
 bs(){ brew search $@ }
 b^(){ brew outdated $@ | column -t -s ' '; }
-b»(){ brew update; brew upgrade }
