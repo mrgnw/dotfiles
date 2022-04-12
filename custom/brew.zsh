@@ -24,6 +24,7 @@ b-(){
 	if [[ $# -gt 0 ]]; then
 		brew uninstall "$@"
 	else
+		echo "brew cleanup -s"
 		brew cleanup -s
 	fi
 }
