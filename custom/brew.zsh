@@ -1,6 +1,7 @@
 #!/bin/zsh
 alias cask='brew cask'
 
+export HOMEBREW_BREWFILE="$CONFIG/Brewfile"
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_AUTO_UPDATE_SECS=300
 export HOMEBREW_CLEANUP_MAX_AGE_DAYS=15
