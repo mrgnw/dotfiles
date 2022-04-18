@@ -1,3 +1,5 @@
+CONFIG="$HOME/.config"
+
 +asdf() {
   asdf plugin-add $1
   asdf install $1 ${2:-latest}

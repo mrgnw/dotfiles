@@ -1,4 +1,6 @@
 export Z="$HOME/.zsh"
+export CONFIG="$HOME/.config"
+
 LANG="en_US.utf8"
 
 source "$Z/zinit.zsh"
