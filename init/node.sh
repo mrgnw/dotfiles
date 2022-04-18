@@ -6,6 +6,7 @@ npm install --global pnpm
 
 node_apps=(
 	degit
+	composerize
 	npx
 	speed-test
 	spoof

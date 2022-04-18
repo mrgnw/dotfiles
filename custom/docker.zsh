@@ -13,3 +13,5 @@ dkdk(){
 		docker $docker_command "$i"
 	done
 }
+
+comp(){ composerize "$@" | pbcopy }
