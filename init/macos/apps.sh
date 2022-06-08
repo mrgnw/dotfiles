@@ -62,6 +62,10 @@ c+ $CASKS & b+ $BREWS
 
 espanso install mac-symbols
 
+# github.com/dundee/gdu
+brew install -f gdu
+brew link --overwrite gdu  # if you have coreutils installed as well
+
 # 1password extensions
 open -gj -a Safari https://1password.com/downloads/mac/#browsers
 
