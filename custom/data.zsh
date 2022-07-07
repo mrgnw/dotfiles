@@ -1,3 +1,4 @@
+alias duck='duckdb'
 xls(){
 	# if there's one argument, convert it to csv
 	if [[ $# -gt 0 ]]; then
