@@ -7,14 +7,11 @@ brew cask
 
 CASKS=(
 	1password
-	aerial
 	bartender
-	beekeeper-studio
 	bettertouchtool
 	docker
 	github
 	iina
-	insomnia
 	istat-menus
 	keycastr
 	macmediakeyforwarder
@@ -29,10 +26,9 @@ CASKS=(
 BREWS=(
 	docker
 	diskonaut
+	duckdb
 	dust
 	duf
-	ffmpeg
-	fzf
 	zoxide
 	git-delta
 	git-extras
@@ -41,19 +37,14 @@ BREWS=(
 	curlie
 	gping
 	jq
-	node
 	pdm
-	pyenv
-	pyenv-virtualenv
 	tree
-	youtube-dl
 	federico-terzi/espanso/espanso
 	jesseduffield/lazydocker/lazydocker
 	cloudflare/cloudflare/cloudflared
 	choose-rust
 	procs
 	sd # sed alternative
-	zoxide
 )
 echo "  🍻 Installing casks & brews in parallel! 🍻"
 echo "  🍺 brew install" $BREWS
