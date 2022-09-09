@@ -2,8 +2,6 @@ alias dl='http -d'
 
 gp() {
 	local hosts=(
-		"ax"
-		"psf"
 		"1.1.1.1"
 		"cloudflare.com"
 		"8.8.8.8"
@@ -39,3 +37,4 @@ alias flushdns='dscacheutil -flushcache'
 is_macos || return 1
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
+ybr(){ yt-dlp --cookies-from-browser ${1:-safari} "$(pbpaste)" }
