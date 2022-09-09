@@ -3,7 +3,7 @@
 # create project
 +s() {
 	appdir="${1:-sv$(word)}"
-	pnpm init svelte@next "$appdir"
+	pnpm create svelte@next "$appdir"
 	cd $appdir
 	pnpm install
 	git init
