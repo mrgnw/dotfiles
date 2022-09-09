@@ -22,30 +22,22 @@ py() {
 	fi
 }
 
-# default installs for most projects
-+pips(){ pip install cython python-dotenv black }
-
 # activate env
 »(){ pyenv activate ${1:-} }
 «(){ pyenv deactivate }
-+v() {
-	pyenv virtualenv "$(PYTHON3_VERSION)" ${1:-${PWD##*/}}
-	pyenv local ${1:-${PWD##*/}}
-	+pips
++v() { 
+    (
+        pdm init --non-interactive --skip pre_publish,post_publish & 
+          curl https://www.gitignore.io/api/python >.gitignore
+    ) && 
+      pdm add --dev darker pytest "$@"
 }
 -v() { pyenv uninstall ${1:-${PWD##*/}} }
 
-# new python env with gitignore & directory
-+py() {
-	# only mkdir + cd if specified
-	if [ "$#" -ge 1 ];
-    then +d $1
-	fi
-	+v & (curl https://www.gitignore.io/api/python >.gitignore)
-}
++py() {pdm add --dev darker pytest "$@"}
 
 # fastapi starter
 +fast() {
 	+py $1
-	pip install fastapi uvicorn
+	pdm add fastapi uvicorn
 }
