@@ -1,16 +1,5 @@
 CONFIG="$HOME/.config"
 
-+asdf() {
-  asdf plugin-add $1
-  asdf install $1 ${2:-latest}
-  asdf global $1 ${2:-latest}
-}
-+asdfs(){
-	for i in $@; do
-		+asdf $i
-	done
-}
-
 export ZDIR="$HOME/.zsh"
 alias zd="cd $ZDIR"
 alias zed="code $ZDIR"
@@ -63,4 +52,3 @@ denest(){
 	rm -rf "$nested_dir"
 }
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
