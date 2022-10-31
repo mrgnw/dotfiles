@@ -1,4 +1,11 @@
-alias dl='http -d'
+dl(){
+    # if there are 2 parameters
+    if [ $# -eq 2 ]; then
+        xh --download "$1" --output "$2"
+    else
+        xh --download "$1"
+    fi
+}
 
 gp() {
 	local hosts=(
