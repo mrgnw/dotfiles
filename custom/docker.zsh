@@ -3,6 +3,9 @@ alias dkrun='docker run -it $(docker build -q .)'
 
 export containers="$HOME/.containers"
 
+dc(){ docker-compose "${1:-up}" "$@" }
+
+
 # Run a docker command on multiple items
 # e.g. `dkr pull a b` = docker pull a; docker pull b;
 dkdk(){
