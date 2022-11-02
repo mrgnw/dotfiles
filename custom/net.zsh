@@ -1,9 +1,17 @@
 dl(){
-    # if there are 2 parameters
-    if [ $# -eq 2 ]; then
-        xh --download "$1" --output "$2"
-    else
-        xh --download "$1"
+    # Usage options
+    # - dl {clipboard}
+    # - dl {url}
+    # - dl {urls_in_file} to pwd
+    # - dl {urls_in_file} to {dir}
+    # - dl {url} to {output_file}
+    # dl (everything passes through to aria2c)
+    opts="--log-level=warn --download-result=full"
+    if [[ $# -eq 0 ]]; then aria2c ${=opts} "$(pbpaste)"
+    elif [[ $# -eq 1 ]] && [[ -f "$1" ]]; then aria2c ${=opts} -i "$1";
+    elif [[ -f "$1" ]] && [[ -d "$2" ]]; then aria2c ${=opts} -i "$1" -d "$2" "$@";
+    elif [[ $# -eq 2 ]]; then aria2c ${=opts} "$1" -o "$2";
+    else aria2c ${=opts} "${=@}";
     fi
 }
 
