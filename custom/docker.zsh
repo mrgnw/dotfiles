@@ -33,3 +33,6 @@ dkdk(){
 }
 
 comp(){ composerize "$@" | pbcopy }
+
+# docker-compose auto-completion
+fpath=(~/.zsh/completion $fpath)
