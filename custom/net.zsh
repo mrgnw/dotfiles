@@ -53,6 +53,6 @@ alias flushdns='dscacheutil -flushcache'
 rcp(){ rclone copy "$1" "$2" --progress --transfers=${3:-12} }
 
 is_macos || return 1
-alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+# alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
 ybr(){ yt-dlp --cookies-from-browser ${1:-safari} "$(pbpaste)" }
