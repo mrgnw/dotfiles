@@ -47,8 +47,8 @@ denest(){
 	# default assuems nested_dir is same as the current directory name
 	# nested_dir is $1 or the folder name of $PWD
 	nested_dir="${1:-$(basename $(pwd))}"
-	mv "$nested_dir"/* .
+	ditto "$nested_dir"/* .
 	echo "$nested_dir"
-	rm -rf "$nested_dir"
+	trash "$nested_dir"
 }
 
