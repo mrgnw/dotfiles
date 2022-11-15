@@ -1,4 +1,13 @@
+
+# CONF
 CONFIG="$HOME/.config"
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=1_000_000
+SAVEHIST=1_000_000
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt SHARE_HISTORY        # Share history between all sessions.
+# setopt INC_APPEND_HISTORY   # Write to the history file immediately, not when shell exits.
 
 export ZDIR="$HOME/.zsh"
 alias zd="cd $ZDIR"
@@ -33,15 +42,6 @@ scr() {
 scr-rename() {
 	screen -S "$1" -X sessionname "$2"
 }
-
-# CONF
-HISTFILE="$HOME/.zsh_history"
-HISTSIZE=1_000_000
-SAVEHIST=1_000_000
-setopt hist_ignore_all_dups
-setopt hist_ignore_space
-# setopt SHARE_HISTORY        # Share history between all sessions.
-# setopt INC_APPEND_HISTORY   # Write to the history file immediately, not when shell exits.
 
 denest(){
 	# default assuems nested_dir is same as the current directory name
