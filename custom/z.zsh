@@ -28,6 +28,27 @@ h(){ tldr "$1" || man "$1" || "$1" --help || "$1" -h }
 
 +d() { mkdir -p $1; cd $1 }
 +line(){ grep -qF -- "$2" "$1" || echo "$2" >> "$1"}
+
++bin(){
+    # tries to download a binary, unzip if necessary, and move to ~/.binaries when done
+     (
+        +d $HOME/.installs/;
+        src=${1:-$(pbpaste)};
+
+        local filename=${src##*/};  # src after last slash
+        local name="${2:-${filename%%[._-]*}}" # $2 or chars before first [._-] of filename
+        echo $name
+        dl "$src";
+        
+        # unpack if it's a zip or tar.gz
+        if [[ $filename == *.zip ]]; then unzip -o $filename
+        elif [[ $filename == *.tar.gz ]]; then tar -xvf $filename
+        fi
+        
+        chmod +x $name
+        mv $name $HOME/.binaries/$name
+        )
+}
 rand(){ python -c "from random import randrange; print(randrange(0, ${1:-10}))" }
 word(){ sed `perl -e "print int rand(99999)"`"q;d" /usr/share/dict/words }
 
