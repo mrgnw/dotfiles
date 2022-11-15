@@ -52,3 +52,10 @@ denest(){
 	trash "$nested_dir"
 }
 
+showpath() {
+    # display $PATH as a readable list
+    echo $PATH | tr ':' '\n' | uniq 
+}
+
+folder(){ basename "$PWD"}
+parent() {basename "$(dirname $PWD)"}
