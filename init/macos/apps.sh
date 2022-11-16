@@ -39,7 +39,6 @@ BREWS=(
 	jq
 	pdm
 	tree
-	federico-terzi/espanso/espanso
 	jesseduffield/lazydocker/lazydocker
 	cloudflare/cloudflare/cloudflared
 	choose-rust
@@ -50,8 +49,6 @@ echo "  🍻 Installing casks & brews in parallel! 🍻"
 echo "  🍺 brew install" $BREWS
 echo "  🍺 brew install --cask" $CASKS
 c+ $CASKS & b+ $BREWS
-
-espanso install mac-symbols
 
 # github.com/dundee/gdu
 brew install -f gdu
@@ -73,8 +70,6 @@ export MAS_APPS=(
 )
 mas install $MAS_APPS
 
-
-espanso install mac-symbols
 
 quicklooks=(
 	qlcolorcode
