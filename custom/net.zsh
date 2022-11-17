@@ -1,4 +1,20 @@
-alias dl='http -d'
+dl(){
+    # Usage options
+    # - dl {clipboard}
+    # - dl {url}
+    # - dl {urls_in_file} to pwd
+    # - dl {urls_in_file} to {dir}
+    # - dl {url} to {output_file}
+    # dl (everything passes through to aria2c)
+    opts="--log-level=warn --download-result=full"
+    if [[ $# -eq 0 ]]; then aria2c ${=opts} "$(pbpaste)"
+    elif [[ $# -eq 1 ]] && [[ -f "$1" ]]; then aria2c ${=opts} -i "$1";
+    elif [[ -f "$1" ]] && [[ -d "$2" ]]; then aria2c ${=opts} -i "$1" -d "$2" "$@";
+    elif [[ $# -eq 2 ]]; then aria2c ${=opts} "$1" -o "$2";
+    else aria2c ${=opts} "${=@}";
+    fi
+}
+alias ts='tailscale'
 
 gp() {
 	local hosts=(
@@ -34,8 +50,7 @@ ip() {curl -sS ipinfo.io | jq '{ip:.ip, city:.city, country:.country}'}
 alias ttl='sudo sysctl net.inet.ip.ttl=65'
 alias flushdns='dscacheutil -flushcache'
 
-is_macos || return 1
-alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+rcp(){ rclone copy "$1" "$2" --progress --transfers=${3:-12} }
 
 ybr(){ yt-dlp --cookies-from-browser ${1:-safari} "$(pbpaste)" }
 
