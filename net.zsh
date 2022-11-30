@@ -1,3 +1,5 @@
+alias ts='tailscale'
+
 dl(){
     # - dl {clipboard}
     # - dl {url}
@@ -13,7 +15,26 @@ dl(){
     else aria2c ${=opts} "${=@}";
     fi
 }
-alias ts='tailscale'
++bin(){
+    # tries to download a binary, unzip if necessary, and move to ~/.binaries when done
+     (
+        +d $HOME/.installs/;
+        src=${1:-$(pbpaste)};
+
+        local filename=${src##*/};  # src after last slash
+        local name="${2:-${filename%%[._-]*}}" # $2 or chars before first [._-] of filename
+        echo $name
+        dl "$src";
+        
+        # unpack if it's a zip or tar.gz
+        if [[ $filename == *.zip ]]; then unzip -o $filename
+        elif [[ $filename == *.tar.gz ]]; then tar -xvf $filename
+        fi
+        
+        chmod +x $name
+        mv $name $HOME/.binaries/$name
+        )
+}
 
 gp() {
 	local hosts=(
