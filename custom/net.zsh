@@ -1,5 +1,4 @@
 dl(){
-    # Usage options
     # - dl {clipboard}
     # - dl {url}
     # - dl {urls_in_file} to pwd
@@ -51,9 +50,4 @@ alias ttl='sudo sysctl net.inet.ip.ttl=65'
 alias flushdns='dscacheutil -flushcache'
 
 rcp(){ rclone copy "$1" "$2" --progress --transfers=${3:-12} }
-
 ybr(){ yt-dlp --cookies-from-browser ${1:-safari} "$(pbpaste)" }
-
-rcp(){
-    rclone copy "$1" "$2" --progress --transfers=${3:-12}
-}

@@ -13,6 +13,3 @@
 
 # svelte-add to project
 s+(){ npx svelte-add $@ }
-
-# if node version is incompatible
-# sudo pnpm install n -g || sudo n stable

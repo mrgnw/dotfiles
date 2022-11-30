@@ -1,9 +1,8 @@
 is_macos || return 1
-
-EDITOR=subl
-alias o='open .'
-
 ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+EDITOR=code
+
+alias o='open .'
 
 com.which(){
 	local app_name="$*"  # src https://unix.stackexchange.com/a/197794/77873
@@ -17,15 +16,11 @@ merge() {
 	trash $1
 }
 
-ramdisk() {
-	ramdisksize=$(($1 * 2048 * 1024))
-	echo $ramdisksize
-	diskutil erasevolume HFS+ "RAM Disk $1gb" $(hdiutil attach -nobrowse -nomount ram://$ramdisksize)
-}
-
 screens() {
 	defaults write com.apple.screencapture location $@
 	killall SystemUIServer
 }
 
 sms() {open "sms://open?addresses=$1/&body=$2" }
+
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"

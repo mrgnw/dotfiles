@@ -3,7 +3,6 @@ PATH_DIRS=(
     "$HOME/.binaries"
     "$GOPATH/bin"
     "$BUN_INSTALL/bin"
-    "$PNPM_HOME"
     "$PY_BASE/bin"
 )
 PATH="$PATH:${(j.:.)PATH_DIRS}"

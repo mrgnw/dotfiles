@@ -1,26 +1,17 @@
 is_linux || return 1
 
-alias a+="sudo apt-get -y install "
-alias a»="sudo apt-get -y upgrade "
-alias a-="sudo apt-get -y remove "
+export PKGR=aptitude
 
-open() { xdg-open ${1:-.} }
-alias o='open .'
+alias a+="sudo $PKGR -y install "
+alias a»="sudo $PKGR -y upgrade "
+alias a-="sudo $PKGR -y remove "
 
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-# lazy load
-nvm(){
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && . "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
-    [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-    nvm
-}
 
 distro() {
 	source /etc/os-release && echo $PRETTY_NAME
 	# head /etc/os-release -n 1
 }
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
