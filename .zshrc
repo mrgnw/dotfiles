@@ -12,7 +12,6 @@ export GOPATH="$HOME/.golang"
 export BUN_INSTALL="$HOME/.bun"
 export PY_BASE="$(python3.11 -m site --user-base)"
 
-<<<<<<< Updated upstream
 # completions
 [ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
 
@@ -35,13 +34,6 @@ export ZDIR="$HOME/.zsh"
 alias zed="$EDITOR $Z"
 
 # custom scripts
-=======
-function is_macos() { [[ "$OSTYPE" =~ ^darwin ]] || return 1 }
-function is_linux() { [[ "$OSTYPE" =~ ^linux ]] || return 1 }
-
-
-# mrgnw/dotfiles
->>>>>>> Stashed changes
 for f in $Z/**/*.zsh; do
     source "$f";
 done
