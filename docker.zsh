@@ -3,9 +3,6 @@ alias dkrun='docker run -it $(docker build -q .)'
 
 export containers="$HOME/.containers"
 
-comp(){ composerize "$@" | pbcopy }
-dc(){ docker-compose "${1:-up}" "$@" }
-
 dc(){
     # usage: dc (file or folder) and/or command
     # examples:
@@ -22,8 +19,8 @@ dc(){
 }
 
 
-# Run a docker command on multiple items in parallel
-# e.g. `dkdk pull a b` = docker pull a; docker pull b;
+# Run a docker command on multiple items
+# e.g. `dkr pull a b` = docker pull a; docker pull b;
 dkdk(){
 	docker_command=$1
 	shift
@@ -32,6 +29,8 @@ dkdk(){
 		docker $docker_command "$i"
 	done
 }
+
+comp(){ composerize "$@" | pbcopy }
 
 # docker-compose auto-completion
 fpath=(~/.zsh/completion $fpath)
