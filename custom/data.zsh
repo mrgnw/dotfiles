@@ -1,4 +1,5 @@
 alias duck='duckdb'
+
 xls(){
 	# if there's one argument, convert it to csv
 	if [[ $# -gt 0 ]]; then
@@ -15,11 +16,3 @@ xls(){
 }
 
 alias csv='xls'
-
-
-rill-import(){
-	loco=${1:-$(pwd)}
-	for ccc in $loco/*.csv; do
-		pnpm run cli -- import-table "$ccc";
-	done
-}
