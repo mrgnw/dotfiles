@@ -16,6 +16,7 @@ export PY_BASE="$(python -m site --user-base)"
 
 PATH_DIRS=(
     "$HOME/.binaries"
+    "$HOME.local/bin"
     "$GOPATH/bin"
     "$BUN_INSTALL/bin"
     "$PY_BASE/bin"
