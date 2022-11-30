@@ -46,19 +46,4 @@ for f in $Z/**/*.zsh; do
     source "$f";
 done
 
-<<<<<<< Updated upstream
 source "$Z/theme";
-=======
-
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-
-
-# pnpm
-export PNPM_HOME="/home/x/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-# fnm
-export PATH=/home/x/.fnm:$PATH
-eval "`fnm env`"
->>>>>>> Stashed changes
