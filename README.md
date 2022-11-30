@@ -2,6 +2,7 @@
 
 ### Install
 ```sh
-sh -c "$(curl -fsSL https://git.io/mw_init)"
+git clone https://github.com/mrgnw/dotfiles ~/.zsh
+echo 'source ~/.zsh/.zsh' > ~/.zshrc
 ```
 

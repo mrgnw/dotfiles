@@ -3,17 +3,24 @@ export Z="$HOME/.zsh"
 
 function is_macos() { [[ "$OSTYPE" = "darwin"* ]] || return 1 }
 function is_linux() { [[ "$OSTYPE" = "linux"* ]] || return 1 }
-function is_apple_silicon(){ is_macos && [[ $(sysctl -n machdep.cpu.brand_string)  == 'Apple'* ]] || return 1 }
+function is_apple(){ is_macos && [[ $(sysctl -n machdep.cpu.brand_string)  == 'Apple'* ]] || return 1 }
 
-LANG="en_US.utf8";
+export LANG="en_US.utf8";
 
-# Language & framework variables
+# Languages & frameworks
 export GOPATH="$HOME/.golang"
 export BUN_INSTALL="$HOME/.bun"
-export PY_BASE="$(python3.11 -m site --user-base)"
+alias python="$(which python3.11)"
+export PY_BASE="$(python -m site --user-base)"
+# pnpm?
 
-# completions
-[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
+PATH_DIRS=(
+    "$HOME/.binaries"
+    "$GOPATH/bin"
+    "$BUN_INSTALL/bin"
+    "$PY_BASE/bin"
+)
+PATH="$PATH:${(j.:.)PATH_DIRS}"
 
 zsh_opts=(
     auto_list
@@ -30,12 +37,9 @@ zsh_opts=(
 )
 setopt "${zsh_opts[@]}"
 
-export ZDIR="$HOME/.zsh"
-alias zed="$EDITOR $Z"
-
 # custom scripts
-for f in $Z/**/*.zsh; do
+for f in $Z/*.zsh; do
     source "$f";
 done
-
-source "$Z/theme";
+# TODO: picky file order?
+# https://linuxhint.com/bash_append_array/
