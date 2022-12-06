@@ -8,6 +8,8 @@ HISTFILE="$HOME/.zsh_history"
 HISTSIZE=1_000_000
 SAVEHIST=1_000_000
 
+export EDITOR='code'
+
 alias gits='git status'
 
 alias zd="$HOME/.zsh"
@@ -26,7 +28,6 @@ alias disks='duf -only local,fuse'
 alias spanso='espanso edit'
 
 h(){ tldr "$1" || man "$1" || "$1" --help || "$1" -h }
-
 +d() { mkdir -p $1; cd $1 }
 
 rand(){ python -c "from random import randrange; print(randrange(0, ${1:-10}))" }
@@ -59,4 +60,4 @@ showpath() {
 }
 
 folder(){ basename "$PWD"}
-parent() {basename "$(dirname $PWD)"}
+parent(){ basename "$(dirname $PWD)"}
