@@ -70,5 +70,7 @@ ip() {curl -sS ipinfo.io | jq '{ip:.ip, city:.city, country:.country}'}
 alias ttl='sudo sysctl net.inet.ip.ttl=65'
 alias flushdns='dscacheutil -flushcache'
 
-rcp(){ rclone copy "$1" "$2" --progress --transfers=${3:-12} }
+rcp(){ 
+    rclone copy "$1" "$2" --progress --transfers=${3:-12} --multi-thread-streams 0 "${@:4}"
+    }
 ybr(){ yt-dlp --cookies-from-browser ${1:-safari} "$(pbpaste)" }
