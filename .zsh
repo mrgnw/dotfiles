@@ -9,15 +9,17 @@ export LANG="en_US.utf8";
 
 # Languages & frameworks
 export GOPATH="$HOME/.golang"
-export BUN_INSTALL="$HOME/.bun"
+
 alias python="$(which python3.11)"
 export PY_BASE="$(python -m site --user-base)"
-# pnpm?
+export DENO_INSTALL="$HOME/.deno"
+export BUN_INSTALL="$HOME/.bun"
 
 PATH_DIRS=(
     "$HOME/.binaries"
     "$HOME.local/bin"
     "$GOPATH/bin"
+    "$DENO_INSTALL/bin"
     "$BUN_INSTALL/bin"
     "$PY_BASE/bin"
 )
