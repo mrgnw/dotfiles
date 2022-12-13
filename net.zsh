@@ -1,5 +1,7 @@
 alias ts='tailscale'
 
+alias y='yt-dlp'
+
 dl(){
     # - dl {clipboard}
     # - dl {url}

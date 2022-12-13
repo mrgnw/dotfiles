@@ -5,6 +5,12 @@ function is_macos() { [[ "$OSTYPE" = "darwin"* ]] || return 1 }
 function is_linux() { [[ "$OSTYPE" = "linux"* ]] || return 1 }
 function is_apple(){ is_macos && [[ $(sysctl -n machdep.cpu.brand_string)  == 'Apple'* ]] || return 1 }
 
+alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport'
+
+rssi(){
+    airport -s | grep "$1" | choose 1 0 2 --output-field-separator='\t';
+}
+
 export LANG="en_US.utf8";
 
 # Languages & frameworks
