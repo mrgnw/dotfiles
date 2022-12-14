@@ -21,7 +21,8 @@ atv(){
 
     handbrake --input "$input" -o "$output_dir/$fname-$quality.mp4" \
         --preset "Apple $quality Surround" \
-        --all-subtitles --all-audio --optimize
+        --all-subtitles --all-audio --optimize \
+        && trash "$input";
     # ensure format will play in macos quicklook using handbrake
     # ffmpeg -i input.mp4 -c:v h264_videotoolbox -b:v 2M -hwaccel videotoolbox output.mp4
     # ffmpeg -i "${1%.*}.mp4" -c copy -movflags faststart "${1%.*}.mp4"
@@ -31,6 +32,10 @@ atv(){
     # apply profile 'Apple 1080p60 HEVC Surround' to all files in current directory
     local quality=${2:-"1080p30"}
     for f in *; 
+        # ignore if $f is a directory
+        if [[ -d $f ]]; then
+            continue
+        fi
         # get file extension
         # local ext=${f##*.}
         # before applying profile, check if file is already Apple-optimized
@@ -38,5 +43,6 @@ atv(){
             atv "$f" "$quality"
         else
             echo " - $f is already optimized"
+            atv "$f" "$quality"
         fi
  }
