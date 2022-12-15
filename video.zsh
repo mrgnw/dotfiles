@@ -33,14 +33,16 @@ atv(){
     local quality=${2:-"1080p30"}
     for f in *; 
         # ignore if $f is a directory
-        if [[ -d $f ]]; then
-            continue
-        fi
+        # fi
         # get file extension
         # local ext=${f##*.}
         # before applying profile, check if file is already Apple-optimized
         if [[ $(mediainfo --Inform="Video;%Format%" "$f") != "HEVC" ]]; then
-            atv "$f" "$quality"
+            if [[ -d $f ]]; then  
+                echo "it's a directory"
+            else
+                atv "$f" "$quality"
+            fi
         else
             echo " - $f is already optimized"
             atv "$f" "$quality"
