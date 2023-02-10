@@ -1,4 +1,8 @@
 alias ts='tailscale'
+# check if tailscale is not in PATH
+if ! command -v tailscale &>/dev/null; then
+    alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
+fi
 
 alias y='yt-dlp'
 
