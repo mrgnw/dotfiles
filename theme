@@ -1,5 +1,6 @@
 #/bin/zsh
-[[ -z "$SHELL_SYMBOL" ]] && SHELL_SYMBOL="❯"
+if [ -z "$SHELL_SYMBOL" ]; then
+    SHELL_SYMBOL="❯"
+fi
 
-# PS1='%n@%m %1~ %# '
 export PS1=" %1~ $SHELL_SYMBOL "
