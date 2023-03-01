@@ -1,7 +1,6 @@
 # zinit ice OMZ::davidparsson/zsh-pyenv-lazy silent wait"0b"
 # zinit load davidparsson/zsh-pyenv-lazy
 
-
 p+() {pip install "$@"}
 p-() {pip uninstall "$@"}
 
