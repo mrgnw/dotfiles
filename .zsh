@@ -1,15 +1,10 @@
 #!/bin/zsh
 export Z="$HOME/.zsh"
+# export X="$HOME/.xsh"
 
 function is_macos() { [[ "$OSTYPE" = "darwin"* ]] || return 1 }
 function is_linux() { [[ "$OSTYPE" = "linux"* ]] || return 1 }
 function is_apple(){ is_macos && [[ $(sysctl -n machdep.cpu.brand_string)  == 'Apple'* ]] || return 1 }
-
-alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport'
-
-rssi(){
-    airport -s | grep "$1" | choose 1 0 2 --output-field-separator='\t';
-}
 
 export LANG="en_US.utf8";
 
@@ -20,6 +15,7 @@ alias python="$(which python3.11)"
 export PY_BASE="$(python -m site --user-base)"
 export DENO_INSTALL="$HOME/.deno"
 export BUN_INSTALL="$HOME/.bun"
+export PNPM_HOME="$HOME/Library/pnpm"
 
 PATH_DIRS=(
     "$HOME/.binaries"
@@ -28,6 +24,7 @@ PATH_DIRS=(
     "$DENO_INSTALL/bin"
     "$BUN_INSTALL/bin"
     "$PY_BASE/bin"
+    "$PNPM_HOME"
 )
 PATH="$PATH:${(j.:.)PATH_DIRS}"
 

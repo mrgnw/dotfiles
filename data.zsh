@@ -1,5 +1,23 @@
 alias duck='duckdb'
 
+# dasf file [new_ext]
+dasf(){
+  new_ext="${2:-json}"
+  dasel -f "$1" -r "$1:e" -w "$new_ext" > "$1:r"."$new_ext" 
+}
+
+dasf2(){
+    echo "$1" > "$1:r".json
+    dasel -f "$1" -r "$1:e" -w "json" | jj -u > "$1:r".json
+}
+
+dasfs(){
+  for f in **/*.xml; do
+    echo "$f" > "$f:r".json
+    dasel -f "$f" -r "$f:e" -w "json" | jj -u > "$f:r".json
+  done
+}
+
 xls(){
 	# if there's one argument, convert it to csv
 	if [[ $# -gt 0 ]]; then

@@ -1,5 +1,6 @@
 #!/bin/zsh
 alias dkrun='docker run -it $(docker build -q .)'
+alias lz='lazy docker'
 
 export containers="$HOME/.containers"
 
