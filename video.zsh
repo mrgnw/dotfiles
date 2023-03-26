@@ -1,3 +1,7 @@
+yb(){
+yt-dlp --cookies-from-browser firefox "$1"
+}
+
 hevc(){
     local filename=$1:t:r
     ffmpeg -i $1 -c:v hevc_videotoolbox -b:v 2M $filename.mp4
