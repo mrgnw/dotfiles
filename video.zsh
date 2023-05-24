@@ -1,5 +1,7 @@
 yb(){
-yt-dlp --cookies-from-browser firefox "$1"
+	local url="$1"
+	shift 1
+  yt-dlp --cookies-from-browser firefox "$url" "$@"
 }
 
 hevc(){
