@@ -1,5 +1,18 @@
 alias duck='duckdb'
 
+
+jsonl(){
+  local selector="${2:-.[]}"
+  jq -c "$selector" "$1" > "$1:r".jsonl
+}
+
+sojsonl(){ jsonl "$1" ".[].row[]" }
+sojsons(){
+  for f in **/*.json; do
+    sojsonl "$f"
+  done
+}
+
 # dasf file [new_ext]
 dasf(){
   new_ext="${2:-json}"
