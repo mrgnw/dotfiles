@@ -1,3 +1,6 @@
+ffp(){
+	ffprobe -print_format json -show_format -show_streams -show_chapters -show_private_data "$@" | jq '.streams'
+}
 yb(){
 	local url="$1"
 	shift 1
