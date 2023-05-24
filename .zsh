@@ -18,34 +18,35 @@ export BUN_INSTALL="$HOME/.bun"
 export PNPM_HOME="$HOME/Library/pnpm"
 
 PATH_DIRS=(
-    "$HOME/.binaries"
-    "$HOME.local/bin"
-    "$GOPATH/bin"
-    "$DENO_INSTALL/bin"
-    "$BUN_INSTALL/bin"
-    "$PY_BASE/bin"
-    "$PNPM_HOME"
+		"$HOME/.scripts"
+		"$HOME/.binaries"
+		"$HOME.local/bin"
+		"$GOPATH/bin"
+		"$DENO_INSTALL/bin"
+		"$BUN_INSTALL/bin"
+		"$PY_BASE/bin"
+		"$PNPM_HOME"
 )
 PATH="$PATH:${(j.:.)PATH_DIRS}"
 
 zsh_opts=(
-    auto_list
-    auto_menu
-    auto_param_keys
-    autocd
-    correct
-    hist_ignore_all_dups
-    hist_ignore_dups
-    hist_ignore_space
-    interactive_comments
-    null_glob
-    share_history
+		auto_list
+		auto_menu
+		auto_param_keys
+		autocd
+		correct
+		hist_ignore_all_dups
+		hist_ignore_dups
+		hist_ignore_space
+		interactive_comments
+		null_glob
+		share_history
 )
 setopt "${zsh_opts[@]}"
 
 # custom scripts
 for f in $Z/*.zsh; do
-    source "$f";
+		source "$f";
 done
 # TODO: picky file order?
 # https://linuxhint.com/bash_append_array/
