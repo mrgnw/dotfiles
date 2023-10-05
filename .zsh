@@ -21,7 +21,7 @@ export PNPM_HOME="$HOME/Library/pnpm"
 PATH_DIRS=(
 		"$HOME/.scripts"
 		"$HOME/.binaries"
-		"$HOME.local/bin"
+		"$HOME/.local/bin"
 		"$GOPATH/bin"
 		"$DENO_INSTALL/bin"
 		"$BUN_INSTALL/bin"
