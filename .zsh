@@ -6,7 +6,8 @@ function is_macos() { [[ "$OSTYPE" = "darwin"* ]] || return 1 }
 function is_linux() { [[ "$OSTYPE" = "linux"* ]] || return 1 }
 function is_apple(){ is_macos && [[ $(sysctl -n machdep.cpu.brand_string)  == 'Apple'* ]] || return 1 }
 
-export LANG="en_US.utf8";
+export LANG=en_US.utf8
+export LC_ALL=en_US.UTF-8
 
 # Languages & frameworks
 export GOPATH="$HOME/.golang"
