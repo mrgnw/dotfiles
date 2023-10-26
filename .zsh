@@ -27,6 +27,7 @@ PATH_DIRS=(
 		"$BUN_INSTALL/bin"
 		"$PY_BASE/bin"
 		"$PNPM_HOME"
+		"$HOME/.orbstack/bin"
 )
 PATH="$PATH:${(j.:.)PATH_DIRS}"
 
