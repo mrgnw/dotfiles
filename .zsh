@@ -1,6 +1,5 @@
 #!/bin/zsh
 export Z="$HOME/.zsh"
-# export X="$HOME/.xsh"
 
 function is_macos() { [[ "$OSTYPE" = "darwin"* ]] || return 1 }
 function is_linux() { [[ "$OSTYPE" = "linux"* ]] || return 1 }
@@ -10,12 +9,11 @@ export LANG=en_US.utf8
 export LC_ALL=en_US.UTF-8
 
 # Languages & frameworks
-export GOPATH="$HOME/.golang"
-
-alias python="$(which python3.11)"
-export PY_BASE="$(python -m site --user-base)"
+alias python="$(which python3)"
+export PY_BASE="$(python3 -m site --user-base)"
 export DENO_INSTALL="$HOME/.deno"
 export BUN_INSTALL="$HOME/.bun"
+export GOPATH="$HOME/.golang"
 export PNPM_HOME="$HOME/Library/pnpm"
 
 PATH_DIRS=(
@@ -27,9 +25,11 @@ PATH_DIRS=(
 		"$BUN_INSTALL/bin"
 		"$PY_BASE/bin"
 		"$PNPM_HOME"
+		"$HOME/.orbstack/bin"
 )
 PATH="$PATH:${(j.:.)PATH_DIRS}"
 
+# https://zsh.sourceforge.io/Doc/Release/Options.html
 zsh_opts=(
 		auto_list
 		auto_menu
@@ -49,5 +49,3 @@ setopt "${zsh_opts[@]}"
 for f in $Z/*.zsh; do
 		source "$f";
 done
-# TODO: picky file order?
-# https://linuxhint.com/bash_append_array/
