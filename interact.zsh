@@ -1,19 +1,16 @@
 #/bin/zsh
 source "$Z/theme";
+alias e=edit
 
-# completions
-[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
+edit(){
+	$EDITOR ${1:-.}
+}
 
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=1_000_000
 SAVEHIST=1_000_000
 
-export EDITOR='code'
-
 alias gits='git status'
-
-alias zd="$HOME/.zsh"
-alias zed="$EDITOR $Z"
 
 alias '$'=''
 alias ❯=''
@@ -54,10 +51,13 @@ denest(){
 	trash "$nested_dir"
 }
 
-showpath() {
+paths() {
     # display $PATH as a readable list
-    echo $PATH | tr ':' '\n' | uniq 
+    echo $PATH | tr ':' '\n' | uniq | sed 's/^/\t/'
 }
 
 folder(){ basename "$PWD"}
 parent(){ basename "$(dirname $PWD)"}
+
+# completions
+[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"

@@ -1,6 +1,7 @@
 is_linux || return 1
 
 export PKGR=aptitude
+export EDITOR='nano'
 
 alias a+="sudo $PKGR -y install "
 alias a»="sudo $PKGR -y upgrade "

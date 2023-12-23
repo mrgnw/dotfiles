@@ -4,6 +4,8 @@ EDITOR=code
 
 alias o='open .'
 
+tabs -3
+
 com.which(){
 	local app_name="$*"  # src https://unix.stackexchange.com/a/197794/77873
 	osascript -e "id of app \"$app_name\""  # src https://robservatory.com/easily-see-any-apps-bundle-identifier/

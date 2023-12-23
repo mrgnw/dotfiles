@@ -4,9 +4,6 @@
 p+() {pip install "$@"}
 p-() {pip uninstall "$@"}
 
-pf(){
-	ruff format --config ~/.config/ruff.toml "$@"	
-}
 alias jupy='jupyter notebook'
 
 # activate env
