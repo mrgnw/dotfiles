@@ -1,4 +1,5 @@
 alias duck='duckdb'
+alias pb='pocketbase'
 
 jsonl(){
   local selector="${2:-.[]}"
