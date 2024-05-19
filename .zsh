@@ -9,7 +9,7 @@ export LANG=en_US.utf8
 export LC_ALL=en_US.UTF-8
 
 # Languages & frameworks
-alias python="$(which python3)"
+# alias python="$(which python3)"
 export PY_BASE="$(python3 -m site --user-base)"
 export DENO_INSTALL="$HOME/.deno"
 export BUN_INSTALL="$HOME/.bun"
@@ -42,8 +42,12 @@ zsh_opts=(
 		interactive_comments
 		null_glob
 		share_history
+		extended_history
 )
 setopt "${zsh_opts[@]}"
+
+export SAVEHIST=10000
+export HISTSIZE=10000
 
 # custom scripts
 for f in $Z/*.zsh; do
