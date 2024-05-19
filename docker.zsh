@@ -10,8 +10,10 @@ dc(){
     # - `dc` ▸ `docker-compose up`
     # - `dc dev-docker-compose.yml` ▸ `docker-compose -f dev-docker-compose.yml up`
     # - `dc a_project1` ▸ `docker-compose -f a_project/docker-compose.yml up`
+		open -a "OrbStack"
+
     if [[ -f "$1" ]]; then
-        docker-compose -f "$1" "${2:-up}" "${@:2}"
+        docker-compose -f "$1" "${2:-up}" "${@:2}" 
     elif [[ -d "$1" ]]; then
         docker-compose -f "$1/docker-compose.yml" "${2:-up}" "${@:2}"
     else
