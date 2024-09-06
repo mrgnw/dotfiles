@@ -1,6 +1,6 @@
 is_macos || return 1
 ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
-EDITOR=code
+EDITOR=cursor
 
 alias o='open .'
 
@@ -16,11 +16,6 @@ merge() {
 	echo "Merging $(basename $1) into $(basename $2)"
 	ditto $@
 	trash $1
-}
-
-screens() {
-	defaults write com.apple.screencapture location $@
-	killall SystemUIServer
 }
 
 sms() {open "sms://open?addresses=$1/&body=$2" }
