@@ -1,5 +1,6 @@
 #!/bin/zsh
 export Z="$HOME/.zsh"
+export TERM=xterm-256color
 
 function is_macos() { [[ "$OSTYPE" = "darwin"* ]] || return 1 }
 function is_linux() { [[ "$OSTYPE" = "linux"* ]] || return 1 }
@@ -9,12 +10,11 @@ export LANG=en_US.utf8
 export LC_ALL=en_US.UTF-8
 
 # Languages & frameworks
-# alias python="$(which python3)"
-export PY_BASE="$(python3 -m site --user-base)"
-export DENO_INSTALL="$HOME/.deno"
+alias python="$(which python3)"
+alias py=python
 export BUN_INSTALL="$HOME/.bun"
+export DENO_INSTALL="$HOME/.deno"
 export GOPATH="$HOME/.golang"
-export PNPM_HOME="$HOME/Library/pnpm"
 
 PATH_DIRS=(
 		"$HOME/.scripts"
@@ -23,8 +23,6 @@ PATH_DIRS=(
 		"$GOPATH/bin"
 		"$DENO_INSTALL/bin"
 		"$BUN_INSTALL/bin"
-		"$PY_BASE/bin"
-		"$PNPM_HOME"
 		"$HOME/.orbstack/bin"
 )
 PATH="$PATH:${(j.:.)PATH_DIRS}"
@@ -53,3 +51,5 @@ export HISTSIZE=10000
 for f in $Z/*.zsh; do
 		source "$f";
 done
+
+eval "$(fzf --zsh)"
