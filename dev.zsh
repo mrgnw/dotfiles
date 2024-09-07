@@ -1,3 +1,4 @@
+# infer tool from current directory
 get_tool() {
 	if [[ -f pyproject.toml ]]; then
 		echo "uv"
@@ -16,7 +17,7 @@ get_tool() {
 	fi
 }
 
-# Define the command for each operation
+# Define the command for each tool & operation (+-«»)
 map_tool_command() {
 	local tool=$1
 	local operation=$2
@@ -62,7 +63,7 @@ run_tool_command() {
     shift
     local tool=$(get_tool)
 		echo $tool
-    tool=${tool:-brew}  # Default to brew if tool is empty
+    tool=${tool:-brew}
     command=$(map_tool_command $tool $operation)
 		echo "$tool $command" "$@"
     $tool $command "$@"
