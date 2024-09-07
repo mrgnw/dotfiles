@@ -3,10 +3,10 @@
 # create project
 +s() {
 	appname="${1:-sv$(word)}"
-	pnpm create svelte@next "$appname"
+	bun create svelte@next "$appname"
 	cd $appname
   svelte-add mdsvex
-	pnpm install
+	bun install
 	git init
 	git add .
 	git commit -m "🚀 init $appname"
