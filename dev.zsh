@@ -8,9 +8,9 @@ get_tool() {
 		echo "swift"
 	elif [[ -f main.go ]]; then
 		echo "go"
-	elif [[ -f docker-compose.yml ]]; then
+	elif [[ -f compose.yml || -f compose.yaml ]]; then
 		echo "docker-compose"
-	elif [[ -f docker-compose.yaml ]]; then
+	elif [[ -f docker-compose.yml || -f docker-compose.yaml ]]; then
 		echo "docker-compose"
 	else
 		echo ""
