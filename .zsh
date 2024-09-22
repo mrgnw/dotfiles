@@ -1,5 +1,6 @@
 #!/bin/zsh
 export Z="$HOME/.zsh"
+
 export TERM=xterm-256color
 
 function is_macos() { [[ "$OSTYPE" = "darwin"* ]] || return 1 }
@@ -11,7 +12,6 @@ export LC_ALL=en_US.UTF-8
 
 # Languages & frameworks
 alias python="$(which python3)"
-alias py=python
 export BUN_INSTALL="$HOME/.bun"
 export DENO_INSTALL="$HOME/.deno"
 export GOPATH="$HOME/.golang"
