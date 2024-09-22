@@ -1,6 +1,19 @@
 is_linux || return 1
 
-export PKGR=aptitude
+if [ -f /etc/os-release ]; then
+	. /etc/os-release
+	case "$ID" in
+		ubuntu)
+			export PKGR=apt
+			;;
+		amzn)
+			export PKGR=yum
+			;;
+		fedora|rhel|centos)
+			export PKGR=dnf
+		;;
+	esac
+fi
 export EDITOR='nano'
 
 alias a+="sudo $PKGR -y install "
