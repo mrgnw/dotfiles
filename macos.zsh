@@ -18,11 +18,6 @@ merge() {
 	trash $1
 }
 
-screens() {
-	defaults write com.apple.screencapture location $@
-	killall SystemUIServer
-}
-
 sms() {open "sms://open?addresses=$1/&body=$2" }
 
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
