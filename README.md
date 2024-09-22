@@ -1,4 +1,4 @@
-# mrgnw  dotfiles
+# Morgan's dotfiles
 
 ### Install
 ```sh
