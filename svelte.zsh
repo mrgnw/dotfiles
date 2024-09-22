@@ -3,13 +3,12 @@
 # create project
 +s() {
 	appname="${1:-sv$(word)}"
-	bun create svelte@next "$appname"
+	gh repo create $appname \
+	  --template https://github.com/mrgnw/shadcn-svelte-template \
+	  --private --clone
 	cd $appname
-  svelte-add mdsvex
 	bun install
-	git init
-	git add .
-	git commit -m "🚀 init $appname"
+	bun run dev
 }
 
 # svelte-add to project
