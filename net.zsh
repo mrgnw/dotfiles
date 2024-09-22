@@ -4,7 +4,13 @@ if ! command -v tailscale &>/dev/null; then
     alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
 fi
 
-alias y='yt-dlp'
+y() {
+	if [ $# -eq 0 ]; then
+		yt-dlp "$(pbpaste)"
+	else
+		yt-dlp "$@"
+	fi
+}
 
 dl(){
     # - dl {clipboard}
