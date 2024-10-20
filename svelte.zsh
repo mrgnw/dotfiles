@@ -1,6 +1,7 @@
 »s() { bun run ${1:-dev} }
 s+(){ svelte-add $@ }
 
+# +project from template (shadcn-svelte)
 +s() {
 	local appname="${1:-sv$(word)}"
 	local local_template="$HOME/.repos/shadcn-svelte-template"
@@ -20,6 +21,22 @@ s+(){ svelte-add $@ }
 		rm -rf .git &&
 		bun install &&
 		bun run dev	
+}
+
++s0() {
+	# + svelte project from scratch
+	local appname="${1:-sv$(word)}"
+
+	bunx sv create \
+			--check-types typescript \
+			--template minimal \
+			--no-install "$appname" &&
+	cd "$appname" &&
+	bun install &&
+	git init &&
+	git add . &&
+	git commit -m '+𝖘𝖛𝖑𝖙𝖊 New Svelte 5 project!' &&
+	bun run dev
 }
 
 # create a remote repo directly from the template
