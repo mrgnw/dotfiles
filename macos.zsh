@@ -1,6 +1,6 @@
 is_macos || return 1
 ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
-EDITOR=cursor
+EDITOR=windsurf
 
 alias o='open .'
 
