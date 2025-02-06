@@ -9,6 +9,8 @@ function is_apple(){ is_macos && [[ $(sysctl -n machdep.cpu.brand_string)  == 'A
 
 export LANG=en_US.utf8
 export LC_ALL=en_US.UTF-8
+autoload -Uz compinit
+compinit
 
 # Languages & frameworks
 alias python="$(which python3)"
