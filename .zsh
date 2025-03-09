@@ -51,5 +51,3 @@ export HISTSIZE=10000
 for f in $Z/*.zsh; do
 		source "$f";
 done
-
-eval "$(fzf --zsh)"
