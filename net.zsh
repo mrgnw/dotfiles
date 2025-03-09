@@ -11,8 +11,13 @@ y() {
 		yt-dlp "$@"
 	fi
 }
+yb(){
+    y --cookies-from-browser firefox "$@"
+}
 
 dl(){
+    # - dl {clipboard}
+    # - dl {url}
     # - dl {clipboard}
     # - dl {url}
     # - dl {urls_in_file} to pwd
