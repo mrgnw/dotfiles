@@ -2,8 +2,8 @@
 source "$Z/theme";
 alias e=edit
 ze(){
-	z $1 &&
-	edit
+	z "$1" &&
+	edit "$1"
 }
 
 edit(){
