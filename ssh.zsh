@@ -1,5 +1,5 @@
 sshake(){
-    ls $HOME/.ssh/id_rsa || ssh-keygen -t rsa;
+    ls $HOME/.ssh/id_rsa || ssh-keygen;
     ssh-copy-id $@;
 }
 
