@@ -21,8 +21,9 @@ alias ❯=''
 
 alias ..='cd ..'
 
-alias ls='ls -h'
-alias la='ls -lah'
+alias l='lsd -1'
+alias ll='lsd -l'
+lt() { lsd --tree --depth "$1" }
 
 alias disks='duf -only local,fuse'
 
