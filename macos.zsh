@@ -2,6 +2,8 @@ is_macos || return 1
 ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 EDITOR=code
 
+alias blog="open -a Typora $HOME/dev/blog/content"
+
 alias o='open .'
 
 tabs -3
