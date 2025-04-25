@@ -82,7 +82,10 @@ pforward(){
     ssh -L $FWD_TO_PORT:$FWD_FROM_HOST:$FWD_FROM_PORT -N 127.0.0.1
 }
 
-ip() {curl -sS ipinfo.io | jq '{ip:.ip, city:.city, country:.country}'}
+ip() {
+    # copy just the ip address, output ip, city, country
+    curl -sS ipinfo.io | tee >(jq -r '.ip' | pbcopy) | jq '{ip:.ip, city:.city, country:.country}'
+}
 
 alias ttl='sudo sysctl net.inet.ip.ttl=65'
 alias flushdns='dscacheutil -flushcache'
