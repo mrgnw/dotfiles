@@ -13,7 +13,7 @@ autoload -Uz compinit
 compinit
 
 # Languages & frameworks
-alias python="$(which python3)"
+# alias python="$(which python3)"
 export BUN_INSTALL="$HOME/.bun"
 export DENO_INSTALL="$HOME/.deno"
 export GOPATH="$HOME/.golang"
