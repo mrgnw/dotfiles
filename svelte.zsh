@@ -1,4 +1,7 @@
-»s() { bun run ${1:-dev} }
+alias p='pnpm'
+alias px='pnpx'
+
+»() { pnpm run ${1:-dev} }
 s+(){ svelte-add $@ }
 
 # +project from template (shadcn-svelte)
@@ -16,11 +19,11 @@ s+(){ svelte-add $@ }
 
 	cp -R "${local_template}/." "$appname"
 	chmod -R u+rw "$appname"
-	
+
 	cd "$appname" &&
 		rm -rf .git &&
 		bun install &&
-		bun run dev	
+		bun run dev
 }
 
 +s0() {

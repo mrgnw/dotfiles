@@ -53,3 +53,6 @@ export HISTSIZE=10000
 for f in $Z/*.zsh; do
 		source "$f";
 done
+
+# prompt theme (after all scripts, so SSH detection can set SHELL_SYMBOL)
+source "$Z/theme"

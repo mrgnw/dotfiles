@@ -1,5 +1,5 @@
 #/bin/zsh
-source "$Z/theme";
+
 alias e=edit
 ze(){
 	z "$1" &&

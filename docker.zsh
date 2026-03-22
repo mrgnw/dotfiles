@@ -2,6 +2,8 @@
 alias dkrun='docker run -it $(docker build -q .)'
 alias lz='lazy docker'
 
+alias compose='docker compose'
+
 export containers="$HOME/.containers"
 
 dc(){
@@ -13,7 +15,7 @@ dc(){
 		open -a "OrbStack"
 
     if [[ -f "$1" ]]; then
-        docker-compose -f "$1" "${2:-up}" "${@:2}" 
+        docker-compose -f "$1" "${2:-up}" "${@:2}"
     elif [[ -d "$1" ]]; then
         docker-compose -f "$1/docker-compose.yml" "${2:-up}" "${@:2}"
     else
