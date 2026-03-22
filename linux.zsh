@@ -20,8 +20,8 @@ alias a+="sudo $PKGR -y install "
 alias a»="sudo $PKGR -y upgrade "
 alias a-="sudo $PKGR -y remove "
 
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
+# alias pbcopy='xclip -selection clipboard'
+# alias pbpaste='xclip -selection clipboard -o'
 
 distro() {
 	source /etc/os-release && echo $PRETTY_NAME
