@@ -5,7 +5,7 @@ EDITOR=zed
 alias blog="open -a Typora $HOME/dev/blog/content"
 
 alias o='open .'
-
+alias subl='open -a Sublime\ Merge '
 tabs -3
 
 com.which(){
