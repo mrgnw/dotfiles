@@ -2,3 +2,6 @@
 # macos sees `•` first, zsh sees it last
 .DS_Store
 [_Ω•]*
+
+.stversions
+.stfolder
